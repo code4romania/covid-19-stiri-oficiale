@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./
+    volumes:
+      - ./src:/var/www/html:delegated
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - mariadb
+    environment:
+      DB_PORT: "3306"
+      DB_HOST: "mariadb"
+    networks:
+      - backend
+    container_name: "Stiri-importante"
+
+  mariadb:
+    build:
+      context: ./configs/mariadb
+      args:
+        - MARIADB_VERSION=10.1.41
+    volumes:
+      - mariadbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      TZ: "Europe/Bucharest"
+      MYSQL_DATABASE: "stiri_importante"
+      MYSQL_USER: "stiri_importante"
+      MYSQL_PASSWORD: "123456"
+      MYSQL_ROOT_PASSWORD: "cr9EWr2wKw6usFq5"
+    networks:
+      - backend
+    container_name: "stiri-importate-db"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  mariadbdata:
+    driver: local
+  webserver:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge
