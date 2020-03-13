@@ -1,83 +1,86 @@
-<!-- Footer -->
-<footer class="page-footer font-small bg-info pt-4">
+@php
+    // TODO: replace with actual menu data
+    $menus = [
+        [
+            'name' => 'Link-uri utile',
+            'items' => [
+                [
+                    'url' => '#',
+                    'label' => 'Link 1',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 2',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 3',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 4',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 5',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Link-uri utile',
+            'items' => [
+                [
+                    'url' => '#',
+                    'label' => 'Link 1',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 2',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 3',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 4',
+                ],
+                [
+                    'url' => '#',
+                    'label' => 'Link 5',
+                ],
+            ],
+        ],
+    ];
+@endphp
 
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+<footer class="text-blue-100 bg-blue-500">
+    <div class="container grid row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
+        <div class="tracking-wide">
+            <a href="https://code4.ro/ro/">
+                @svg('code4romania-gray', 'h-10 mb-4')
+            </a>
 
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-
-                <!-- Content -->
-                <h5 class="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
+            <p>© 2019 Code for Romania.</p>
+            <p>Organizație neguvernamentală independentă, neafiliată politic și apolitică.</p>
         </div>
-        <!-- Grid row -->
+        <div class="flex flex-wrap">
+            @foreach ($menus as $menu)
+                <ul class="w-full py-5 md:w-1/2 md:px-3 md:py-0">
+                    <li class="mb-4 font-bold tracking-wide">
+                        {{ $menu['name'] }}
+                    </li>
 
+                    @foreach ($menu['items'] as $item)
+                        <li class="mt-2">
+                            <a
+                                class="focus:outline-none focus:shadow-outline hover:underline focus:underline"
+                                href="{{ $item['url'] }}"
+                            >{{ $item['label'] }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            @endforeach
+        </div>
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-       Code4Ro
-    </div>
-    <!-- Copyright -->
-
 </footer>
-<!-- Footer -->

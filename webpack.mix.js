@@ -1,4 +1,15 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
+
+mix.config.fileLoaderDirs.fonts = 'fonts';
+
+mix.webpackConfig({
+    devtool: mix.config.production ? 'none' : 'source-map',
+});
+
+if (mix.config.production) {
+    mix.version();
+}
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +22,18 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.setPublicPath('public/assets')
+    .setResourceRoot('./')
+
+    .copyDirectory('resources/images', 'public/assets/images')
+
+    .js('resources/js/app.js', 'public/assets')
+    .postCss('resources/css/app.pcss', 'public/assets', [
+        require('postcss-import'),
+        require('tailwindcss')('./tailwind.config.js'),
+        require('postcss-nested')({
+            bubble: ['screen'],
+        }),
+    ])
+    .purgeCss()
+    .extract();
