@@ -25,7 +25,7 @@
 
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">
     <div class="container flex flex-wrap items-center justify-between py-5 border-b">
-        <a href="{{ route('pages.index') }}" class="inline-block">
+        <a href="{{ route('pages.index') }}" class="inline-block focus:outline-none focus:shadow-outline">
             <img src="{{ asset('assets/images/logo.png') }}" class="block w-auto h-8" alt="">
             {{-- @svg('logo', 'block w-auto h-8') --}}
         </a>
@@ -45,7 +45,7 @@
 
             @foreach ($menuItems as $item)
                 <li class="relative py-2 lg:ml-6">
-                    <a class="py-2 rounded lg:px-3 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none" href="{{ $item['url'] }}">{{ $item['label'] }}</a>
+                    <a class="py-1 lg:px-3 hover:bg-gray-100 focus:outline-none focus:shadow-outline" href="{{ $item['url'] }}">{{ $item['label'] }}</a>
                 </li>
             @endforeach
         </ul>
@@ -55,13 +55,13 @@
 <aside class="container flex flex-wrap text-sm lg:justify-end">
     <div class="inline-flex items-end justify-between w-full py-5 border-b lg:w-auto">
         <span>Un proiect dezvoltat de</span>
-        <a href="https://code4.ro" target="_blank" class="inline-block px-2">
+        <a href="https://code4.ro" target="_blank" class="inline-block px-2 focus:outline-none focus:shadow-outline">
             @svg('code4romania', 'block h-8 w-auto')
         </a>
     </div>
     <div class="inline-flex items-end justify-between w-full py-5 border-b lg:pl-4 lg:w-auto">
         <span>În parteneriat cu</span>
-        <a href="https://www.gov.ro/" target="_blank" class="inline-block px-2">
+        <a href="https://www.gov.ro/" target="_blank" class="inline-block px-2 focus:outline-none focus:shadow-outline">
             @svg('govro', 'block h-12 w-auto')
         </a>
     </div>

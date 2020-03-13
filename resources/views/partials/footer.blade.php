@@ -66,7 +66,7 @@
                     @foreach ($menu['items'] as $item)
                         <li class="mt-2">
                             <a
-                                class="focus:outline-none focus:shadow-outline hover:underline focus:underline"
+                                class="focus:outline-none focus:shadow-outline hover:underline"
                                 href="{{ $item['url'] }}"
                             >{{ $item['label'] }}</a>
                         </li>
@@ -75,7 +75,7 @@
             @endforeach
         </div>
         <div class="tracking-wide lg:text-right">
-            <a href="https://code4.ro/ro/" class="inline-block mb-4">
+            <a href="https://code4.ro/ro/" class="inline-block mb-4 focus:outline-none focus:shadow-outline">
                 @svg('code4romania-gray', 'h-10')
             </a>
 

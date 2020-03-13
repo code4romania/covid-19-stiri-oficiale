@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
 class SectionButton extends Component
@@ -10,7 +11,7 @@ class SectionButton extends Component
     public $label;
 
     /** @var string */
-    public $url;
+    public $route;
 
     /** @var boolean */
     public $active;
@@ -20,11 +21,12 @@ class SectionButton extends Component
      *
      * @return void
      */
-    public function __construct(string $label, string $url)
+    public function __construct(string $label, string $route)
     {
         $this->label = $label;
-        $this->url = $url;
-        $this->active = false;
+        $this->route = $route;
+
+        $this->active = Route::currentRouteName() === $route;
     }
 
     /**
