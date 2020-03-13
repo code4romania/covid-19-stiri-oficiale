@@ -56,14 +56,6 @@
 
 <footer class="text-blue-100 bg-blue-500">
     <div class="container grid row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
-        <div class="tracking-wide">
-            <a href="https://code4.ro/ro/">
-                @svg('code4romania-gray', 'h-10 mb-4')
-            </a>
-
-            <p>© 2019 Code for Romania.</p>
-            <p>Organizație neguvernamentală independentă, neafiliată politic și apolitică.</p>
-        </div>
         <div class="flex flex-wrap">
             @foreach ($menus as $menu)
                 <ul class="w-full py-5 md:w-1/2 md:px-3 md:py-0">
@@ -81,6 +73,14 @@
                     @endforeach
                 </ul>
             @endforeach
+        </div>
+        <div class="tracking-wide lg:text-right">
+            <a href="https://code4.ro/ro/" class="inline-block mb-4">
+                @svg('code4romania-gray', 'h-10')
+            </a>
+
+            <p>© 2019 Code for Romania.</p>
+            <p>Organizație neguvernamentală independentă, neafiliată politic și apolitică.</p>
         </div>
     </div>
 </footer>

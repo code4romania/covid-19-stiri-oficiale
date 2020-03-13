@@ -11,7 +11,7 @@
 
     <link href="{{ asset(mix('app.css', 'assets')) }}" rel="stylesheet">
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen font-light">
     @include('partials.header')
 
     <main class="flex-1 py-20 md:text-lg">

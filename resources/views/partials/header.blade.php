@@ -26,8 +26,8 @@
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">
     <div class="container flex flex-wrap items-center justify-between py-5 border-b">
         <a href="{{ route('pages.index') }}" class="inline-block">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="">
-            {{-- @svg('logo', 'block h-10 w-auto') --}}
+            <img src="{{ asset('assets/images/logo.png') }}" class="block w-auto h-8" alt="">
+            {{-- @svg('logo', 'block w-auto h-8') --}}
         </a>
 
         <div class="flex justify-end col-span-1 lg:hidden">
@@ -53,16 +53,16 @@
 </nav>
 
 <aside class="container flex flex-wrap text-sm lg:justify-end">
-    <div class="inline-flex items-end w-full py-5 border-b lg:w-auto">
+    <div class="inline-flex items-end justify-between w-full py-5 border-b lg:w-auto">
         <span>Un proiect dezvoltat de</span>
         <a href="https://code4.ro" target="_blank" class="inline-block px-2">
             @svg('code4romania', 'block h-8 w-auto')
         </a>
     </div>
-    <div class="inline-flex items-end w-full py-5 pl-4 border-b lg:w-auto">
+    <div class="inline-flex items-end justify-between w-full py-5 border-b lg:pl-4 lg:w-auto">
         <span>În parteneriat cu</span>
-        <a href="https://code4.ro" target="_blank" class="inline-block px-2">
-            @svg('code4romania', 'block h-8 w-auto')
+        <a href="https://www.gov.ro/" target="_blank" class="inline-block px-2">
+            @svg('govro', 'block h-12 w-auto')
         </a>
     </div>
 </aside>
