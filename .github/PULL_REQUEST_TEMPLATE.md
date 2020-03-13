@@ -1,6 +1,6 @@
 ### Requirements for making a pull request
 
-Thank you for contributing to our project! 
+Thank you for contributing to our project!
 
 Please fill out the template below to help the project maintainers review it as fast as possible and include your contribution to the project.
 
