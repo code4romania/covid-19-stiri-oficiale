@@ -32,9 +32,46 @@ You can also list any pending features and planned improvements for the project 
 
 Mention all related repos and projects.
 
+## Development
+
+### To bootstrap the project (Run this only once), run the following commands in your shell:
+
+Install composer dependencies
+
+```bash
+$ docker run -v ${PWD}:/app -w /app composer:latest composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
+```
+
+Copy environment variables and start the application
+
+```bash
+$ cp .env.example .env
+$ docker-compose up
+```
+
+Run database migrations
+
+```bash
+$ docker exec -it stiri-importante php artisan migrate
+```
+
+Generate app secret key, and personal access client keys
+
+```bash
+$ docker exec -it stiri-importante php artisan key:generate
+$ docker exec -it stiri-importante php artisan optimize
+```
+
+### Every other time
+
+```bash
+$ docker-compose up
+```
+
 ## Deployment
 
 Guide users through getting your code up and running on their own system. In this section you can talk about:
+
 1. Installation process
 2. Software dependencies
 3. Latest releases
@@ -44,10 +81,10 @@ Describe and show how to build your code and run the tests.
 
 ## Feedback
 
-* Request a new feature on GitHub.
-* Vote for popular feature requests.
-* File a bug in GitHub Issues.
-* Email us with other feedback contact@code4.ro
+-   Request a new feature on GitHub.
+-   Vote for popular feature requests.
+-   File a bug in GitHub Issues.
+-   Email us with other feedback contact@code4.ro
 
 ## License
 
