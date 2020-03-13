@@ -42,10 +42,11 @@ Install composer dependencies
 $ docker run -v ${PWD}:/app -w /app composer:latest composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
 ```
 
-Copy environment variables
+Copy environment variables and start the application
 
 ```bash
 $ cp .env.example .env
+$ docker-compose up
 ```
 
 Run database migrations
@@ -59,12 +60,6 @@ Generate app secret key, and personal access client keys
 ```bash
 $ docker exec -it stiri-importante php artisan key:generate
 $ docker exec -it stiri-importante php artisan optimize
-```
-
-Start the application
-
-```bash
-$ docker-compose up
 ```
 
 ### Every other time
