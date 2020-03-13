@@ -8,7 +8,7 @@ Just head over to the GitHub page and click the "Fork" button. It's just that si
 
 ```shell
 # Clone your fork to your local machine
-git clone git@github.com:USERNAME/FORKED-PROJECT.git
+git clone git@github.com:code4romania/stiri-oficiale.git
 ```
 
 ## Keeping Your Fork Up to Date
@@ -88,7 +88,7 @@ Now, it may be desirable to squash some of your smaller commits down into a smal
 
 ```shell
 # Rebase all commits on your development branch
-git checkout 
+git checkout
 git rebase -i master
 ```
 
@@ -154,7 +154,7 @@ git branch -d newfeature
 Copyright 2017, Chase Pettit
 
 MIT License, http://www.opensource.org/licenses/mit-license.php
- 
+
 **Additional Reading**
 * [Atlassian - Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
