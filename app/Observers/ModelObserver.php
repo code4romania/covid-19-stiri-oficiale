@@ -18,7 +18,6 @@ class ModelObserver
     {
         $errors=[];
         $slug = Str::slug($model->title);
-        dd($slug);
         $exists = BaseModel::where("slug",'=',"{$slug}")->first();
         if ($exists) {
             $errors["name"] = "Acest nume este deja folosit";
@@ -31,8 +30,6 @@ class ModelObserver
     }
     public function saving(BaseModel $model)
     {
-        dd($model);
-
         $model->slug = trim(Str::slug($model->title));
         $model->user_id = auth()->user()->id;
 

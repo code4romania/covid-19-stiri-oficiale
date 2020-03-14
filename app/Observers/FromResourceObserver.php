@@ -17,7 +17,7 @@ class FromResourceObserver
     public function creating( FromResource $fromResource)
     {
         $errors=[];
-        $slug = Str::slug($fromResource->title);
+        $slug = Str::slug($fromResource->name);
         $exists = FromResource::where("slug",'=',"{$slug}")->first();
         if ($exists) {
             $errors["name"] = "Acest nume este deja folosit";
