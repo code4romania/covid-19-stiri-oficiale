@@ -21,10 +21,6 @@
 </head>
 <body>
 
-
-@auth
-    @include('admin.partials.header')
-@endauth
 @guest()
     @include('partials.header')
 @endguest

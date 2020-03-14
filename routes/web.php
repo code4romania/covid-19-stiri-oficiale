@@ -13,23 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-    Route::get('/','AdminController@list')->name('admin.article.list');
-    Route::get('/add','AdminController@add')->name('admin.article.add');
-    Route::post('/add','AdminController@storage')->name('admin.article.storage');
-    Route::get('/edit/{id}','AdminController@edit')->name('admin.article.edit');
-    Route::post('/edit/{id}','AdminController@update')->name('admin.article.update');
-    Route::get('/delete/{id}','AdminController@delete')->name('admin.article.delete');
-    });
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
