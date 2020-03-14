@@ -2,29 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
+use App\Page;
 
-class NewsController extends Controller
+class PageController extends Controller
 {
     public function index()
     {
-        $items = News::listing();
-
-        return view('news.index', [
-            'items' => $items,
-        ]);
+        return redirect()->route('news.index');
     }
 
     public function show(string $slug)
     {
-        $item = News::where('slug', $slug)->firstOrFail();
+        $item = Page::where('slug', $slug)->firstOrFail();
 
         $this->setSeo([
             'title' => $item->title,
             'description' => $item->content,
         ]);
 
-        return view('news.show', [
+        return view('pages.show', [
             'item' => $item,
         ]);
     }

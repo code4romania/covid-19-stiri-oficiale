@@ -2,12 +2,17 @@
 
 namespace App\View\Components;
 
+use App\BaseModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\View\Component;
 
 class ContentCard extends Component
 {
-    /** @var array<string> */
-    public $card;
+    /** @var BaseModel */
+    public $model;
+
+    /** @var string */
+    public $route;
 
     /** @var bool */
     public $readMore;
@@ -17,15 +22,10 @@ class ContentCard extends Component
      *
      * @return void
      */
-    public function __construct(array $card, bool $readMore = true)
+    public function __construct(BaseModel $item, ?string $route = null, bool $readMore = true)
     {
-        $this->card = array_merge([
-            'date' => null,
-            'title' => null,
-            'excerpt' => null,
-            'url' => '/news/page',
-        ], $card);
-
+        $this->model = $item;
+        $this->route = $route;
         $this->readMore = $readMore;
     }
 

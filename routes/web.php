@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DecisionController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,25 +16,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test','MenuController@index');
-Route::prefix('/news')->group(function () {
-    Route::view('/', 'news.index')->name('news.index');
-    Route::view('/{slug}', 'news.show')->name('news.show');
+
+Route::prefix('/informatii')->group(function () {
+    Route::get('/', [NewsController::class, 'index'])->name('news.index');
+    Route::get('/{slug}', [NewsController::class, 'show'])->name('news.show');
 });
 
 Route::prefix('/hotarari')->group(function () {
-    Route::view('/', 'legal.index')->name('legal.index');
-    Route::view('/{slug}', 'legal.show')->name('legal.show');
+    Route::get('/', [DecisionController::class, 'index'])->name('decisions.index');
+    Route::get('/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
 });
 
 Route::prefix('/video')->group(function () {
-    Route::view('/', 'video.index')->name('video.index');
-    Route::view('/{slug}', 'video.show')->name('video.show');
+    Route::get('/', [VideoController::class, 'index'])->name('videos.index');
+    // Route::get('/{slug}', [VideoController::class, 'show'])->name('videos.show');
 });
 
-// Route::view('/', 'pages.index')->name('pages.index');
-Route::get('/', function () {
-    return redirect()->route('news.index');
-})->name('pages.index');
-
-// Route::view('/{slug}', 'pages.show')->name('pages.show');
+Route::get('/', [PageController::class, 'index'])->name('pages.index');
+Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();

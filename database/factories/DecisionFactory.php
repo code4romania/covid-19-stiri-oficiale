@@ -11,6 +11,7 @@ $factory->define(Decision::class, function (Faker $faker) {
     return [
         'slug' => $faker->slug,
         'title' => $faker->sentence,
+        'short_content' => $faker->paragraph,
         'content' => collect($faker->paragraphs(6))
             ->map(fn ($paragraph) => "<p>{$paragraph}</p>")
             ->implode(''),

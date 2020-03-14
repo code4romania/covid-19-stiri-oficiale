@@ -25,4 +25,9 @@ class BaseModel extends Model implements HasMedia
     {
         $this->addMediaCollection('images')->acceptsMimeTypes(['image/jpeg', 'image/png']);
     }
+
+    public function scopeListing($query)
+    {
+        return $query->orderBy('updated_at', 'DESC')->paginate(10);
+    }
 }

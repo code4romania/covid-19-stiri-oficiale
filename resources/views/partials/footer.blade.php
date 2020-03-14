@@ -1,57 +1,11 @@
 @php
     // TODO: replace with actual menu data
     $menus = [
-        [
-            'name' => 'Link-uri utile',
-            'items' => [
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 1',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 2',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 3',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 4',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 5',
-                ],
-            ],
-        ],
-        [
-            'name' => 'Link-uri utile',
-            'items' => [
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 1',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 2',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 3',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 4',
-                ],
-                [
-                    'url' => '/static-page',
-                    'label' => 'Link 5',
-                ],
-            ],
-        ],
+        nova_get_menu('footer1'),
+        nova_get_menu('footer2'),
     ];
+
+    // dd($menus);
 @endphp
 
 <aside class="container flex flex-wrap text-sm lg:justify-end">
@@ -68,17 +22,23 @@
     <div class="container grid items-end row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
         <div class="flex flex-wrap">
             @foreach ($menus as $menu)
+                @continue(is_null($menu))
                 <ul class="w-full py-5 md:w-1/2 md:px-3 md:py-0">
                     <li class="mb-4 font-bold tracking-wide">
                         {{ $menu['name'] }}
                     </li>
 
-                    @foreach ($menu['items'] as $item)
+                    @foreach (($menu['menuItems'] ?? []) as $item)
                         <li>
-                            <a
-                                class="focus:outline-none focus:shadow-outline hover:underline"
-                                href="{{ $item['url'] }}"
-                            >{{ $item['label'] }}</a>
+                            @if ($item['type'] === 'text')
+                                <span>{{ $item['name'] }}</span>
+                            @else
+                                <a
+                                    class="focus:outline-none focus:shadow-outline hover:underline"
+                                    href="{{ $item['value'] }}"
+                                    target="{{ $item['target'] }}"
+                                >{{ $item['name'] }}</a>
+                            @endif
                         </li>
                     @endforeach
                 </ul>

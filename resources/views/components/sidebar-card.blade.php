@@ -1,26 +1,23 @@
-@php
-
-@endphp
-
-
 <div class="">
     <div class="flex bg-gray-300">
-        <i class="w-3 {{ $card['color']['bg'] }}"></i>
-        <h1 class="flex-1 px-4 py-6">{{ $card['title'] }}</h1>
+        <i class="w-3 {{ $color['bg'] }}"></i>
+        <h1 class="flex-1 px-4 py-6">{{ $model->title }}</h1>
     </div>
 
-    @if ($card['text'] || isset($card['button']))
+    @if ($model->description || ($model->link_button && $model->text_button))
         <div class="px-6 py-4 bg-gray-100">
-            @if ($card['text'])
-                <p class="mb-4">{{ $card['text'] }}</p>
+            @if ($model->description)
+                <div class="mb-4 rich-text">
+                    {!! $model->description !!}
+                </div>
             @endif
 
-            @if (isset($card['button']))
+            @if ($model->link_button && $model->text_button)
                 <a
-                    href="{{ $card['button']['url'] }}"
-                    class="block text-center tracking-wide py-2 px-4 hover:opacity-75 transition-opacity duration-100 focus:outline-none focus:shadow-outline rounded font-bold text-base w-full {{ $card['color']['bg'] }} {{ $card['color']['text'] }}"
+                    href="{{ $model->link_button }}"
+                    class="block text-center tracking-wide py-2 px-4 hover:opacity-75 transition-opacity duration-100 focus:outline-none focus:shadow-outline rounded font-bold text-base w-full {{ $color['bg'] }} {{ $color['text'] }}"
                 >
-                    {{ $card['button']['label'] }}
+                    {{ $model->text_button }}
                 </a>
             @endif
         </div>

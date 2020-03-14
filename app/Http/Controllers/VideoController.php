@@ -9,12 +9,24 @@ class VideoController extends Controller
 {
     public  function index()
     {
-        $items=Video::paginate(10);
-        return view('news.index',compact('items'));
+        $items = Video::listing();
+
+        return view('video.index', [
+            'items' => $items,
+        ]);
     }
+
     public function show($slug)
     {
-        $item=Video::where('slug',slug)->get();
-        return view('video.show',compact('$item'));
+        $item = Video::where('slug', $slug)->firstOrFail();
+
+        $this->setSeo([
+            'title' => $item->title,
+            'description' => $item->content,
+        ]);
+
+        return view('video.show', [
+            'item' => $item,
+        ]);
     }
 }

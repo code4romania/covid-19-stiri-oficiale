@@ -9,7 +9,7 @@
 
     <div class="grid gap-4 lg:grid-cols-3">
         <x-section-button label="Ultimele informații oficiale" route="news.index" />
-        <x-section-button label="Hotarări și legislație" route="legal.index" />
-        <x-section-button label="Înregistrări video" route="video.index" />
+        <x-section-button label="Hotarări și legislație" route="decisions.index" />
+        <x-section-button label="Înregistrări video" route="videos.index" />
     </div>
 </div>

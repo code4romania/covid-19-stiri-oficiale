@@ -23,19 +23,11 @@ class CreateNewsTable extends Migration
             $table->bigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
-        });
-        $user_table = 'news';
-        Schema::table($user_table, function ($table) use ($user_table) {
+
             $table->string('preview_token')->nullable();
             $table->boolean('published')->default(true);
             $table->bigInteger('draft_parent_id')->nullable()->unsigned();
-            $table->foreign('draft_parent_id')->references('id')->on($user_table)->onDelete('cascade');
-
-            // It's recommended to replace your current unique constraint and add published field to it.
-
-            // Example:  $table->dropUnique("your_unique_index_name");
-            //           $table->unique(['your_unique_fields', 'published'], "example_unique_name_with_published_field_added");
-
+            $table->foreign('draft_parent_id')->references('id')->on('news')->onDelete('cascade');
         });
     }
 
