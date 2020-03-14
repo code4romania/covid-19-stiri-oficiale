@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
+        "artesaos/seotools": "^0.17.1",
         "bakerkretzmar/nova-settings-tool": "^1.0",
         "benjaminhirsch/nova-slug-field": "^1.2",
         "ebess/advanced-nova-media-library": "dev-master",
@@ -21,6 +22,7 @@
         "laravel/nova": "~3.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "nothingworks/blade-svg": "^0.3.4",
         "php-ffmpeg/php-ffmpeg": "^0.14.0",
         "spatie/laravel-medialibrary": "^8.0.0",
         "spatie/nova-tags-field": "^3.0",
