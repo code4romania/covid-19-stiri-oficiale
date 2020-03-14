@@ -19,6 +19,11 @@ class Decision extends BaseModel
 
     protected $with = ['institution'];
 
+    public function childDraft()
+    {
+        return $this->hasOne(Decision::class, 'draft_parent_id', 'id');
+    }
+
     public function institution()
     {
         return $this->belongsTo(Institution::class);

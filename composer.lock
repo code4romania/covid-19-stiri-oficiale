@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "989b648e5f38e438e862c01a583bd6ec",
+    "content-hash": "969f0ad911e2f363bbe5d8df309cb472",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -2790,6 +2790,167 @@
             "time": "2019-11-29T22:36:02+00:00"
         },
         {
+            "name": "optimistdigital/nova-drafts",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-drafts.git",
+                "reference": "38edcb3328349103e9f85f563a44a15cf582c772"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-drafts/zipball/38edcb3328349103e9f85f563a44a15cf582c772",
+                "reference": "38edcb3328349103e9f85f563a44a15cf582c772",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaDrafts\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaDrafts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field that allows you to make drafts of your current resources.",
+            "keywords": [
+                "drafts",
+                "field",
+                "laravel",
+                "nova",
+                "optimistdigital"
+            ],
+            "time": "2020-02-27T15:05:00+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-locale-field",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-locale-field.git",
+                "reference": "c92496c420ab01c4fc22d3038a17dec15c8c9226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/c92496c420ab01c4fc22d3038a17dec15c8c9226",
+                "reference": "c92496c420ab01c4fc22d3038a17dec15c8c9226",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^2.0.11 || ^3.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaLocaleField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaLocaleField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "field",
+                "laravel",
+                "nova",
+                "optimistdigital"
+            ],
+            "time": "2020-03-05T07:24:46+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-menu-builder",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-menu-builder.git",
+                "reference": "b8fd1c5099364c26430bfd1c014070078b50c4da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/b8fd1c5099364c26430bfd1c014070078b50c4da",
+                "reference": "b8fd1c5099364c26430bfd1c014070078b50c4da",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^2.0.11 || ^3.0",
+                "optimistdigital/nova-locale-field": "^2.0.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\MenuBuilder\\MenuBuilderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\MenuBuilder\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Menu Builder Tool for Laravel Nova.",
+            "keywords": [
+                "builder",
+                "laravel",
+                "menu",
+                "nova",
+                "optimistdigital"
+            ],
+            "time": "2020-03-05T14:22:44+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -3608,12 +3769,6 @@
                 "sort",
                 "sortable"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-02T19:45:44+00:00"
         },
         {
@@ -3808,12 +3963,6 @@
                 "media",
                 "spatie"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-14T10:52:41+00:00"
         },
         {
@@ -3870,12 +4019,6 @@
             "keywords": [
                 "laravel-tags",
                 "spatie"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.patreon.com/spatie",
-                    "type": "patreon"
-                }
             ],
             "time": "2020-03-04T17:07:08+00:00"
         },
@@ -3949,12 +4092,6 @@
                 "spatie",
                 "translate"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-11T09:56:26+00:00"
         },
         {
@@ -4010,12 +4147,6 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
             ],
             "time": "2020-03-03T15:52:07+00:00"
         },
@@ -4867,20 +4998,6 @@
                 "intl",
                 "l10n",
                 "localization"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-04T09:41:09+00:00"
         },
@@ -5947,24 +6064,6 @@
                 "ascii",
                 "clean",
                 "php"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-13T01:23:26+00:00"
         }
@@ -7971,6 +8070,5 @@
     "platform": {
         "php": "^7.4"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
