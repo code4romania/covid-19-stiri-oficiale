@@ -51,7 +51,7 @@ class RecordVideo extends Resource
             ID::make()->sortable(),
             TextWithSlug::make('Title')
                 ->slug('slug'),
-            Slug::make('Slug')->showUrlPreview('http://localhost/'),
+            Slug::make('Slug','slug'),
             NovaTinyMCE::make('Content','content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',

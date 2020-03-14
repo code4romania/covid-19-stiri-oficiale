@@ -20,6 +20,7 @@ class NewsInfo extends Resource
      * @var string
      */
     public static $model = 'App\NewsInfo';
+    public static $group ="Article";
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -47,10 +48,9 @@ class NewsInfo extends Resource
     {
         return [
             ID::make()->sortable(),
-            ID::make()->sortable(),
             TextWithSlug::make('Title')
                 ->slug('slug'),
-            Slug::make('Slug'),
+            Slug::make('Slug','slug'),
             NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
