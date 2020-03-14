@@ -10,7 +10,6 @@ class RecordVideo extends BaseModel
     {
         parent::__construct($attributes);
         $this->user_id=auth()->user()->id;
-        $this->slug=Str::slug($this->title);
 
     }
 
