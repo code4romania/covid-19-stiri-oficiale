@@ -39,7 +39,7 @@ return [
     | or a callable (ie 'locales' => 'nova_lang_get_all_locales').
     */
 
-    'locales' => ['en_US' => 'English','ro_RO'=>'Română'],
+    'locales' => ['ro_RO' => 'Română'],
 
 
     /*
@@ -50,5 +50,7 @@ return [
     | Set all the linkable models in an array.
     */
 
-    'linkable_models' => [],
+    'linkable_models' => [
+        App\Helpers\PageMenuLinkable::class,
+    ],
 ];

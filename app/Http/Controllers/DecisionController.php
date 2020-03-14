@@ -3,20 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Decision;
-use Illuminate\Http\Request;
 
 class DecisionController extends Controller
 {
-    public function index ()
+    public function index()
     {
-        $data = Decision::paginate(10);
-        return view('decision.index', compact('data'));
+        $items = Decision::listing();
+
+        return view('decisions.index', [
+            'items' => $items,
+        ]);
     }
 
-    public function show ($slug)
+    public function show($slug)
     {
-        $data = Decision::where('slug', $slug);
-        return view('decision.show', compact('data'));
+        $item = Decision::where('slug', $slug)->firstOrFail();
 
+        $this->setSeo([
+            'title' => $item->title,
+            'description' => $item->content,
+        ]);
+
+        return view('decisions.show', [
+            'item' => $item,
+        ]);
     }
 }

@@ -4,29 +4,51 @@
         <div class="flex flex-wrap items-center mb-2">
             <time
                 class="my-1 mr-4 text-sm tracking-wide text-gray-700"
-                datetime="{{ $card['date']->toIso8601String() }}"
+                datetime="{{ $model->created_at->toIso8601String() }}"
             >
                 <span class="font-normal uppercase">
-                    {{ $card['date']->isoFormat('d MMMM Y') }}
+                    {{ $model->created_at->isoFormat('d MMMM Y') }}
                 </span>
                 <strong class="font-semibold">
-                    {{ $card['date']->isoFormat('HH:mm') }}
+                    {{ $model->created_at->isoFormat('HH:mm') }}
                 </strong>
             </time>
 
-            <span class="inline-block px-3 py-1 text-xs text-center bg-blue-300 rounded">
-                Departamentul pentru situații de urgență
+            <span
+                class="inline-block px-3 py-1 text-xs text-center rounded"
+                style="background-color: {{ $model->institution->color }}"
+            >
+                {{ $model->institution->name }}
             </span>
         </div>
 
-        <h1 class="mb-4 font-semibold">{{ $card['title'] }}</h1>
+        @if ($model->updated_at->greaterThan($model->created_at))
+            <div class="flex flex-wrap items-center mb-2">
+                <time
+                class="my-1 mr-4 text-sm tracking-wide text-gray-700"
+                datetime="{{ $model->updated_at->toIso8601String() }}"
+                >
+                    <span>Actualizat la: </span>
+                    <span class="font-normal uppercase">
+                        {{ $model->updated_at->isoFormat('d MMMM Y') }}
+                    </span>
+                    <strong class="font-semibold">
+                        {{ $model->updated_at->isoFormat('HH:mm') }}
+                    </strong>
+                </time>
+            </div>
+        @endif
 
-        <p class="text-base">{{ $card['excerpt'] }}</p>
+        <h1 class="mb-4 font-semibold">{{ $model->title }}</h1>
+
+        <div class="rich-text">
+            {!! $model->short_content !!}
+        </div>
 
         @if ($readMore)
             <div class="mt-4 text-right">
                 <a
-                    href="{{ $card['url'] }}"
+                    href="{{ route($route, ['slug' => $model->slug]) }}"
                     class="text-base font-normal text-blue-500 underline focus:outline-none focus:shadow-outline hover:no-underline"
                 >
                     Citește mai mult

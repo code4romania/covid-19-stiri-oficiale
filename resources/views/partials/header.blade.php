@@ -1,26 +1,5 @@
 @php
-    $menuItems = [
-        [
-            'url' => '/static-page',
-            'label' => 'Link 1',
-        ],
-        [
-            'url' => '/static-page',
-            'label' => 'Link 2',
-        ],
-        [
-            'url' => '/static-page',
-            'label' => 'Link 3',
-        ],
-        [
-            'url' => '/static-page',
-            'label' => 'Link 4',
-        ],
-        [
-            'url' => '/static-page',
-            'label' => 'Link 5',
-        ],
-    ];
+    $menu = nova_get_menu('header');
 @endphp
 
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">
@@ -42,9 +21,19 @@
         <ul id="header-menu" class="items-center justify-end w-full col-span-4 pt-10 lg:pt-0 lg:w-auto lg:flex lg:col-span-9 lg:col-start-4"
             :class="{ 'hidden' : !open }" x-on:click.away="open = false">
 
-            @foreach ($menuItems as $item)
+            @foreach (($menu['menuItems'] ?? []) as $item)
                 <li class="relative py-2 lg:ml-6">
-                    <a class="py-1 lg:px-3 hover:bg-gray-100 focus:outline-none focus:shadow-outline" href="{{ $item['url'] }}">{{ $item['label'] }}</a>
+                    @if ($item['type'] === 'text')
+                        <span class="py-1 lg:px-3">{{ $item['name'] }}</span>
+                    @else
+                        <a
+                            class="py-1 lg:px-3 hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                            href="{{ $item['value'] }}"
+                            target="{{ $item['target'] }}"
+                        >
+                            {{ $item['name'] }}
+                        </a>
+                    @endif
                 </li>
             @endforeach
         </ul>

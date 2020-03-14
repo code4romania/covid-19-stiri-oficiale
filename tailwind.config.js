@@ -99,9 +99,19 @@ module.exports = {
                 800: "hsl(48, 48%, 30%)",
                 900: "hsl(48, 48%, 20%)",
             },
+            green: {
+                100: "hsl(146, 47%, 94%)",
+                200: "hsl(145, 46%, 85%)",
+                300: "hsl(144, 46%, 77%)",
+                400: "hsl(146, 45%, 59%)",
+                500: "hsl(145, 63%, 42%)",
+                600: "hsl(145, 64%, 38%)",
+                700: "hsl(146, 64%, 25%)",
+                800: "hsl(145, 63%, 19%)",
+                900: "hsl(146, 63%, 13%)",
+            },
         },
         textStyles: theme => ({
-            // defaults to {}
             heading: {
                 output: false, // this means there won't be a "heading" component in the CSS, but it can be extended
                 fontWeight: theme('fontWeight.bold'),
@@ -205,6 +215,9 @@ module.exports = {
                 },
                 'i, em': {
                     fontStyle: 'italic',
+                },
+                iframe: {
+                    width: '100%',
                 },
             },
         }),

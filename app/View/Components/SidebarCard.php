@@ -2,27 +2,27 @@
 
 namespace App\View\Components;
 
+use App\BaseModel;
 use Illuminate\View\Component;
 
 class SidebarCard extends Component
 {
-    /** @var array<string> */
-    public $card;
+    /** @var BaseModel */
+    public $model;
+
+    /** @var string */
+    public $color;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(array $card)
+    public function __construct(BaseModel $item)
     {
-        $this->card = array_merge([
-            'type' => null,
-            'title' => null,
-            'text' => null,
-        ], $card);
+        $this->model = $item;
 
-        $this->card['color'] = $this->cardColorsFromType($card['type']);
+        $this->color = $this->cardColorsFromType($item->color);
     }
 
     /**
