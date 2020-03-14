@@ -25,8 +25,6 @@ if (mix.config.production) {
 mix.setPublicPath('public/assets')
     .setResourceRoot('./')
 
-    .copyDirectory('resources/images', 'public/assets/images')
-
     .js('resources/js/app.js', 'public/assets')
     .postCss('resources/css/app.pcss', 'public/assets', [
         require('postcss-import'),
