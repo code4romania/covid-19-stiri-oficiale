@@ -12,6 +12,7 @@
         "artesaos/seotools": "^0.17.1",
         "bakerkretzmar/nova-settings-tool": "^1.0",
         "benjaminhirsch/nova-slug-field": "^1.2",
+        "coderello/laravel-nova-lang": "^1.4",
         "ebess/advanced-nova-media-library": "dev-master",
         "emilianotisato/nova-tinymce": "^1.1",
         "epigra/nova-settings": "^1.2",

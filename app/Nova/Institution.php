@@ -2,32 +2,37 @@
 
 namespace App\Nova;
 
-use Benjaminhirsch\NovaSlugField\Slug;
-use Benjaminhirsch\NovaSlugField\TextWithSlug;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
-use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Timothyasp\Color\Color;
 
-class DecisionsLegislation extends Resource
+class Institution extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\DecisionsLegislation';
+    public static $model = 'App\Institution';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
-    public static $group ="Article";
+    public static $title = 'name';
+
+    public static function label(): string
+    {
+        return __('nova.institution.plural');
+    }
+
+    public static function singularLabel(): string
+    {
+        return __('nova.institution.singular');
+    }
 
     /**
      * The columns that should be searched.
@@ -48,23 +53,8 @@ class DecisionsLegislation extends Resource
     {
         return [
             ID::make()->sortable(),
-            TextWithSlug::make('Title')
-                ->slug('slug'),
-            Slug::make('Slug','slug'),
-            NovaTinyMCE::make('Content','content')->options([
-                'plugins' => [
-                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen',
-                    'insertdatetime media nonbreaking save table directionality',
-                    'emoticons template paste textcolor textpattern'
-                ],
-                'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
-                'use_lfm' => true,
-                'lfm_url' => 'filemanager',
-                'height' => '300'
-            ])->rules('required'),
-            BelongsTo::make(\FromResource::class ),
-            Files::make('Files', 'multiple_files'),
+            Text::make('Name'),
+            Color::make("Color")->compact()->palette(config('common.institutionColors')),
         ];
     }
 

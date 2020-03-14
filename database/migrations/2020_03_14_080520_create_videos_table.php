@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsefulToolsTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateUsefulToolsTable extends Migration
      */
     public function up()
     {
-        Schema::create('useful_tools', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->string('slug');
-            $table->text('description')->nullable();
-            $table->string('text_button')->nullable();
-            $table->string('link_button')->nullable();
-            $table->enum('color',['teal','yellow','red','pink','default']);
+            $table->string('title');
+            $table->text('content');
+            $table->bigInteger('institution_id');
+            $table->bigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ class CreateUsefulToolsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('useful_tools');
+        Schema::dropIfExists('videos');
     }
 }

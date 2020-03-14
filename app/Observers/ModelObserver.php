@@ -13,12 +13,14 @@ class ModelObserver
      * @return void
      *
      */
-
-    public function creating( BaseModel $model)
+    public function creating(BaseModel $model)
     {
-        $errors=[];
+        $errors = [];
+
         $slug = Str::slug($model->title);
-        $exists = BaseModel::where("slug",'=',"{$slug}")->first();
+
+        $exists = BaseModel::where("slug", '=', "{$slug}")->first();
+
         if ($exists) {
             $errors["name"] = "Acest nume este deja folosit";
         }
@@ -26,12 +28,10 @@ class ModelObserver
         if ($errors) {
             throw ValidationException::withMessages($errors);
         }
-
     }
     public function saving(BaseModel $model)
     {
         $model->slug = trim(Str::slug($model->title));
         $model->user_id = auth()->user()->id;
-
     }
 }

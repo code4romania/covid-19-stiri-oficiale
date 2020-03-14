@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\DecisionsLegislation;
 use App\NewsInfo;
-use App\RecordVideo;
-use App\UsefulTool;
+use App\Video;
+use App\SidebarItem;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,11 +19,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $output['DecisionsLegislation']=DecisionsLegislation::get();
-        $output['NewsInfo']=NewsInfo::get();
-        $output['RecordVideo']=RecordVideo::get();
-        $output['Tool']=UsefulTool::get();
+        $output['DecisionsLegislation'] = DecisionsLegislation::get();
+        $output['NewsInfo'] = NewsInfo::get();
+        $output['RecordVideo'] = Video::get();
+        $output['Tool'] = SidebarItem::get();
         dd($output);
-
     }
 }
