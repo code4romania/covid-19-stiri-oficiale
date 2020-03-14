@@ -1,0 +1,13 @@
+{
+  "novaDrafts.unpublishButtonText": "Nepublicat",
+  "novaDrafts.discardDraftButtonText": "Elimină draft",
+  "novaDrafts.createDraftButtonText": "Crează draft",
+  "novaDrafts.publishButtonText": "Publică",
+  "novaDrafts.dicardSuccessToast": "Draft șters cu succes.",
+  "novaDrafts.publishSuccessToast": "Draft publicat cu succes.",
+  "novaDrafts.unpublishSuccessToast": "Dezpublicat cu succes.",
+  "novaDrafts.publishFailedToast": "Eroarea la publicarea draftului",
+  "novaDrafts.unpublishFailedToast": "Eroarea la dezpublicarea draftului",
+  "novaDrafts.publishIndicatorPublished": "PUBLICAT",
+  "novaDrafts.publishIndicatorDraft": "DRAFT"
+}

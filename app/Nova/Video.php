@@ -8,9 +8,13 @@ use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\NovaDrafts\DraftButton;
+use OptimistDigital\NovaDrafts\PublishedField;
+use OptimistDigital\NovaDrafts\UnpublishButton;
 
 class Video extends Resource
 {
@@ -63,10 +67,23 @@ class Video extends Resource
     {
         return [
             ID::make()->sortable(),
-            ID::make()->sortable(),
             TextWithSlug::make('Title')
-                ->slug('slug'),
-            Slug::make('Slug', 'slug'),
+                ->slug('slug')->sortable(),
+            Slug::make('Slug', 'slug')->hideFromIndex(),
+            NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
+                'plugins' => [
+                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen',
+                    'insertdatetime media nonbreaking save table directionality',
+                    'emoticons template paste textcolor textpattern'
+                ],
+                'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
+                'use_lfm' => true,
+                'lfm_url' => 'filemanager',
+                'height' => '300',
+                'max'=>'120'
+            ])->rules('required'),
+            Date::make('Created','created_at')->format('DD MMM YYYY')->readonly()->sortable(),
             NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -78,9 +95,13 @@ class Video extends Resource
                 'use_lfm' => true,
                 'lfm_url' => 'filemanager',
                 'height' => '300'
-            ])->rules('required'),
+            ])->rules('required')->hideFromIndex(),
             BelongsTo::make(\Institution::class)->withoutTrashed(),
             Files::make('Files', 'multiple_files'),
+
+            UnpublishButton::make('Dezpublica'),
+            DraftButton::make('Draft'),
+            PublishedField::make('Stare', 'published'),
         ];
     }
 
