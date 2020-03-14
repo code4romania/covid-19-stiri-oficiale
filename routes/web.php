@@ -33,4 +33,4 @@ Route::get('/', function () {
     return redirect()->route('news.index');
 })->name('pages.index');
 
-Route::view('/{slug}', 'pages.show')->name('pages.show');
+// Route::view('/{slug}', 'pages.show')->name('pages.show');

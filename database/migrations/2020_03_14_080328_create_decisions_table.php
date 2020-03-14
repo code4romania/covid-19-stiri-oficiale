@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecordVideosTable extends Migration
+class CreateDecisionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRecordVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('record_videos', function (Blueprint $table) {
+        Schema::create('decisions', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
             $table->string('title');
             $table->text('content');
-            $table->bigInteger('from_resource_id');
+            $table->bigInteger('institution_id');
             $table->bigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateRecordVideosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('record_videos');
+        Schema::dropIfExists('decisions');
     }
 }

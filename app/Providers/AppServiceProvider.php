@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use App\BaseModel;
-use App\FromResource;
-use App\Observers\FromResourceObserver;
 use App\Observers\ModelObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
@@ -31,7 +29,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         BaseModel::observe(ModelObserver::class);
-        FromResource::observe(FromResourceObserver::class);
-
     }
 }

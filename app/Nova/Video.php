@@ -4,21 +4,38 @@ namespace App\Nova;
 
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class UsefulTool extends Resource
+class Video extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\UsefulTool';
+    public static $model = 'App\Video';
+
+    public static function group(): string
+    {
+        return __('nova.group.articles');
+    }
+
+    public static function label(): string
+    {
+        return __('nova.video.plural');
+    }
+
+    public static function singularLabel(): string
+    {
+        return __('nova.video.singular');
+    }
+
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -46,10 +63,11 @@ class UsefulTool extends Resource
     {
         return [
             ID::make()->sortable(),
-            TextWithSlug::make('Title','title')
+            ID::make()->sortable(),
+            TextWithSlug::make('Title')
                 ->slug('slug'),
-            Slug::make('Slug','slug'),
-            NovaTinyMCE::make('Description','description')->options([
+            Slug::make('Slug', 'slug'),
+            NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
                     'searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -60,16 +78,9 @@ class UsefulTool extends Resource
                 'use_lfm' => true,
                 'lfm_url' => 'filemanager',
                 'height' => '300'
-            ])->nullable(),
-            Text::make('Text button')->nullable(),
-            Text::make('Link button')->nullable(),
-            Select::make('Color')->options(array('teal' => 'Teal',
-                'yellow' => 'Yellow',
-                'red' => 'Red',
-                'pink'=>'Pink',
-                'default'=>'Default'))->displayUsingLabels(),
-
-
+            ])->rules('required'),
+            BelongsTo::make(\Institution::class)->withoutTrashed(),
+            Files::make('Files', 'multiple_files'),
         ];
     }
 

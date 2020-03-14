@@ -4,27 +4,39 @@ namespace App\Nova;
 
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
+use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Timothyasp\Color\Color;
 
-class FromResource extends Resource
+class SidebarItem extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\FromResource';
+    public static $model = 'App\SidebarItem';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
+
+    public static function label(): string
+    {
+        return __('nova.sidebarItem.plural');
+    }
+
+    public static function singularLabel(): string
+    {
+        return __('nova.sidebarItem.singular');
+    }
+
 
     /**
      * The columns that should be searched.
@@ -45,8 +57,30 @@ class FromResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name'),
-            Color::make("Color")->compact()->palette(['#96CEB4', '#ffeead', '#ff6f69','#FFCC5C','#88D8B0']),
+            Text::make('Title', 'title'),
+            NovaTinyMCE::make('Description', 'description')->options([
+                'plugins' => [
+                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen',
+                    'insertdatetime media nonbreaking save table directionality',
+                    'emoticons template paste textcolor textpattern'
+                ],
+                'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
+                'use_lfm' => true,
+                'lfm_url' => 'filemanager',
+                'height' => '300'
+            ])->nullable(),
+            Text::make('Text button')->nullable(),
+            Text::make('Link button')->nullable(),
+            Select::make('Color')->options(array(
+                'teal' => 'Teal',
+                'yellow' => 'Yellow',
+                'red' => 'Red',
+                'pink' => 'Pink',
+                'default' => 'Default'
+            ))->displayUsingLabels(),
+
+
         ];
     }
 

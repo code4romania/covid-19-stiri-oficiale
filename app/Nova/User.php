@@ -24,6 +24,17 @@ class User extends Resource
      */
     public static $title = 'name';
 
+    public static function label(): string
+    {
+        return __('nova.user.plural');
+    }
+
+    public static function singularLabel(): string
+    {
+        return __('nova.user.singular');
+    }
+
+
     /**
      * The columns that should be searched.
      *

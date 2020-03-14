@@ -12,15 +12,30 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class RecordVideo extends Resource
+class News extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\RecordVideo';
-    public static $group ="Article";
+    public static $model = 'App\News';
+
+    public static function group(): string
+    {
+        return __('nova.group.articles');
+    }
+
+    public static function label(): string
+    {
+        return __('nova.news.plural');
+    }
+
+    public static function singularLabel(): string
+    {
+        return __('nova.news.singular');
+    }
+
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -41,18 +56,17 @@ class RecordVideo extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
             ID::make()->sortable(),
-            ID::make()->sortable(),
             TextWithSlug::make('Title')
                 ->slug('slug'),
-            Slug::make('Slug','slug'),
-            NovaTinyMCE::make('Content','content')->options([
+            Slug::make('Slug', 'slug'),
+            NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
                     'searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -64,7 +78,7 @@ class RecordVideo extends Resource
                 'lfm_url' => 'filemanager',
                 'height' => '300'
             ])->rules('required'),
-            BelongsTo::make(\FromResource::class ),
+            BelongsTo::make(\Institution::class)->withoutTrashed(),
             Files::make('Files', 'multiple_files'),
         ];
     }
@@ -72,7 +86,7 @@ class RecordVideo extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -83,7 +97,7 @@ class RecordVideo extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -94,7 +108,7 @@ class RecordVideo extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -105,7 +119,7 @@ class RecordVideo extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

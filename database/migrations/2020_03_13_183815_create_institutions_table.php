@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDecisionsLegislationsTable extends Migration
+class CreateInstitutionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateDecisionsLegislationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('decisions_legislations', function (Blueprint $table) {
+        Schema::create('institutions', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('title');
-            $table->text('content');
-            $table->bigInteger('from_resource_id');
-            $table->bigInteger('user_id');
+            $table->string('name');
+            $table->string('color')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreateDecisionsLegislationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('decisions_legislations');
+        Schema::dropIfExists('institutions');
     }
 }
