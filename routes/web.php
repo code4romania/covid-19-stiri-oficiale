@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/test','MenuController@index');
 Route::prefix('/news')->group(function () {
     Route::view('/', 'news.index')->name('news.index');
     Route::view('/{slug}', 'news.show')->name('news.show');
