@@ -55,7 +55,7 @@
 @endphp
 
 <footer class="text-blue-100 bg-blue-500">
-    <div class="container grid row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
+    <div class="container grid items-end row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
         <div class="flex flex-wrap">
             @foreach ($menus as $menu)
                 <ul class="w-full py-5 md:w-1/2 md:px-3 md:py-0">
@@ -64,7 +64,7 @@
                     </li>
 
                     @foreach ($menu['items'] as $item)
-                        <li class="mt-2">
+                        <li>
                             <a
                                 class="focus:outline-none focus:shadow-outline hover:underline"
                                 href="{{ $item['url'] }}"

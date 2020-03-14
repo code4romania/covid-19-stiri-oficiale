@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'pages.index')->name('pages.index');
 Route::view('/hotarari', 'pages.legal')->name('pages.legal');
 Route::view('/video', 'pages.video')->name('pages.video');
+
+Route::view('/newspage', 'news.show')->name('news.show');

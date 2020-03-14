@@ -13,7 +13,7 @@ class SectionButton extends Component
     /** @var string */
     public $route;
 
-    /** @var boolean */
+    /** @var bool */
     public $active;
 
     /**
