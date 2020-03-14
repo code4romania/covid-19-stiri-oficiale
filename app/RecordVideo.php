@@ -9,7 +9,11 @@ class RecordVideo extends BaseModel
     public function __construct (array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->user_id=auth()->user()->id;
+        if (auth()->user())
+        {
+            $this->user_id=auth()->user()->id;
+
+        }
 
     }
     protected $with=['fromresource'];
