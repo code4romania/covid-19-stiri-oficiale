@@ -12,6 +12,8 @@ class RecordVideo extends BaseModel
         $this->user_id=auth()->user()->id;
 
     }
+    protected $with=['fromresource'];
+
 
     public function fromresource ()
     {

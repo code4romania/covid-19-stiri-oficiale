@@ -12,6 +12,7 @@ class DecisionsLegislation extends BaseModel
         parent::__construct($attributes);
         $this->user_id=auth()->user()->id;
     }
+    protected $with=['fromresource'];
 
     public function fromresource ()
     {

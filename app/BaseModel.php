@@ -10,6 +10,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class BaseModel extends Model implements HasMedia
 {
     use InteractsWithMedia, SoftDeletes;
+    protected $with=['media'];
 
 
     public function registerMediaConversions (\Spatie\MediaLibrary\MediaCollections\Models\Media $media = null): void
