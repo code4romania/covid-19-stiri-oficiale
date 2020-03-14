@@ -9,6 +9,7 @@
                 <h1 class="mb-4 text-lg font-normal leading-tight lg:text-2xl xl:text-3xl">
                     Ultimele informații oficiale
                 </h1>
+{{--             @dd($menu)--}}
 
                 @php
                     $items = [
