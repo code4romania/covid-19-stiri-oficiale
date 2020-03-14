@@ -20,6 +20,7 @@
 
                 <x-content-card :card="$item" :read-more="false" />
 
+                <x-share />
 
                 <div class="my-8 rich-text">
                     <p>A fost aprobată suspendarea procesului de învățământ în unitățile școlare din învățământul preșcolar, gimnazial, liceal, postliceal și profesional, în perioada 11-22 martie a.c., cu posibilitatea prelungirii acestei măsuri în funcție de situație.</p>
@@ -38,6 +39,8 @@
 
                     <p>Până astăzi, 10 martie, la nivel național au fost confirmate 17 cazuri de cetățeni infectați cu virusul COVID – 19 (coronavirus) pe teritoriul României.</p>
                 </div>
+
+                <x-share />
             </section>
 
             @include('partials.sidebar')
