@@ -22,5 +22,7 @@ return [
 
     'user.singular' => 'Utilizator',
     'user.plural' => 'Utilizatori',
+    'page.singular' => 'Pagină',
+    'page.plural' => 'Pagini',
 
 ];
