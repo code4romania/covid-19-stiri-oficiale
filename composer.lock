@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bb52bb4ebf27fc5f468d15ce0a3dbfc",
+    "content-hash": "969f0ad911e2f363bbe5d8df309cb472",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -2788,6 +2788,50 @@
                 "serialize"
             ],
             "time": "2019-11-29T22:36:02+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-drafts",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-drafts.git",
+                "reference": "38edcb3328349103e9f85f563a44a15cf582c772"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-drafts/zipball/38edcb3328349103e9f85f563a44a15cf582c772",
+                "reference": "38edcb3328349103e9f85f563a44a15cf582c772",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaDrafts\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaDrafts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field that allows you to make drafts of your current resources.",
+            "keywords": [
+                "drafts",
+                "field",
+                "laravel",
+                "nova",
+                "optimistdigital"
+            ],
+            "time": "2020-02-27T15:05:00+00:00"
         },
         {
             "name": "optimistdigital/nova-locale-field",
