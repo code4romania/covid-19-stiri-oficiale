@@ -23,7 +23,7 @@ class ContentCard extends Component
             'date' => null,
             'title' => null,
             'excerpt' => null,
-            'url' => '/newspage',
+            'url' => '/news/page',
         ], $card);
 
         $this->readMore = $readMore;

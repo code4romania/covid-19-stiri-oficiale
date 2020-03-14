@@ -8,8 +8,8 @@
     </p>
 
     <div class="grid gap-4 lg:grid-cols-3">
-        <x-section-button label="Ultimele informații oficiale" route="pages.index" />
-        <x-section-button label="Hotarări și legislație" route="pages.legal" />
-        <x-section-button label="Înregistrări video" route="pages.video" />
+        <x-section-button label="Ultimele informații oficiale" route="news.index" />
+        <x-section-button label="Hotarări și legislație" route="legal.index" />
+        <x-section-button label="Înregistrări video" route="video.index" />
     </div>
 </div>

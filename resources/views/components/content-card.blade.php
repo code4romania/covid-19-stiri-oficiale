@@ -1,9 +1,9 @@
 <article class="flex bg-gray-300">
     <i class="px-4 py-5 bg-blue-200"></i>
-    <div class="flex-1 p-4">
-        <div class="flex items-center mb-2">
+    <div class="flex-1 px-8 py-5">
+        <div class="flex flex-wrap items-center mb-2">
             <time
-                class="mb-2 mr-4 text-sm tracking-wide text-gray-700"
+                class="my-1 mr-4 text-sm tracking-wide text-gray-700"
                 datetime="{{ $card['date']->toIso8601String() }}"
             >
                 <span class="font-normal uppercase">
@@ -19,7 +19,7 @@
             </span>
         </div>
 
-        <h1 class="mb-4 font-normal">{{ $card['title'] }}</h1>
+        <h1 class="mb-4 font-semibold">{{ $card['title'] }}</h1>
 
         <p class="text-base">{{ $card['excerpt'] }}</p>
 

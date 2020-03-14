@@ -26,7 +26,10 @@ class SectionButton extends Component
         $this->label = $label;
         $this->route = $route;
 
-        $this->active = Route::currentRouteName() === $route;
+        $currentRouteGroup = explode('.', Route::currentRouteName())[0];
+        $routeGroup = explode('.', $route)[0];
+
+        $this->active = $currentRouteGroup === $routeGroup;
     }
 
     /**

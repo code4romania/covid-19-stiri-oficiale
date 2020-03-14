@@ -1,23 +1,23 @@
 @php
     $menuItems = [
         [
-            'url' => '#',
+            'url' => '/static-page',
             'label' => 'Link 1',
         ],
         [
-            'url' => '#',
+            'url' => '/static-page',
             'label' => 'Link 2',
         ],
         [
-            'url' => '#',
+            'url' => '/static-page',
             'label' => 'Link 3',
         ],
         [
-            'url' => '#',
+            'url' => '/static-page',
             'label' => 'Link 4',
         ],
         [
-            'url' => '#',
+            'url' => '/static-page',
             'label' => 'Link 5',
         ],
     ];
@@ -26,8 +26,7 @@
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">
     <div class="container flex flex-wrap items-center justify-between py-5 border-b">
         <a href="{{ route('pages.index') }}" class="inline-block focus:outline-none focus:shadow-outline">
-            <img src="{{ asset('assets/images/logo.png') }}" class="block w-auto h-8" alt="">
-            {{-- @svg('logo', 'block w-auto h-8') --}}
+            @svg('logo', 'block w-auto h-8')
         </a>
 
         <div class="flex justify-end col-span-1 lg:hidden">
