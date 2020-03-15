@@ -18,6 +18,7 @@
     </main>
 
     @include('partials.footer')
+    @include('partials.analytics')
 
     <script src="{{ asset(mix('manifest.js', 'assets')) }}"></script>
     <script src="{{ asset(mix('vendor.js', 'assets')) }}"></script>
