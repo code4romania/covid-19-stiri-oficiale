@@ -18,7 +18,6 @@ class CreateVideosTable extends Migration
             $table->string('title');
             $table->text('short_content')->nullable();
             $table->bigInteger('institution_id');
-            $table->bigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
 
