@@ -4,7 +4,7 @@
         <span>Rămâi informat</span>
     </h2>
 
-    <p class="mb-4">Abonează-te la newsletter și îți trimitem zilnic ultimele informații!</p>
+    <p class="mb-4">Abonează-te la newsletter și te ținem la curent cu cele mai importante informații și cu toate soluțiile digitale pe care le dezvoltăm în cadrul acestui proiect.</p>
 
     <div class="mc-field-group">
         <label>
@@ -17,5 +17,5 @@
         <input type="text" name="b_046bd86a80966c2ecaa0d84bf_10738ac8bf" tabindex="-1" value=""/>
     </div>
 
-    <input type="submit" value="Subscribe" name="subscribe" class="block w-full px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-green-500 rounded curspo hover:opacity-75 focus:outline-none focus:shadow-outline">
+    <input type="submit" value="Abonează-te" name="subscribe" class="block w-full px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-green-500 rounded curspo hover:opacity-75 focus:outline-none focus:shadow-outline">
 </form>
