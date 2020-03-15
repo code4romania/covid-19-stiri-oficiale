@@ -24,7 +24,6 @@
         "laravel/nova": "~3.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "neopheus/laravel-filemanager": "dev-master",
         "nothingworks/blade-svg": "^0.3.4",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^2.3",
@@ -48,12 +47,8 @@
         {
             "type": "vcs",
             "url": "https://github.com/bkintanar/advanced-nova-media-library"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/neopheus/laravel-filemanager"
-
         }
+
     ],
     "config": {
         "optimize-autoloader": true,

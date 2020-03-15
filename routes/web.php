@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-\UniSharp\LaravelFilemanager\Lfm::routes();
 Route::prefix('/informatii')->group(function () {
     Route::get('/', [NewsController::class, 'index'])->name('news.index');
     Route::get('/{slug}', [NewsController::class, 'show'])->name('news.show');
