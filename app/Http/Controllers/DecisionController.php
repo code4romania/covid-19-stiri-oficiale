@@ -17,7 +17,7 @@ class DecisionController extends Controller
 
     public function show($slug)
     {
-        $item = Decision::where('slug', $slug)->firstOrFail();
+        $item = Decision::where('slug', $slug)->published()->firstOrFail();
 
         $this->setSeo([
             'title' => $item->title,

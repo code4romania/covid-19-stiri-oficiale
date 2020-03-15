@@ -9,12 +9,13 @@
                 <h1 class="mb-4 text-lg font-normal leading-tight lg:text-2xl xl:text-3xl">
                     Ultimele informații oficiale
                 </h1>
-{{--             @dd($menu)--}}
 
                 <div class="grid row-gap-10">
-                    @foreach ($items as $item)
+                    @forelse ($items as $item)
                         <x-content-card :item="$item" route="news.show" />
-                    @endforeach
+                    @empty
+                        <p>Încă nu au fost adăugate informații.</p>
+                    @endforelse
 
                     {{ $items->links('partials.pagination') }}
 

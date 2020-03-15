@@ -25,10 +25,16 @@ class BaseModel extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images')->acceptsMimeTypes(['image/jpeg', 'image/png']);
+        $this->addMediaCollection('document')->singleFile();
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('published', 1);
     }
 
     public function scopeListing($query)
     {
-        return $query->orderBy('updated_at', 'DESC')->paginate(10);
+        return $query->published()->orderBy('updated_at', 'DESC')->paginate(10);
     }
 }

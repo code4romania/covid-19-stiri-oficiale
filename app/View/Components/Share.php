@@ -23,6 +23,9 @@ class Share extends Component
     ];
 
     /** @var string|null */
+    public $downloadable;
+
+    /** @var string|null */
     public $url;
 
     /**
@@ -30,9 +33,10 @@ class Share extends Component
      *
      * @return void
      */
-    public function __construct(?string $url = null)
+    public function __construct(?string $url = null, ?string $downloadable = null)
     {
         $this->url = $url ?? url()->current();
+        $this->downloadable = $downloadable;
     }
 
     /**
