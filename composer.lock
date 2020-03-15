@@ -1722,6 +1722,66 @@
             "time": "2019-07-01T23:21:34+00:00"
         },
         {
+            "name": "infinety-es/nova-filemanager",
+            "version": "2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfinetyEs/Nova-Filemanager.git",
+                "reference": "832d7bcaad9c109abebc5e9172946fa3e382b2ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfinetyEs/Nova-Filemanager/zipball/832d7bcaad9c109abebc5e9172946fa3e382b2ad",
+                "reference": "832d7bcaad9c109abebc5e9172946fa3e382b2ad",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "~2.0|~3.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Infinety\\Filemanager\\FilemanagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Infinety\\Filemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Lagarda",
+                    "email": "eric@infinety.es",
+                    "role": "Developer"
+                },
+                {
+                    "name": "InfinetyEs",
+                    "email": "apps@infinety.es",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Filemanager tool for Laravel Nova",
+            "homepage": "https://github.com/InfinetyEs/nova-filemanager",
+            "keywords": [
+                "filemanager",
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-03-11T13:38:28+00:00"
+        },
+        {
             "name": "intervention/image",
             "version": "2.5.1",
             "source": {
@@ -4035,12 +4095,6 @@
                 "sort",
                 "sortable"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-02T19:45:44+00:00"
         },
         {
@@ -4235,12 +4289,6 @@
                 "media",
                 "spatie"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-14T10:52:41+00:00"
         },
         {
@@ -4297,12 +4345,6 @@
             "keywords": [
                 "laravel-tags",
                 "spatie"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.patreon.com/spatie",
-                    "type": "patreon"
-                }
             ],
             "time": "2020-03-04T17:07:08+00:00"
         },
@@ -4376,12 +4418,6 @@
                 "spatie",
                 "translate"
             ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-11T09:56:26+00:00"
         },
         {
@@ -4437,12 +4473,6 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
             ],
             "time": "2020-03-03T15:52:07+00:00"
         },
@@ -5294,20 +5324,6 @@
                 "intl",
                 "l10n",
                 "localization"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-04T09:41:09+00:00"
         },
@@ -6447,24 +6463,6 @@
                 "ascii",
                 "clean",
                 "php"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-13T01:23:26+00:00"
         }
@@ -8471,6 +8469,5 @@
     "platform": {
         "php": "^7.4"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

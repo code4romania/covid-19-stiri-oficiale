@@ -19,6 +19,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "infinety-es/nova-filemanager": "^2.7",
         "laravel/framework": "^7.0",
         "laravel/nova": "~3.0",
         "laravel/tinker": "^2.0",
@@ -48,6 +49,7 @@
             "type": "vcs",
             "url": "https://github.com/bkintanar/advanced-nova-media-library"
         }
+
     ],
     "config": {
         "optimize-autoloader": true,

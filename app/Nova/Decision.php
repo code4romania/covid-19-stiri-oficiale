@@ -80,7 +80,7 @@ class Decision extends Resource
                     'emoticons template paste textcolor textpattern'
                 ],
                 'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
-                'use_lfm' => true,
+                'use_lfm' => false,
                 'lfm_url' => 'filemanager',
                 'height' => '300',
                 'max' => '120'
@@ -97,7 +97,7 @@ class Decision extends Resource
                     'emoticons template paste textcolor textpattern'
                 ],
                 'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
-                'use_lfm' => true,
+                'use_lfm' => false,
                 'lfm_url' => 'filemanager',
                 'height' => '300'
             ])->rules('required')->hideFromIndex(),
