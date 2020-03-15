@@ -18,6 +18,3 @@
         </div>
     </article>
 @endsection
-
-
-
