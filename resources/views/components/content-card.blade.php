@@ -7,7 +7,7 @@
                 datetime="{{ $model->created_at->toIso8601String() }}"
             >
                 <span class="font-normal uppercase">
-                    {{ $model->created_at->isoFormat('d MMMM Y') }}
+                    {{ $model->created_at->isoFormat('D MMMM Y') }}
                 </span>
                 <strong class="font-semibold">
                     {{ $model->created_at->isoFormat('HH:mm') }}
@@ -30,7 +30,7 @@
                 >
                     <span>Actualizat la: </span>
                     <span class="font-normal uppercase">
-                        {{ $model->updated_at->isoFormat('d MMMM Y') }}
+                        {{ $model->updated_at->isoFormat('D MMMM Y') }}
                     </span>
                     <strong class="font-semibold">
                         {{ $model->updated_at->isoFormat('HH:mm') }}
