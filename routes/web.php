@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DecisionController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\VideoController;
@@ -31,6 +32,8 @@ Route::prefix('/video')->group(function () {
     Route::get('/', [VideoController::class, 'index'])->name('videos.index');
     // Route::get('/{slug}', [VideoController::class, 'show'])->name('videos.show');
 });
+
+Route::get('/download/{uuid}', [MediaController::class, 'download'])->name('download');
 
 Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
 Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();

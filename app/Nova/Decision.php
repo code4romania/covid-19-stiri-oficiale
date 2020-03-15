@@ -98,7 +98,7 @@ class Decision extends Resource
                 'height' => '300'
             ])->rules('required')->hideFromIndex(),
             BelongsTo::make(\Institution::class)->withoutTrashed(),
-            Files::make('Files', 'multiple_files'),
+            Files::make('Files', 'document'),
 
             UnpublishButton::make('Dezpublica'),
             DraftButton::make('Draft'),

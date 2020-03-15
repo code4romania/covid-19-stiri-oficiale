@@ -24,6 +24,7 @@ class BaseModel extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images')->acceptsMimeTypes(['image/jpeg', 'image/png']);
+        $this->addMediaCollection('document')->singleFile();
     }
 
     public function scopePublished($query)
