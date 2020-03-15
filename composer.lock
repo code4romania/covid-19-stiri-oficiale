@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee196f1f2c664705a80bf5407e0862f0",
+    "content-hash": "7a6fe52b7b4dbb5007d46e202edf8580",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -1555,6 +1555,66 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "infinety-es/nova-filemanager",
+            "version": "2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfinetyEs/Nova-Filemanager.git",
+                "reference": "832d7bcaad9c109abebc5e9172946fa3e382b2ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfinetyEs/Nova-Filemanager/zipball/832d7bcaad9c109abebc5e9172946fa3e382b2ad",
+                "reference": "832d7bcaad9c109abebc5e9172946fa3e382b2ad",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "~2.0|~3.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Infinety\\Filemanager\\FilemanagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Infinety\\Filemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Lagarda",
+                    "email": "eric@infinety.es",
+                    "role": "Developer"
+                },
+                {
+                    "name": "InfinetyEs",
+                    "email": "apps@infinety.es",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Filemanager tool for Laravel Nova",
+            "homepage": "https://github.com/InfinetyEs/nova-filemanager",
+            "keywords": [
+                "filemanager",
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-03-11T13:38:28+00:00"
         },
         {
             "name": "intervention/image",
