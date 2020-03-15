@@ -14,6 +14,7 @@
         "benjaminhirsch/nova-slug-field": "^1.2",
         "coderello/laravel-nova-lang": "^1.4",
         "ebess/advanced-nova-media-library": "dev-master",
+        "neopheus/laravel-filemanager": "dev-master",
         "emilianotisato/nova-tinymce": "^1.1",
         "epigra/nova-settings": "^1.2",
         "fideloper/proxy": "^4.2",
@@ -46,6 +47,11 @@
         {
             "type": "vcs",
             "url": "https://github.com/bkintanar/advanced-nova-media-library"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/neopheus/laravel-filemanager"
+
         }
     ],
     "config": {
