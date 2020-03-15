@@ -71,8 +71,8 @@ class News extends Resource
                 ->slug('slug')->sortable(),
             Slug::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->creationRules('unique:pages,slug')
-                ->updateRules('unique:pages,slug,{{resourceId}}'),
+                ->creationRules('unique:news,slug')
+                ->updateRules('unique:news,slug,{{resourceId}}'),
             NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -105,7 +105,7 @@ class News extends Resource
             BelongsTo::make(\Institution::class)->withoutTrashed(),
             Files::make('Files', 'document'),
 
-            UnpublishButton::make('Dezpublica'),
+            UnpublishButton::make('Delistează'),
             DraftButton::make('Draft'),
             PublishedField::make('Stare', 'published'),
         ];
