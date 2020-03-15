@@ -1,11 +1,8 @@
 @php
-    // TODO: replace with actual menu data
     $menus = [
         nova_get_menu('footer1'),
         nova_get_menu('footer2'),
     ];
-
-    // dd($menus);
 @endphp
 
 <aside class="container flex flex-wrap text-sm lg:justify-end">
