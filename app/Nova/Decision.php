@@ -9,11 +9,13 @@ use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use OptimistDigital\NovaDrafts;
 use OptimistDigital\NovaDrafts\DraftButton;
 use OptimistDigital\NovaDrafts\PublishedField;
 use OptimistDigital\NovaDrafts\UnpublishButton;
+use Spatie\TagsField\Tags;
 
 
 class Decision extends Resource
@@ -84,7 +86,10 @@ class Decision extends Resource
                 'height' => '300',
                 'max'=>'120'
             ])->rules('required'),
-            Date::make('Created','created_at')->format('DD MMM YYYY')->readonly()->sortable(),
+            Tags::make('Tags'),
+            Heading::make('<small class="info">Pentru a adauga tag-ul,apasați tasta ENTER</small>')->asHtml(),
+            Date::make('Updated','updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
+            Date::make('Created','created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
