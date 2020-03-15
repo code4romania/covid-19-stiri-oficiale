@@ -13,8 +13,6 @@ class BaseModel extends Model implements HasMedia
 {
     use InteractsWithMedia, SoftDeletes, HasTags;
 
-    protected $with = ['media'];
-
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
