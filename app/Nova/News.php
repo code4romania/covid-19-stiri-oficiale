@@ -9,6 +9,7 @@ use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -85,6 +86,7 @@ class News extends Resource
                 'max'=>'120'
             ])->rules('required'),
             Tags::make('Tags'),
+            Heading::make('<small class="info">Pentru a adauga tag-ul,apasați tasta ENTER</small>')->asHtml(),
             Date::make('Updated','updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             Date::make('Created','created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             NovaTinyMCE::make('Content', 'content')->options([
