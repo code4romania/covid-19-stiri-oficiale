@@ -32,5 +32,5 @@ Route::prefix('/video')->group(function () {
     // Route::get('/{slug}', [VideoController::class, 'show'])->name('videos.show');
 });
 
-Route::get('/', [PageController::class, 'index'])->name('pages.index');
+Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
 Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();
