@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
@@ -71,14 +70,6 @@ class Page extends Resource
                 'lfm_url' => 'filemanager',
                 'height' => '300'
             ])->rules('required'),
-            Images::make('Images', 'images') // second parameter is the media collection name
-                ->conversionOnDetailView('thumb') // conversion used on the model's view
-                ->conversionOnIndexView('thumb') // conversion used to display the image on the model's index page
-                ->conversionOnForm('thumb') // conversion used to display the image on the model's form
-                ->fullSize() // full size column
-                //->rules('required')// validation rules for the collection of images
-                // validation rules for the collection of images
-                ->singleImageRules('dimensions:min_width=100'),
         ];
     }
 
