@@ -71,10 +71,12 @@ class SidebarItem extends Resource
             Text::make('Link button')->nullable(),
             Select::make('Color')->options(array(
                 'teal' => 'Teal',
+                'cyan' => 'Cyan',
                 'yellow' => 'Yellow',
+                'orange' => 'Orange',
                 'red' => 'Red',
                 'pink' => 'Pink',
-                'default' => 'Default'
+                'default' => 'Default',
             ))->displayUsingLabels(),
 
 

@@ -43,8 +43,18 @@ class SidebarCard extends Component
                 $textColor = 'text-black';
                 break;
 
+            case 'cyan':
+                $bgColor = 'bg-cyan-500';
+                $textColor = 'text-black';
+                break;
+
             case 'yellow':
                 $bgColor = 'bg-yellow-500';
+                $textColor = 'text-black';
+                break;
+
+            case 'orange':
+                $bgColor = 'bg-orange-500';
                 $textColor = 'text-black';
                 break;
 

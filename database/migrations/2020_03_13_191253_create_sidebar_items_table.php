@@ -19,7 +19,7 @@ class CreateSidebarItemsTable extends Migration
             $table->text('description')->nullable();
             $table->string('text_button')->nullable();
             $table->string('link_button')->nullable();
-            $table->enum('color', ['teal', 'yellow', 'red', 'pink', 'default']);
+            $table->enum('color', ['teal', 'cyan', 'yellow', 'orange', 'red', 'pink', 'default']);
             $table->softDeletes();
             $table->timestamps();
         });
