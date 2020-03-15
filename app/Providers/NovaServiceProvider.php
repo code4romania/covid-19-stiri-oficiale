@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 
+use App\Nova\Metrics\DecisionMetrics;
+use App\Nova\Metrics\NewsMetrics;
+use App\Nova\Metrics\VideosMetrics;
 use Bakerkretzmar\NovaSettingsTool\SettingsTool;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
@@ -57,6 +60,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            new DecisionMetrics(),
+            new NewsMetrics(),
+            new VideosMetrics(),
 
         ];
     }
