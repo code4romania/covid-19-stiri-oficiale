@@ -29,8 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menusResponse = nova_get_menus();
-        View::share('menu', $menusResponse);
         Schema::defaultStringLength(191);
         BaseModel::observe(ModelObserver::class);
     }
