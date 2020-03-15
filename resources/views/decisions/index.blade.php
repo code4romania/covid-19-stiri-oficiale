@@ -11,9 +11,11 @@
                 </h1>
 
                 <div class="grid row-gap-10">
-                    @foreach ($items as $item)
+                    @forelse ($items as $item)
                         <x-content-card :item="$item" route="decisions.show" />
-                    @endforeach
+                    @empty
+                        <p>Încă nu au fost adăugate hotărâri.</p>
+                    @endforelse
 
                     {{ $items->links('partials.pagination') }}
 
