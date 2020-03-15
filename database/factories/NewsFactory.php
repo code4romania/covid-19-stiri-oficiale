@@ -16,6 +16,5 @@ $factory->define(News::class, function (Faker $faker) {
             ->map(fn ($paragraph) => "<p>{$paragraph}</p>")
             ->implode(''),
         'institution_id' => $faker->randomElement(Institution::all()->pluck('id')->toArray()),
-        'user_id' => User::first()->id,
     ];
 });

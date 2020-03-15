@@ -20,7 +20,6 @@ class CreateDecisionsTable extends Migration
             $table->text('short_content')->nullable();
             $table->text('content');
             $table->bigInteger('institution_id');
-            $table->bigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
 

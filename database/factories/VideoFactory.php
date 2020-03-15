@@ -12,6 +12,5 @@ $factory->define(Video::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'short_content' => $faker->paragraph,
         'institution_id' => $faker->randomElement(Institution::all()->pluck('id')->toArray()),
-        'user_id' => User::first()->id,
     ];
 });
