@@ -3,24 +3,14 @@
 namespace App;
 
 use App\Institution;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\Models\Media;
-
 
 class News extends BaseModel
 {
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        if (auth()->user()) {
-            $this->user_id = auth()->user()->id;
-        }
-    }
+    protected $with = [
+        'institution',
+        'tags',
+    ];
 
-    protected $with = ['institution'];
     public function childDraft()
     {
         return $this->hasOne(News::class, 'draft_parent_id', 'id');

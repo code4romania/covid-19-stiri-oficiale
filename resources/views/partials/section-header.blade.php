@@ -4,7 +4,7 @@
         <span>Informații din surse sigure de informare</span>
     </h1>
     <p class="mb-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim auctor bibendum sit in amet duis pellentesque lorem. Euismod est non et tincidunt amet, amet, lectus nec, vestibulum. At turpis imperdiet adipiscing volutpat aliquam. Varius non, nisl massa tincidunt cursus dignissim nulla. Mauris pharetra, ultrices tortor suspendisse. Vitae eu, purus enim egestas. Proin arcu bibendum sapien, velit dictumst velit felis.
+        O sursă de informare corectă, nealimentată de panică poate ajuta populația României să fie vigilentă în felul în care accesează, asimilează și distribuie rafalele de știri prezentate în media. Informați-vă doar canalele media oficiale și verificați informațiile pe care le citiți cu ajutorul extensiei de browser ȘtiriOficiale. stirioficiale.ro este un proiect realizat pro-bono de voluntarii Code for Romania, organizație neguvernamentală independentă, neafiliată politic și apolitică, în cadrul Code for Romania Task Force în parteneriat cu Guvernul României prin Autoritatea pentru Digitalizarea României.
     </p>
 
     <div class="grid gap-4 lg:grid-cols-3">

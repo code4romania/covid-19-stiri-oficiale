@@ -7,7 +7,7 @@
         <div class="grid gap-12 py-16 lg:grid-cols-3">
             <section class="lg:col-span-2">
                 <h1 class="mb-4 text-lg font-normal leading-tight lg:text-2xl xl:text-3xl">
-                    Ultimele informații oficiale
+                    Hotarări și legislație
                 </h1>
 
                 <div class="grid row-gap-10">
