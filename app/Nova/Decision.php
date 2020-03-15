@@ -71,7 +71,10 @@ class Decision extends Resource
             ID::make()->sortable(),
             TextWithSlug::make('Titlu', 'title')
                 ->slug('slug')->sortable(),
-            Slug::make('Slug', 'slug')->hideFromIndex(),
+            Slug::make('Slug', 'slug')
+                ->hideFromIndex()
+                ->creationRules('unique:decisions,slug')
+                ->updateRules('unique:decisions,slug,{{resourceId}}'),
             NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
