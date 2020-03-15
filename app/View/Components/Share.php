@@ -2,7 +2,9 @@
 
 namespace App\View\Components;
 
+use App\BaseModel;
 use Illuminate\View\Component;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Share extends Component
 {
@@ -22,10 +24,13 @@ class Share extends Component
         ],
     ];
 
-    /** @var string|null */
-    public $downloadable;
+    /** @var BaseModel */
+    public $item;
 
     /** @var string|null */
+    public $downloadUrl = null;
+
+    /** @var string */
     public $url;
 
     /**
@@ -33,10 +38,16 @@ class Share extends Component
      *
      * @return void
      */
-    public function __construct(?string $url = null, ?string $downloadable = null)
+    public function __construct(BaseModel $item)
     {
-        $this->url = $url ?? url()->current();
-        $this->downloadable = $downloadable;
+        $this->item = $item;
+        $this->url = url()->current();
+
+        $media = $item->getMedia('document')->first();
+
+        if ($media instanceof Media) {
+            $this->downloadUrl = $item->getMedia('document')->first()->getUrl();
+        }
     }
 
     /**

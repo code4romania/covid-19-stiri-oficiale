@@ -10,15 +10,16 @@
                     Ultimele informații oficiale
                 </h1>
 
+
                 <x-content-card :item="$item" :read-more="false" />
 
-                <x-share :downloadable="$item->getMedia('document')->first()->uuid ?? null" />
+                <x-share :item="$item"/>
 
                 <div class="my-8 rich-text">
                     {!! $item->content !!}
                 </div>
 
-                <x-share :downloadable="$item->getMedia('document')->first()->uuid ?? null" />
+                <x-share :item="$item"/>
             </section>
 
             @include('partials.sidebar')
