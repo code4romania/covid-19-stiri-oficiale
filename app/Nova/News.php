@@ -69,7 +69,10 @@ class News extends Resource
             ID::make()->sortable(),
             TextWithSlug::make('Title', 'title')
                 ->slug('slug')->sortable(),
-            Slug::make('Slug', 'slug')->hideFromIndex(),
+            Slug::make('Slug', 'slug')
+                ->hideFromIndex()
+                ->creationRules('unique:pages,slug')
+                ->updateRules('unique:pages,slug,{{resourceId}}'),
             NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
