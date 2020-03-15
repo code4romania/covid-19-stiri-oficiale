@@ -1,25 +1,35 @@
 <article class="flex bg-gray-300">
     <i class="px-4 py-5 bg-blue-200"></i>
     <div class="flex-1 px-8 py-5">
-        <div class="flex flex-wrap items-center mb-2">
-            <time
-                class="my-1 mr-4 text-sm tracking-wide text-gray-700"
-                datetime="{{ $model->created_at->toIso8601String() }}"
-            >
-                <span class="font-normal uppercase">
-                    {{ $model->created_at->isoFormat('D MMMM Y') }}
-                </span>
-                <strong class="font-semibold">
-                    {{ $model->created_at->isoFormat('HH:mm') }}
-                </strong>
-            </time>
+        <div class="flex flex-wrap items-center justify-between mb-2">
+            <div>
+                <time
+                    class="my-1 mr-4 text-sm tracking-wide text-gray-700"
+                    datetime="{{ $model->created_at->toIso8601String() }}"
+                >
+                    <span class="font-normal uppercase">
+                        {{ $model->created_at->isoFormat('D MMMM Y') }}
+                    </span>
+                    <strong class="font-semibold">
+                        {{ $model->created_at->isoFormat('HH:mm') }}
+                    </strong>
+                </time>
 
-            <span
-                class="inline-block px-3 py-1 text-xs text-center rounded"
-                style="background-color: {{ $model->institution->color }}"
-            >
-                {{ $model->institution->name }}
-            </span>
+                <span
+                    class="inline-block px-3 py-1 text-xs text-center rounded"
+                    style="background-color: {{ $model->institution->color }}"
+                >
+                    {{ $model->institution->name }}
+                </span>
+            </div>
+
+            @if ($model->tags)
+                <div>
+                    @foreach ($model->tags as $tag)
+                        <span class="inline-block px-2 text-xs text-center bg-gray-100 rounded">{{ $tag->name }}</span>
+                    @endforeach
+                </div>
+            @endif
         </div>
 
         @if ($model->updated_at->greaterThan($model->created_at))

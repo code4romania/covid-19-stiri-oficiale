@@ -8,10 +8,9 @@ use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
-use OptimistDigital\NovaDrafts;
 use OptimistDigital\NovaDrafts\DraftButton;
 use OptimistDigital\NovaDrafts\PublishedField;
 use OptimistDigital\NovaDrafts\UnpublishButton;
@@ -70,7 +69,7 @@ class Decision extends Resource
     {
         return [
             ID::make()->sortable(),
-            TextWithSlug::make('Title')
+            TextWithSlug::make('Titlu', 'title')
                 ->slug('slug')->sortable(),
             Slug::make('Slug', 'slug')->hideFromIndex(),
             NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
@@ -84,12 +83,12 @@ class Decision extends Resource
                 'use_lfm' => true,
                 'lfm_url' => 'filemanager',
                 'height' => '300',
-                'max'=>'120'
+                'max' => '120'
             ])->rules('required'),
-            Tags::make('Tags'),
+            Tags::make('Tag-uri', 'tags'),
             Heading::make('<small class="info">Pentru a adauga tag-ul,apasați tasta ENTER</small>')->asHtml(),
-            Date::make('Updated','updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
-            Date::make('Created','created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
+            DateTime::make('Creat la', 'created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
+            DateTime::make('Actualizat la', 'updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
