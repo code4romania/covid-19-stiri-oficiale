@@ -28,7 +28,6 @@ if (env('DEPLOY_STAGING_HOSTNAME')) {
     ];
 }
 
-
 return [
 
     /*
