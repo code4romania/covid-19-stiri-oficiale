@@ -1,13 +1,13 @@
 {
-  "novaDrafts.unpublishButtonText": "Nepublicat",
+  "novaDrafts.unpublishButtonText": "Delistează",
   "novaDrafts.discardDraftButtonText": "Elimină draft",
   "novaDrafts.createDraftButtonText": "Crează draft",
   "novaDrafts.publishButtonText": "Publică",
   "novaDrafts.dicardSuccessToast": "Draft șters cu succes.",
   "novaDrafts.publishSuccessToast": "Draft publicat cu succes.",
-  "novaDrafts.unpublishSuccessToast": "Dezpublicat cu succes.",
+  "novaDrafts.unpublishSuccessToast": "Delistat cu succes.",
   "novaDrafts.publishFailedToast": "Eroarea la publicarea draftului",
-  "novaDrafts.unpublishFailedToast": "Eroarea la dezpublicarea draftului",
+  "novaDrafts.unpublishFailedToast": "Eroarea la delistarea draftului",
   "novaDrafts.publishIndicatorPublished": "PUBLICAT",
   "novaDrafts.publishIndicatorDraft": "DRAFT"
 }

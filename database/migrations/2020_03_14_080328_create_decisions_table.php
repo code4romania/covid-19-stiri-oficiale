@@ -15,7 +15,7 @@ class CreateDecisionsTable extends Migration
     {
         Schema::create('decisions', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('title');
             $table->text('short_content')->nullable();
             $table->text('content');

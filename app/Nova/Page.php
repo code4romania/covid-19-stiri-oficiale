@@ -57,7 +57,9 @@ class Page extends Resource
             ID::make()->sortable(),
             TextWithSlug::make('Title')
                 ->slug('slug')->required(),
-            Slug::make('Slug', 'slug'),
+            Slug::make('Slug', 'slug')
+                ->creationRules('unique:pages,slug')
+                ->updateRules('unique:pages,slug,{{resourceId}}'),
             NovaTinyMCE::make('Content', 'content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
