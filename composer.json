@@ -24,6 +24,7 @@
         "laravel/nova": "~3.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "lorisleiva/laravel-deployer": "^0.3.0",
         "nothingworks/blade-svg": "^0.3.4",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^2.3",

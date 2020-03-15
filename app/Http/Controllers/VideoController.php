@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    public  function index()
+    public function index()
     {
         $items = Video::listing();
 
@@ -18,7 +18,7 @@ class VideoController extends Controller
 
     public function show($slug)
     {
-        $item = Video::where('slug', $slug)->firstOrFail();
+        $item = Video::where('slug', $slug)->published()->firstOrFail();
 
         $this->setSeo([
             'title' => $item->title,

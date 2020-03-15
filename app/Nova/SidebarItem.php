@@ -2,14 +2,11 @@
 
 namespace App\Nova;
 
-use Benjaminhirsch\NovaSlugField\Slug;
-use Benjaminhirsch\NovaSlugField\TextWithSlug;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class SidebarItem extends Resource
 {

@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     public function show(string $slug)
     {
-        $item = News::where('slug', $slug)->firstOrFail();
+        $item = News::where('slug', $slug)->published()->firstOrFail();
 
         $this->setSeo([
             'title' => $item->title,

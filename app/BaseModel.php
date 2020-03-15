@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Tags\HasTags;
 
 class BaseModel extends Model implements HasMedia
 {
-    use InteractsWithMedia, SoftDeletes;
+    use InteractsWithMedia, SoftDeletes, HasTags;
 
     protected $with = ['media'];
 
@@ -24,10 +25,16 @@ class BaseModel extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images')->acceptsMimeTypes(['image/jpeg', 'image/png']);
+        $this->addMediaCollection('document')->singleFile();
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('published', 1);
     }
 
     public function scopeListing($query)
     {
-        return $query->orderBy('updated_at', 'DESC')->paginate(10);
+        return $query->published()->orderBy('updated_at', 'DESC')->paginate(10);
     }
 }

@@ -12,13 +12,13 @@
 
                 <x-content-card :item="$item" :read-more="false" />
 
-                <x-share />
+                <x-share :downloadable="$item->getMedia('document')->first()->uuid ?? null" />
 
                 <div class="my-8 rich-text">
                     {!! $item->content !!}
                 </div>
 
-                <x-share />
+                <x-share :downloadable="$item->getMedia('document')->first()->uuid ?? null" />
             </section>
 
             @include('partials.sidebar')
