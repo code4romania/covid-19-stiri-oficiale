@@ -88,7 +88,7 @@ class Video extends Resource
             BelongsTo::make(\Institution::class)->withoutTrashed(),
             Files::make('Files', 'document'),
 
-            UnpublishButton::make('Dezpublica'),
+            UnpublishButton::make('Delistează'),
             DraftButton::make('Draft'),
             PublishedField::make('Stare', 'published'),
         ];
