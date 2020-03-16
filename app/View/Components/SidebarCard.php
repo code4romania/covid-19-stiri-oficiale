@@ -65,7 +65,7 @@ class SidebarCard extends Component
 
             case 'pink':
                 $bgColor = 'bg-pink-500';
-                $textColor = 'text-white';
+                $textColor = 'text-black';
                 break;
 
             default:
