@@ -16,6 +16,7 @@
                 <a
                     href="{{ $model->link_button }}"
                     target="_blank"
+                    rel="noopener"
                     class="block text-center tracking-wide py-2 px-4 hover:opacity-75 transition-opacity duration-100 focus:outline-none focus:shadow-outline rounded font-bold text-base w-full {{ $color['bg'] }} {{ $color['text'] }}"
                 >
                     {{ $model->text_button }}

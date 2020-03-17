@@ -8,7 +8,7 @@
 <aside class="container flex flex-wrap text-sm lg:justify-end">
     <div class="inline-flex items-center justify-between w-full py-5 lg:w-auto">
         <span>proiect dezvoltat în programul</span>
-        <a href="https://code4.ro" target="_blank" class="inline-block px-2 ml-4 focus:outline-none focus:shadow-outline">
+        <a href="https://code4.ro" target="_blank" rel="noopener" class="inline-block px-2 ml-4 focus:outline-none focus:shadow-outline">
             @svg('code4romania-taskforce', 'block h-10 w-auto')
         </a>
     </div>
@@ -34,6 +34,7 @@
                                     class="focus:outline-none focus:shadow-outline hover:underline"
                                     href="{{ $item['value'] }}"
                                     target="{{ $item['target'] }}"
+                                    @if ($item['target'] === '_blank') rel="noopener" @endif
                                 >{{ $item['name'] }}</a>
                             @endif
                         </li>
