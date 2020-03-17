@@ -34,6 +34,7 @@
                                     class="focus:outline-none focus:shadow-outline hover:underline"
                                     href="{{ $item['value'] }}"
                                     target="{{ $item['target'] }}"
+                                    @if ($item['target'] === '_blank') rel="noopener" @endif
                                 >{{ $item['name'] }}</a>
                             @endif
                         </li>

@@ -32,6 +32,7 @@
                             class="py-1 lg:px-3 hover:bg-gray-100 focus:outline-none focus:shadow-outline"
                             href="{{ $item['value'] }}"
                             target="{{ $item['target'] }}"
+                            @if ($item['target'] === '_blank') rel="noopener" @endif
                         >
                             {{ $item['name'] }}
                         </a>
