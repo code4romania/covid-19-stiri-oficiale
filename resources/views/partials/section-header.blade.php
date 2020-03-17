@@ -4,7 +4,7 @@
         <span>Informații din surse sigure</span>
     </h1>
     <p class="mb-6">
-        O sursă de informare corectă, nealimentată de panică poate ajuta populația României să fie vigilentă în felul în care accesează, asimilează și distribuie rafalele de știri prezentate în media. Informați-vă doar din canalele media oficiale și verificați informațiile de fiecare.
+        O sursă de informare corectă, nealimentată de panică poate ajuta populația României să fie vigilentă în felul în care accesează, asimilează și distribuie rafalele de știri prezentate în media. Informați-vă doar din canalele media oficiale și verificați informațiile de fiecare dată.
     </p>
     <p class="mb-6">
         Acest proiect este realizat pro-bono de voluntarii Code for Romania, organizație neguvernamentală independentă, neafiliată politic și apolitică, în cadrul Code for Romania Task Force și în parteneriat cu Guvernul României prin Autoritatea pentru Digitalizarea României.
