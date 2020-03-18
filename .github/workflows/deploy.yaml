@@ -37,15 +37,16 @@ jobs:
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
-      - name: Scan staging URL
+      - name: Setup SSH Keys and known_hosts
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          echo ::set-env name=STAGING_SSH_KNOWN_HOSTS::$(ssh-keygen -F $DEPLOY_STAGING_HOSTNAME)
-
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: $STAGING_SSH_KNOWN_HOSTS
+          mkdir -p ~/.ssh
+          ssh-keyscan $DEPLOY_STAGING_HOSTNAME >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
       - name: Deploy to stage environment
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: php artisan deploy staging
