@@ -41,7 +41,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: $DEPLOY_STAGING_HOSTNAME
+          known_hosts: ${{ ssh-keyscan demo.stirioficiale.ro }}
 
       - name: Deploy to stage environment
         run: php artisan deploy staging
