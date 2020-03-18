@@ -6,8 +6,6 @@ desc('Build frontend assets locally');
 task('assets:build', function () {
     if (!test('[ -d public/assets ]')) {
         run('{{bin/npm}} ci');
-        run('{{bin/npm}} run twill-install');
-        run('{{bin/npm}} run twill-build');
         run('{{bin/npm}} run production');
     }
 })->local();
