@@ -24,11 +24,7 @@ if (env('DEPLOY_STAGING_HOSTNAME')) {
         'http_user'        => env('DEPLOY_STAGING_HTTP_USER', 'www-data'),
         'user'             => env('DEPLOY_STAGING_USER', 'ubuntu'),
         'ssh_multiplexing' => env('DEPLOY_STAGING_SSH_MULTIPLEXING', true),
-        'port'             => env('DEPLOY_STAGING_SSH_PORT', 22),
-        'sshOptions' => [
-            'UserKnownHostsFile' => '/dev/null',
-            'StrictHostKeyChecking' => 'no'
-        ],
+        'port'             => env('DEPLOY_STAGING_SSH_PORT', 22)
     ];
 }
 

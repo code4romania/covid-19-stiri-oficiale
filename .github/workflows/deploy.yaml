@@ -39,7 +39,7 @@ jobs:
 
       - name: Scan staging URL
         run: |
-          echo ::set-env name=STAGING_SSH_KNOWN_HOSTS::$(ssh-keyscan $DEPLOY_STAGING_HOSTNAME)
+          echo ::set-env name=STAGING_SSH_KNOWN_HOSTS::$(ssh-keygen -F $DEPLOY_STAGING_HOSTNAME)
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
