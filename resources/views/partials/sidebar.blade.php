@@ -5,6 +5,8 @@
     </h1>
 
     <div class="grid row-gap-8">
+        @include('search.form')
+
         @foreach (\App\SidebarItem::all() as $card)
             <x-sidebar-card :item="$card" />
         @endforeach
