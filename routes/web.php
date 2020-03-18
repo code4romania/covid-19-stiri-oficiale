@@ -17,22 +17,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::feeds();
-
-Route::prefix('/informatii')->group(function () {
-    Route::get('/', [NewsController::class, 'index'])->name('news.index');
-    Route::get('/{slug}', [NewsController::class, 'show'])->name('news.show');
+Route::middleware('cache.headers:public;etag;max_age=3600')->group(function () {
+    Route::feeds();
 });
 
-Route::prefix('/hotarari')->group(function () {
-    Route::get('/', [DecisionController::class, 'index'])->name('decisions.index');
-    Route::get('/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
-});
+Route::middleware('cache.headers:public;etag;max_age=300')->group(function () {
+    Route::get('informatii', [NewsController::class, 'index'])->name('news.index');
+    Route::get('informatii/{slug}', [NewsController::class, 'show'])->name('news.show');
 
-Route::prefix('/video')->group(function () {
-    Route::get('/', [VideoController::class, 'index'])->name('videos.index');
-    // Route::get('/{slug}', [VideoController::class, 'show'])->name('videos.show');
-});
+    Route::get('hotarari', [DecisionController::class, 'index'])->name('decisions.index');
+    Route::get('hotarari/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
 
-Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
-Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();
+    Route::get('video', [VideoController::class, 'index'])->name('videos.index');
+    // Route::get('video/{slug}', [VideoController::class, 'show'])->name('videos.show');
+
+    Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
+    Route::get('{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();
+});
