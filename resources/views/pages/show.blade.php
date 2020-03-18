@@ -10,7 +10,7 @@
         <x-share />
 
         <div class="grid gap-12 py-16 lg:grid-cols-3">
-            <div class="my-8 lg:col-span-2 rich-text">
+            <div class="my-8 lg:col-span-2 rich-text break-words">
                 {!! $item->content !!}
             </div>
 
