@@ -230,6 +230,19 @@ module.exports = {
                 iframe: {
                     width: '100%',
                 },
+                table: {
+                    width: '100%',
+                    fontSize: theme('fontSize.base'),
+                },
+                'tr:nth-child(2n)': {
+                    backgroundColor: theme('colors.gray.100'),
+                },
+                td: {
+                    paddingTop: theme('spacing.2'),
+                    paddingBottom: theme('spacing.2'),
+                    paddingLeft: theme('spacing.3'),
+                    paddingRight: theme('spacing.3'),
+                },
             },
         }),
     },
