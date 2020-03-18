@@ -13,6 +13,13 @@ class BaseModel extends Model implements HasMedia
 {
     use InteractsWithMedia, SoftDeletes, HasTags;
 
+    /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 10;
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
@@ -33,6 +40,11 @@ class BaseModel extends Model implements HasMedia
 
     public function scopeListing($query)
     {
-        return $query->published()->orderBy('updated_at', 'DESC')->paginate(10);
+        return $query->published()->orderBy('updated_at', 'DESC');
+    }
+
+    public function scopePaginatedListing($query)
+    {
+        return $query->listing()->paginate();
     }
 }

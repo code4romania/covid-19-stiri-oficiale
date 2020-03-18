@@ -8,7 +8,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $items = News::listing();
+        $items = News::paginatedListing();
 
         return view('news.index', [
             'items' => $items,
