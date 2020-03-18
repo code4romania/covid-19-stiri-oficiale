@@ -32,7 +32,7 @@ jobs:
           path: ~/.npm
           key: dependencies-npm-${{ hashFiles('package-lock.json') }}
 
-      - name: composer install
+      - name: Composer install
         run: composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
