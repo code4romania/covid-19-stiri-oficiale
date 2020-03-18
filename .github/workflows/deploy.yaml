@@ -4,6 +4,9 @@ name: Deploy
 jobs:
   deploy-stage:
     runs-on: ubuntu-latest
+    env:
+      DEPLOY_STAGING_HOSTNAME: "demo.stirioficiale.ro"
+      DEPLOY_STAGING_PATH: "/var/www/demo.stirioficiale.ro"
     steps:
       - uses: actions/checkout@v2
 
@@ -35,16 +38,11 @@ jobs:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
       - name: Add ssh key
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keygen -F ${{ secrets.SSH_KNOWN_HOSTS }} >> ~/.ssh/known_hosts
+          ssh-keygen -F $DEPLOY_STAGING_HOSTNAME >> ~/.ssh/known_hosts
 
       - name: Deploy to stage environment
         run: php artisan deploy staging
-        env:
-          DEPLOY_STAGING_HOSTNAME: "demo.stirioficiale.ro"
-          DEPLOY_STAGING_PATH: "/var/www/demo.stirioficiale.ro"
