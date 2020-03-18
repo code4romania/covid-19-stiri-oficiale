@@ -1,0 +1,49 @@
+on: push
+
+name: Deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: mbstring
+          tools: composer
+          coverage: none
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-composer-${{ hashFiles('composer.lock') }}
+      - name: Cache npm dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: dependencies-npm-${{ hashFiles('package-lock.json') }}
+
+      - name: composer install
+        run: composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
+        env:
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+      - name: Add ssh key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy to stage environment
+        run: php artisan deploy staging
+        env:
+          DEPLOY_STAGING_HOSTNAME: "demo.stirioficiale.ro"
+          DEPLOY_STAGING_PATH: "/var/www/demo.stirioficiale.ro"
