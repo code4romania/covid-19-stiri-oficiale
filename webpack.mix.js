@@ -38,5 +38,7 @@ mix.setPublicPath('public/assets')
         ],
     })
     .postCss('resources/css/app.pcss', 'public/assets')
-    .purgeCss()
+    .purgeCss({
+        whitelistPatternsChildren: [/rich-text$/],
+    })
     .extract();
