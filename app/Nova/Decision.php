@@ -16,7 +16,6 @@ use OptimistDigital\NovaDrafts\PublishedField;
 use OptimistDigital\NovaDrafts\UnpublishButton;
 use Spatie\TagsField\Tags;
 
-
 class Decision extends Resource
 {
 
@@ -32,8 +31,18 @@ class Decision extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'title',
+        'short_content',
+        'content',
+    ];
 
     public static function group(): string
     {
@@ -49,15 +58,6 @@ class Decision extends Resource
     {
         return __('nova.decision.singular');
     }
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
 
     /**
      * Get the fields displayed by the resource.

@@ -34,7 +34,7 @@ class Page extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -42,7 +42,8 @@ class Page extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
+        'content'
     ];
 
     /**
