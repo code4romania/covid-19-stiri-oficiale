@@ -8,7 +8,7 @@ class DecisionController extends Controller
 {
     public function index()
     {
-        $items = Decision::listing();
+        $items = Decision::paginatedListing();
 
         return view('decisions.index', [
             'items' => $items,

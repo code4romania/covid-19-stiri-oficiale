@@ -9,7 +9,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-        $items = Video::listing();
+        $items = Video::paginatedListing();
 
         return view('video.index', [
             'items' => $items,
