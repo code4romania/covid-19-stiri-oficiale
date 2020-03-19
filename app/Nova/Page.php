@@ -10,9 +10,6 @@ use Laravel\Nova\Fields\ID;
 
 class Page extends Resource
 {
-
-
-
     public static function label(): string
     {
         return __('nova.page.plural');

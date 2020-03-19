@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6138c459203279b8e6b488b1db6966c6",
+    "content-hash": "61c67fbafb01b7df30daeb1886f46162",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -5378,6 +5378,62 @@
                 }
             ],
             "time": "2020-03-14T10:52:41+00:00"
+        },
+        {
+            "name": "spatie/laravel-robots-middleware",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-robots-middleware.git",
+                "reference": "e450e2f3535313480aab4c2706016eaef58fb616"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-robots-middleware/zipball/e450e2f3535313480aab4c2706016eaef58fb616",
+                "reference": "e450e2f3535313480aab4c2706016eaef58fb616",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^5.8|^6.0|^7.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0|^5.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\RobotsMiddleware\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add an `all` or `none` robots header to your requests via a middleware in Laravel",
+            "homepage": "https://github.com/spatie/laravel-robots-middleware",
+            "keywords": [
+                "index",
+                "robots",
+                "seo",
+                "spatie"
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-03-03T08:39:21+00:00"
         },
         {
             "name": "spatie/laravel-tags",
