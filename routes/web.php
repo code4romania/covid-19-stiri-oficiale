@@ -22,7 +22,7 @@ Route::middleware('cache.headers:public;etag;max_age=3600')->group(function () {
     Route::feeds();
 });
 
-Route::post('/search', [SearchController::class, 'search'])->name('search')->middleware('throttle:5,1');
+Route::get('/cautare', [SearchController::class, 'search'])->name('search')->middleware('throttle:20,1');
 
 Route::middleware('cache.headers:public;etag;max_age=300')->group(function () {
     Route::get('informatii', [NewsController::class, 'index'])->name('news.index');
