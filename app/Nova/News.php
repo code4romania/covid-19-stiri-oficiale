@@ -25,6 +25,24 @@ class News extends Resource
      */
     public static $model = 'App\News';
 
+    /**
+     * The single value that should be used to represent the resource when being displayed.
+     *
+     * @var string
+     */
+    public static $title = 'title';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'title',
+        'short_content',
+        'content',
+    ];
+
     public static function group(): string
     {
         return __('nova.group.articles');
@@ -39,23 +57,6 @@ class News extends Resource
     {
         return __('nova.news.singular');
     }
-
-
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
-    public static $title = 'id';
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
 
     /**
      * Get the fields displayed by the resource.

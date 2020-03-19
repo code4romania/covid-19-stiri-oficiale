@@ -22,7 +22,18 @@ class SidebarItem extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'title',
+        'description',
+    ];
+
 
     public static function label(): string
     {
@@ -33,16 +44,6 @@ class SidebarItem extends Resource
     {
         return __('nova.sidebarItem.singular');
     }
-
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
 
     /**
      * Get the fields displayed by the resource.

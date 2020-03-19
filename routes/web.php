@@ -3,6 +3,7 @@
 use App\Http\Controllers\DecisionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('cache.headers:public;etag;max_age=3600')->group(function () {
     Route::feeds();
 });
+
+Route::get('/cautare', [SearchController::class, 'search'])->name('search')->middleware('throttle:20,1');
 
 Route::middleware('cache.headers:public;etag;max_age=300')->group(function () {
     Route::get('informatii', [NewsController::class, 'index'])->name('news.index');
