@@ -103,6 +103,6 @@ return [
 
 
     // How many seconds should the cache persist
-    'ttl' => 60 * 5,
+    'ttl' => env('CACHE_TTL', 60 * 5),
 
 ];
