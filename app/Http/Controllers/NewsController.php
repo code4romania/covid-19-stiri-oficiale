@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $items = News::paginatedListing();
+        $page = $this->getCurrentPageNumber($request);
+        $items = $this->withCache("news.index.page$page", function () {
+            return News::paginatedListing();
+        });
 
         return view('news.index', [
             'items' => $items,
@@ -17,7 +21,9 @@ class NewsController extends Controller
 
     public function show(string $slug)
     {
-        $item = News::where('slug', $slug)->published()->firstOrFail();
+        $item = $this->withCache("news.show.$slug", function () use ($slug) {
+            return News::where('slug', $slug)->published()->firstOrFail();
+        });
 
         $this->setSeo([
             'title' => $item->title,

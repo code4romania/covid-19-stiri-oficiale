@@ -99,6 +99,10 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache'),
+
+
+    // How many seconds should the cache persist
+    'ttl' => 60 * 5,
 
 ];
