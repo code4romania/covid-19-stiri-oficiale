@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61c67fbafb01b7df30daeb1886f46162",
+    "content-hash": "fcf8f0c14eb7719478e2ff1bb5e72ca7",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -2094,16 +2094,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.1.3",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "42b311862adfc36b8628ac62d226a3682f463439"
+                "reference": "de01e2926a7560c43fb763d86de134a52b46928b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/42b311862adfc36b8628ac62d226a3682f463439",
-                "reference": "42b311862adfc36b8628ac62d226a3682f463439",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/de01e2926a7560c43fb763d86de134a52b46928b",
+                "reference": "de01e2926a7560c43fb763d86de134a52b46928b",
                 "shasum": ""
             },
             "require": {
@@ -2241,21 +2241,21 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-03-14T14:33:32+00:00"
+            "time": "2020-03-20T18:11:43+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "v3.0.2",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "d53e86b9fb8fbdedf3802146ee64bda7759174b1"
+                "reference": "5f298f21c7f214a9b22dc6ec900d2b6439377a09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-d53e86b9fb8fbdedf3802146ee64bda7759174b1-zip-3c448b.zip",
-                "reference": "d53e86b9fb8fbdedf3802146ee64bda7759174b1",
-                "shasum": "25e534ce6796ba0f2b710c1a351e35cf12b21a48"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5f298f21c7f214a9b22dc6ec900d2b6439377a09-zip-7bf129.zip",
+                "reference": "5f298f21c7f214a9b22dc6ec900d2b6439377a09",
+                "shasum": "93478a403d0e8f6d2863cbcbabc33d6695257640"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -2315,7 +2315,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-03-07T14:32:06+00:00"
+            "time": "2020-03-17T18:33:18+00:00"
         },
         {
             "name": "laravel/scout",
@@ -2384,24 +2384,24 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "37579c93271ec30ef099dd633ec7c2de5e5fb112"
+                "reference": "5271893ec90ad9f8d3e34792ac6b72cad3b84cc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/37579c93271ec30ef099dd633ec7c2de5e5fb112",
-                "reference": "37579c93271ec30ef099dd633ec7c2de5e5fb112",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/5271893ec90ad9f8d3e34792ac6b72cad3b84cc2",
+                "reference": "5271893ec90ad9f8d3e34792ac6b72cad3b84cc2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^6.0|^7.0",
-                "illuminate/contracts": "^6.0|^7.0",
-                "illuminate/support": "^6.0|^7.0",
+                "illuminate/console": "^6.0|^7.0|^8.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
                 "php": "^7.2",
-                "psy/psysh": "^0.9",
+                "psy/psysh": "^0.9|^0.10",
                 "symfony/var-dumper": "^4.0|^5.0"
             },
             "require-dev": {
@@ -2409,7 +2409,7 @@
                 "phpunit/phpunit": "^8.0|^9.0"
             },
             "suggest": {
-                "illuminate/database": "The Illuminate Database package (^6.0|^7.0)."
+                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0)."
             },
             "type": "library",
             "extra": {
@@ -2444,7 +2444,7 @@
                 "laravel",
                 "psysh"
             ],
-            "time": "2020-02-05T15:00:44+00:00"
+            "time": "2020-03-17T15:34:59+00:00"
         },
         {
             "name": "laravel/ui",
@@ -2577,16 +2577,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.65",
+            "version": "1.0.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "8f17b3ba67097aafb8318cd5c553b1acf7c891c8"
+                "reference": "021569195e15f8209b1c4bebb78bd66aa4f08c21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8f17b3ba67097aafb8318cd5c553b1acf7c891c8",
-                "reference": "8f17b3ba67097aafb8318cd5c553b1acf7c891c8",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/021569195e15f8209b1c4bebb78bd66aa4f08c21",
+                "reference": "021569195e15f8209b1c4bebb78bd66aa4f08c21",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,13 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-03-08T18:53:20+00:00"
+            "funding": [
+                {
+                    "url": "https://offset.earth/frankdejonge",
+                    "type": "other"
+                }
+            ],
+            "time": "2020-03-17T18:58:12+00:00"
         },
         {
             "name": "league/glide",
@@ -3390,16 +3396,16 @@
         },
         {
             "name": "optimistdigital/nova-locale-field",
-            "version": "2.0.2",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-locale-field.git",
-                "reference": "c92496c420ab01c4fc22d3038a17dec15c8c9226"
+                "reference": "6e29fe1f1ddd6c55c95627381e402e413aabf011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/c92496c420ab01c4fc22d3038a17dec15c8c9226",
-                "reference": "c92496c420ab01c4fc22d3038a17dec15c8c9226",
+                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/6e29fe1f1ddd6c55c95627381e402e413aabf011",
+                "reference": "6e29fe1f1ddd6c55c95627381e402e413aabf011",
                 "shasum": ""
             },
             "require": {
@@ -3442,20 +3448,20 @@
                 "nova",
                 "optimistdigital"
             ],
-            "time": "2020-03-05T07:24:46+00:00"
+            "time": "2020-03-19T08:17:00+00:00"
         },
         {
             "name": "optimistdigital/nova-menu-builder",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-menu-builder.git",
-                "reference": "b8fd1c5099364c26430bfd1c014070078b50c4da"
+                "reference": "27019134729bee1925904456d7c6145d421b6d06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/b8fd1c5099364c26430bfd1c014070078b50c4da",
-                "reference": "b8fd1c5099364c26430bfd1c014070078b50c4da",
+                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/27019134729bee1925904456d7c6145d421b6d06",
+                "reference": "27019134729bee1925904456d7c6145d421b6d06",
                 "shasum": ""
             },
             "require": {
@@ -3503,7 +3509,7 @@
                 "nova",
                 "optimistdigital"
             ],
-            "time": "2020-03-05T14:22:44+00:00"
+            "time": "2020-03-20T13:31:22+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4651,32 +4657,31 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.9.12",
+            "version": "v0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "90da7f37568aee36b116a030c5f99c915267edd4"
+                "reference": "573c2362c3cdebe846b4adae4b630eecb350afd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/90da7f37568aee36b116a030c5f99c915267edd4",
-                "reference": "90da7f37568aee36b116a030c5f99c915267edd4",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/573c2362c3cdebe846b4adae4b630eecb350afd8",
+                "reference": "573c2362c3cdebe846b4adae4b630eecb350afd8",
                 "shasum": ""
             },
             "require": {
                 "dnoegel/php-xdg-base-dir": "0.1.*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "jakub-onderka/php-console-highlighter": "0.3.*|0.4.*",
-                "nikic/php-parser": "~1.3|~2.0|~3.0|~4.0",
-                "php": ">=5.4.0",
-                "symfony/console": "~2.3.10|^2.4.2|~3.0|~4.0|~5.0",
-                "symfony/var-dumper": "~2.7|~3.0|~4.0|~5.0"
+                "jakub-onderka/php-console-highlighter": "0.4.*|0.3.*",
+                "nikic/php-parser": "~4.0|~3.0|~2.0|~1.3",
+                "php": "^8.0 || ^7.0 || ^5.5.9",
+                "symfony/console": "~5.0|~4.0|~3.0|^2.4.2|~2.3.10",
+                "symfony/var-dumper": "~5.0|~4.0|~3.0|~2.7"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.2",
-                "hoa/console": "~2.15|~3.16",
-                "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0"
+                "hoa/console": "~3.16|~2.15"
             },
             "suggest": {
                 "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
@@ -4691,7 +4696,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.9.x-dev"
+                    "dev-master": "0.10.x-dev"
                 }
             },
             "autoload": {
@@ -4721,7 +4726,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2019-12-06T14:19:43+00:00"
+            "time": "2020-03-21T06:55:27+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5285,16 +5290,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.0.2",
+            "version": "8.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "0467473fdbbaea5346056fbd861fef8b795f67e6"
+                "reference": "af698ec0ee87bb2131cfe3d31bf25fd0c54526a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0467473fdbbaea5346056fbd861fef8b795f67e6",
-                "reference": "0467473fdbbaea5346056fbd861fef8b795f67e6",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/af698ec0ee87bb2131cfe3d31bf25fd0c54526a7",
+                "reference": "af698ec0ee87bb2131cfe3d31bf25fd0c54526a7",
                 "shasum": ""
             },
             "require": {
@@ -5377,7 +5382,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-03-14T10:52:41+00:00"
+            "time": "2020-03-18T19:05:27+00:00"
         },
         {
             "name": "spatie/laravel-robots-middleware",
@@ -7768,6 +7773,59 @@
             "time": "2019-03-14T07:29:30+00:00"
         },
         {
+            "name": "vink/nova-cache-card",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dannyvink/nova-cache-card.git",
+                "reference": "dd2a5225b5e698958c7e2d7e0753c398c91116a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dannyvink/nova-cache-card/zipball/dd2a5225b5e698958c7e2d7e0753c398c91116a0",
+                "reference": "dd2a5225b5e698958c7e2d7e0753c398c91116a0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vink\\NovaCacheCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vink\\NovaCacheCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danny Vink",
+                    "email": "danny@dannyvink.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manage your application's cache from a handy Laravel Nova dashboard card.",
+            "homepage": "https://github.com/dannyvink/nova-cache-card",
+            "keywords": [
+                "cache",
+                "file",
+                "laravel",
+                "nova",
+                "redis"
+            ],
+            "time": "2019-02-16T21:11:08+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v4.1.2",
             "source": {
@@ -8078,16 +8136,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "b8dbf7791c81619161270d580a64a30bad41b832"
+                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/b8dbf7791c81619161270d580a64a30bad41b832",
-                "reference": "b8dbf7791c81619161270d580a64a30bad41b832",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/67f1677954ad33ca6b77f2c41cf43a58624f27fc",
+                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc",
                 "shasum": ""
             },
             "require": {
@@ -8109,7 +8167,7 @@
                 "orchestra/testbench": "5.0"
             },
             "suggest": {
-                "laravel/telescope": "^2.0"
+                "laravel/telescope": "^3.1"
             },
             "type": "library",
             "extra": {
@@ -8145,7 +8203,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-03-05T12:32:22+00:00"
+            "time": "2020-03-18T19:20:44+00:00"
         },
         {
             "name": "facade/ignition-contracts",
