@@ -2,6 +2,8 @@
     $menu = nova_get_menu('header');
 @endphp
 
+@include('partials.notice')
+
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">
     <div class="container flex flex-wrap items-center justify-between py-5 border-b">
         <a href="{{ route('pages.index') }}" class="inline-block focus:outline-none focus:shadow-outline">
