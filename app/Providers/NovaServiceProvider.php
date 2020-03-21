@@ -12,6 +12,7 @@ use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Vink\NovaCacheCard\CacheCard;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -63,7 +64,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new DecisionMetrics(),
             new NewsMetrics(),
             new VideosMetrics(),
-
+            new CacheCard(),
         ];
     }
 
