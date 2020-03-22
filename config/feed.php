@@ -1,7 +1,7 @@
 <?php
 
 $view     = 'feed::rss';
-$type     = 'application/atom+xml';
+$type     = 'application/rss+xml';
 $language = 'ro-RO';
 
 $titleSuffix = ' - ' . env('APP_NAME', '');
