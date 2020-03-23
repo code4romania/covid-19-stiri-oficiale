@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('cache.headers:public;etag;max_age=3600')->group(function () {
+Route::middleware('cache.headers:public;etag;max_age=600')->group(function () {
     Route::feeds();
 });
 
