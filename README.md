@@ -4,33 +4,27 @@
 
 Insert bullets description of the project if available.
 
-[See the project live](insert_link_here)
+[See the project live](https://stirioficiale.ro/)
 
 Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.
 
-[Contributing](#contributing) | [Built with](#built-with) | [Repos and projects](#repos-and-projects) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
+[Contributing](#contributing) | [Built with](#built-with) | [Development](#development) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
 
 ## Contributing
 
 This project is built by amazing volunteers and you can be one of them! Here's a list of ways in [which you can contribute to this project](.github/CONTRIBUTING.md).
 
-You can also list any pending features and planned improvements for the project here.
-
 ## Built With
 
-### Programming languages
+* Laravel 7
+* [Laravel Nova](https://nova.laravel.com/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Alpine.js](https://github.com/alpinejs/alpine)
 
-### Platforms
-
-### Frontend framework
-
-### Package managers
-
-### Database technology & provider
-
-## Repos and projects
-
-Mention all related repos and projects.
+### Requirements
+* PHP 7.4+
+* Apache or Nginx
+* MySQL
 
 ## Development
 
@@ -70,14 +64,7 @@ $ docker-compose up
 
 ## Deployment
 
-Guide users through getting your code up and running on their own system. In this section you can talk about:
-
-1. Installation process
-2. Software dependencies
-3. Latest releases
-4. API references
-
-Describe and show how to build your code and run the tests.
+Deploying to a remote host is done through `php artisan deploy <stage>`, using [lorisleiva/laravel-deployer](https://github.com/lorisleiva/laravel-deployer), which can be configured in [config/deploy.php](config/deploy.php).
 
 ## Feedback
 
