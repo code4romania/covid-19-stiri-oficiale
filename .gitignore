@@ -15,3 +15,4 @@ yarn-error.log
 .idea
 /src/
 /storage/media-library/
+auth.json

@@ -14,19 +14,22 @@ This project is built by amazing volunteers and you can be one of them! Here's a
 
 ## Built With
 
-* Laravel 7
-* [Laravel Nova](https://nova.laravel.com/) (requires license)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Alpine.js](https://github.com/alpinejs/alpine)
+-   Laravel 7
+-   [Laravel Nova](https://nova.laravel.com/) (requires license)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Alpine.js](https://github.com/alpinejs/alpine)
 
 ### Requirements
-* PHP 7.4+
-* Apache or Nginx
-* MySQL
+
+-   PHP 7.4+
+-   Apache or Nginx
+-   MySQL
 
 ## Development
 
-### To bootstrap the project (Run this only once), run the following commands in your shell:
+### To bootstrap the project (run this only once), run the following commands in your shell:
+
+First, create a `auth.json` file with Nova license inside, in the root of the project.
 
 Install composer dependencies
 
@@ -44,20 +47,25 @@ $ docker-compose up
 Run database migrations
 
 ```bash
-$ docker exec -it stiri-importante php artisan migrate
+$ docker exec -it stiri-oficiale php artisan migrate
 ```
 
 Generate app secret key, and personal access client keys
 
 ```bash
-$ docker exec -it stiri-importante php artisan key:generate
-$ docker exec -it stiri-importante php artisan optimize
+$ docker exec -it stiri-oficiale php artisan key:generate
 ```
 
 ### Every other time
 
 ```bash
 $ docker-compose up
+```
+
+For artisan commands:
+
+```bash
+$ docker exec -it stiri-oficiale php artisan
 ```
 
 ## Deployment
