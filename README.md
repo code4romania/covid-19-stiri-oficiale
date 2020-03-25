@@ -29,7 +29,18 @@ This project is built by amazing volunteers and you can be one of them! Here's a
 
 ### To bootstrap the project (run this only once), run the following commands in your shell:
 
-First, create a `auth.json` file with Nova license inside, in the root of the project.
+First, create a `auth.json` file in the project root with the login credentials to your Laravel Nova account. Its contents should look like this:
+
+```json
+{
+    "http-basic": {
+        "nova.laravel.com": {
+            "username": "email@example.com",
+            "password": "YOUR_API_KEY"
+        }
+    }
+}
+```
 
 Install composer dependencies
 
