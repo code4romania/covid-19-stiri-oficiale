@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Decision;
+use App\Helpers\Normalize;
 use App\News;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
-use TeamTNT\TNTSearch\TNTSearch;
 
 class SearchController extends Controller
 {
-    /** @var TNTSearch */
-    protected $tnt;
-
     /** @var array<string> */
     protected $models = [
         'news'     => News::class,
@@ -25,12 +23,6 @@ class SearchController extends Controller
 
     /** @var int */
     protected $resultsPerType = 10;
-
-    public function __construct(TNTSearch $tnt)
-    {
-        $this->tnt = $tnt;
-        $this->tnt->loadConfig(config('scout.tntsearch'));
-    }
 
     /**
      * Display the search results.
@@ -52,29 +44,16 @@ class SearchController extends Controller
         return view('search.results', [
             'query'   => $attributes['query'],
             'type'    => $attributes['type'],
-            'results' => $this->searchIndex($attributes['query'], $attributes['type']),
+            'route'   => Str::plural($attributes['type']) . '.show',
+            'items'   => $this->getResultsFor($attributes['query'], $attributes['type']),
         ]);
     }
 
-    protected function searchIndex(string $query, string $modelName): array
+    protected function getResultsFor(string $query, string $modelName): LengthAwarePaginator
     {
-        $this->tnt->selectIndex(Str::plural($modelName) . '.index');
-        $result = $this->tnt->search(strtolower($query), $this->resultsPerType);
-
-        if ($result['hits'] > 0) {
-            $order = collect($result['ids'])
-                ->map(fn ($id, $index) => "WHEN $id THEN $index")
-                ->implode(' ');
-
-            $items = app($this->models[$modelName])
-                ->whereIn('id', $result['ids'])
-                ->orderByRaw("CASE id $order END")
-                ->get();
-        }
-
-        return [
-            'route' => Str::plural($modelName) . '.show',
-            'items' => $items ?? [],
-        ];
+        return app($this->models[$modelName])
+            ->search(Normalize::string($query))
+            ->paginate()
+            ->appends(['type' => $modelName]);
     }
 }

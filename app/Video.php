@@ -3,14 +3,24 @@
 namespace App;
 
 use App\Institution;
+use Laravel\Scout\Searchable;
 use Spatie\Feed\FeedItem;
 use Spatie\Feed\Feedable;
 
 class Video extends BaseModel implements Feedable
 {
+    use Searchable;
+
     protected $with = [
         'institution',
         'tags',
+    ];
+
+    /** @var array<string> */
+    protected $searchableFields = [
+        'id',
+        'title',
+        'short_content',
     ];
 
     public function childDraft()
@@ -21,6 +31,11 @@ class Video extends BaseModel implements Feedable
     public function institution()
     {
         return $this->belongsTo(Institution::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return parent::toSearchableArray();
     }
 
     public function toFeedItem()

@@ -2,9 +2,9 @@
 
 namespace App;
 
+use App\Helpers\Normalize;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -12,7 +12,7 @@ use Spatie\Tags\HasTags;
 
 class BaseModel extends Model implements HasMedia
 {
-    use InteractsWithMedia, Searchable, SoftDeletes, HasTags;
+    use InteractsWithMedia, SoftDeletes, HasTags;
 
     /**
      * The number of models to return for pagination.
@@ -34,20 +34,6 @@ class BaseModel extends Model implements HasMedia
         $this->addMediaCollection('document')->singleFile();
     }
 
-    /**
-     * Get the indexable data array for the model.
-     *
-     * @return array
-     */
-    public function toSearchableArray()
-    {
-        return $this->only([
-            'id',
-            'title',
-            'short_content',
-        ]);
-    }
-
     public function scopePublished($query)
     {
         return $query->where('published', 1);
@@ -61,5 +47,23 @@ class BaseModel extends Model implements HasMedia
     public function scopePaginatedListing($query)
     {
         return $query->listing()->paginate();
+    }
+
+    /**
+     * Get the normalized indexable data array for the model.
+     *
+     * This removes html tags,
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        if (!isset($this->searchableFields)) {
+            return [];
+        }
+
+        return collect($this->only($this->searchableFields))
+            ->map(fn ($field): string => Normalize::string($field))
+            ->toArray();
     }
 }
