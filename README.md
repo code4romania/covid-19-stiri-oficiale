@@ -2,11 +2,9 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
 
-Insert bullets description of the project if available.
-
 [See the project live](https://stirioficiale.ro/)
 
-Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.
+Platform which centralizes all the official press releases, press conferences and decisions of the Committee for Special Emergency Situations.
 
 [Contributing](#contributing) | [Built with](#built-with) | [Development](#development) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
 
@@ -17,7 +15,7 @@ This project is built by amazing volunteers and you can be one of them! Here's a
 ## Built With
 
 * Laravel 7
-* [Laravel Nova](https://nova.laravel.com/)
+* [Laravel Nova](https://nova.laravel.com/) (requires license)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Alpine.js](https://github.com/alpinejs/alpine)
 
