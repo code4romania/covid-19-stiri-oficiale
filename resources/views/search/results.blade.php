@@ -21,18 +21,20 @@
                     </h1>
                     <div class="grid row-gap-10">
                         @if ($type == 'video')
-                            @forelse ($results['items'] as $item)
+                            @forelse ($items as $item)
                                 <x-content-card :item="$item" :read-more="false" />
                             @empty
                                 <p>{{ __('search.noResults') }}</p>
                             @endforelse
                         @else
-                            @forelse ($results['items'] as $item)
-                                <x-content-card :item="$item" :route="$results['route']" />
+                            @forelse ($items as $item)
+                                <x-content-card :item="$item" :route="$route" />
                             @empty
                                 <p>{{ __('search.noResults') }}</p>
                             @endforelse
                         @endif
+
+                        {{ $items->links('partials.pagination') }}
                     </div>
                 </section>
             </div>
