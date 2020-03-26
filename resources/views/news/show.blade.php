@@ -14,7 +14,7 @@
 
                 <x-share :item="$item"/>
 
-                <div class="my-8 rich-text break-words">
+                <div class="my-8 break-words rich-text">
                     {!! $item->content !!}
                 </div>
 
@@ -25,6 +25,3 @@
         </div>
     </div>
 @endsection
-
-
-

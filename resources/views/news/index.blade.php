@@ -18,8 +18,6 @@
                     @endforelse
 
                     {{ $items->links('partials.pagination') }}
-
-                    @include('partials.newsletter')
                 </div>
             </section>
 
@@ -27,6 +25,3 @@
         </div>
     </div>
 @endsection
-
-
-
