@@ -189,6 +189,7 @@ module.exports = {
             },
             richText: {
                 lineHeight: theme('lineHeight.relaxed'),
+                wordBreak: 'break-word',
                 '> * + *': {
                     marginTop: theme('spacing.5'),
                 },
