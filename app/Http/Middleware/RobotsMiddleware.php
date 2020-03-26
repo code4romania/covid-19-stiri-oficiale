@@ -12,6 +12,6 @@ class RobotsMiddleware extends BaseRobotsMiddleware
      */
     protected function shouldIndex(Request $request)
     {
-        return $request->route()->getName() !== 'search';
+        return !is_null($request->route()) && $request->route()->getName() !== 'search';
     }
 }
