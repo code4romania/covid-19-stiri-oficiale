@@ -10,12 +10,11 @@
                     {{ __('content.decision.title') }}
                 </h1>
 
-
                 <x-content-card :item="$item" :read-more="false" />
 
                 <x-share :item="$item"/>
 
-                <div class="my-8 rich-text break-words">
+                <div class="my-8 break-words rich-text">
                     {!! $item->content !!}
                 </div>
 
@@ -26,6 +25,3 @@
         </div>
     </div>
 @endsection
-
-
-
