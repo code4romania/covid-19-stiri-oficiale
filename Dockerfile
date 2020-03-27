@@ -2,7 +2,7 @@ FROM php:7.4-fpm-alpine
 
 WORKDIR /var/www/html
 
-RUN apk add --no-cache freetype-dev libjpeg-turbo-dev libpng-dev \
+RUN apk add --no-cache git freetype-dev libjpeg-turbo-dev libpng-dev \
     && docker-php-ext-configure gd --with-jpeg --with-freetype \
     && docker-php-ext-install gd exif pdo pdo_mysql
 

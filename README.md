@@ -45,7 +45,7 @@ First, create a `auth.json` file in the project root with the login credentials 
 Install composer dependencies
 
 ```bash
-$ docker run -v ${PWD}:/app -w /app composer:latest composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
+$ docker run --rm -v ${PWD}:/app -v ~/.composer/auth.json:/root/.composer/auth.json -w /app composer:latest composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
 ```
 
 Copy environment variables and start the application

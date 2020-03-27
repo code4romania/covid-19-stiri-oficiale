@@ -1,0 +1,57 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_PRODUCTION_HOSTNAME: "stirioficiale.ro"
+      DEPLOY_PRODUCTION_PATH: "/var/www/stirioficiale.ro"
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: mbstring
+          tools: composer
+          coverage: none
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-composer-${{ hashFiles('composer.lock') }}
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: dependencies-npm-${{ hashFiles('package-lock.json') }}
+
+      - name: Composer install
+        run: composer install --ignore-platform-reqs --no-scripts --no-interaction --prefer-dist --optimize-autoloader
+        env:
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+      - name: Setup SSH Keys and known_hosts
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan $DEPLOY_PRODUCTION_HOSTNAME >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Deploy
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: php artisan deploy production

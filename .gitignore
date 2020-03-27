@@ -15,4 +15,5 @@ yarn-error.log
 .idea
 /src/
 /storage/media-library/
+.composer
 auth.json

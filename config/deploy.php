@@ -24,7 +24,7 @@ if (env('DEPLOY_STAGING_HOSTNAME')) {
         'http_user'        => env('DEPLOY_STAGING_HTTP_USER', 'www-data'),
         'user'             => env('DEPLOY_STAGING_USER', 'ubuntu'),
         'ssh_multiplexing' => env('DEPLOY_STAGING_SSH_MULTIPLEXING', true),
-        'port'             => env('DEPLOY_STAGING_SSH_PORT', 22),
+        'port'             => env('DEPLOY_STAGING_SSH_PORT', 22)
     ];
 }
 
@@ -137,7 +137,7 @@ return [
 
     'options' => [
         'application'         => env('APP_NAME', 'Laravel'),
-        'repository'          => env('DEPLOY_REPOSITORY'),
+        'repository'          => env('DEPLOY_REPOSITORY', 'git@github.com:code4romania/stiri-oficiale.git'),
         'php_fpm_service'     => 'php7.4-fpm',
         'writable_use_sudo'   => true,
         'writable_chmod_mode' => '0775',
