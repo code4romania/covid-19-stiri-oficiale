@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - ci-build
 
 name: Deploy
 jobs:
@@ -17,6 +20,7 @@ jobs:
           extensions: mbstring
           tools: composer
           coverage: none
+
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
@@ -26,6 +30,7 @@ jobs:
         with:
           path: ~/.composer/cache/files
           key: dependencies-composer-${{ hashFiles('composer.lock') }}
+
       - name: Cache npm dependencies
         uses: actions/cache@v1
         with:
