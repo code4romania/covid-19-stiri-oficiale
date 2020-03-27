@@ -1,15 +1,15 @@
 on:
   push:
     branches:
-      - ci-build
+      - master
 
 name: Deploy
 jobs:
-  deploy-stage:
+  deploy:
     runs-on: ubuntu-latest
     env:
-      DEPLOY_STAGING_HOSTNAME: "demo.stirioficiale.ro"
-      DEPLOY_STAGING_PATH: "/var/www/demo.stirioficiale.ro"
+      DEPLOY_PRODUCTION_HOSTNAME: "stirioficiale.ro"
+      DEPLOY_PRODUCTION_PATH: "/var/www/stirioficiale.ro"
     steps:
       - uses: actions/checkout@v2
 
@@ -47,11 +47,11 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan $DEPLOY_STAGING_HOSTNAME >> ~/.ssh/known_hosts
+          ssh-keyscan $DEPLOY_PRODUCTION_HOSTNAME >> ~/.ssh/known_hosts
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-      - name: Deploy to stage environment
+      - name: Deploy
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: php artisan deploy staging
+        run: php artisan deploy production
