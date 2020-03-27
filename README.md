@@ -2,39 +2,45 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
 
-Insert bullets description of the project if available.
+[See the project live](https://stirioficiale.ro/)
 
-[See the project live](insert_link_here)
+Platform which centralizes all the official press releases, press conferences and decisions of the Committee for Special Emergency Situations.
 
-Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.
-
-[Contributing](#contributing) | [Built with](#built-with) | [Repos and projects](#repos-and-projects) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
+[Contributing](#contributing) | [Built with](#built-with) | [Development](#development) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
 
 ## Contributing
 
 This project is built by amazing volunteers and you can be one of them! Here's a list of ways in [which you can contribute to this project](.github/CONTRIBUTING.md).
 
-You can also list any pending features and planned improvements for the project here.
-
 ## Built With
 
-### Programming languages
+-   Laravel 7
+-   [Laravel Nova](https://nova.laravel.com/) (requires license)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Alpine.js](https://github.com/alpinejs/alpine)
 
-### Platforms
+### Requirements
 
-### Frontend framework
-
-### Package managers
-
-### Database technology & provider
-
-## Repos and projects
-
-Mention all related repos and projects.
+-   PHP 7.4+
+-   Apache or Nginx
+-   MySQL
 
 ## Development
 
-### To bootstrap the project (Run this only once), run the following commands in your shell:
+### To bootstrap the project (run this only once), run the following commands in your shell:
+
+First, create a `auth.json` file in the project root with the login credentials to your Laravel Nova account. Its contents should look like this:
+
+```json
+{
+    "http-basic": {
+        "nova.laravel.com": {
+            "username": "email@example.com",
+            "password": "YOUR_API_KEY"
+        }
+    }
+}
+```
 
 Install composer dependencies
 
@@ -52,14 +58,13 @@ $ docker-compose up
 Run database migrations
 
 ```bash
-$ docker exec -it stiri-importante php artisan migrate
+$ docker exec -it stiri-oficiale php artisan migrate
 ```
 
 Generate app secret key, and personal access client keys
 
 ```bash
-$ docker exec -it stiri-importante php artisan key:generate
-$ docker exec -it stiri-importante php artisan optimize
+$ docker exec -it stiri-oficiale php artisan key:generate
 ```
 
 ### Every other time
@@ -68,16 +73,15 @@ $ docker exec -it stiri-importante php artisan optimize
 $ docker-compose up
 ```
 
+For artisan commands:
+
+```bash
+$ docker exec -it stiri-oficiale php artisan
+```
+
 ## Deployment
 
-Guide users through getting your code up and running on their own system. In this section you can talk about:
-
-1. Installation process
-2. Software dependencies
-3. Latest releases
-4. API references
-
-Describe and show how to build your code and run the tests.
+Deploying to a remote host is done through `php artisan deploy <stage>`, using [lorisleiva/laravel-deployer](https://github.com/lorisleiva/laravel-deployer), which can be configured in [config/deploy.php](config/deploy.php).
 
 ## Feedback
 

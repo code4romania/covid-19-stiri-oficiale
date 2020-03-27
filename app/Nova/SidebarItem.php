@@ -22,7 +22,18 @@ class SidebarItem extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'title',
+        'description',
+    ];
+
 
     public static function label(): string
     {
@@ -34,16 +45,6 @@ class SidebarItem extends Resource
         return __('nova.sidebarItem.singular');
     }
 
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
-
     /**
      * Get the fields displayed by the resource.
      *
@@ -54,7 +55,8 @@ class SidebarItem extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Title', 'title'),
+            Text::make('Title', 'title')
+                ->creationRules('required'),
             NovaTinyMCE::make('Description', 'description')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -69,15 +71,18 @@ class SidebarItem extends Resource
             ])->nullable(),
             Text::make('Text button')->nullable(),
             Text::make('Link button')->nullable(),
-            Select::make('Color')->options(array(
-                'teal' => 'Teal',
-                'cyan' => 'Cyan',
-                'yellow' => 'Yellow',
-                'orange' => 'Orange',
-                'red' => 'Red',
-                'pink' => 'Pink',
-                'default' => 'Default',
-            ))->displayUsingLabels(),
+            Select::make('Color')
+                ->options(array(
+                    'teal' => 'Teal',
+                    'cyan' => 'Cyan',
+                    'yellow' => 'Yellow',
+                    'orange' => 'Orange',
+                    'red' => 'Red',
+                    'pink' => 'Pink',
+                    'default' => 'Default',
+                ))
+                ->displayUsingLabels()
+                ->creationRules('required'),
 
 
         ];

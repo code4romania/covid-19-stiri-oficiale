@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $items = Video::listing();
+        $page = $this->getCurrentPageNumber($request);
+        $items = $this->withCache("video.index.page{$page}", function () {
+            return Video::paginatedListing();
+        });
 
         return view('video.index', [
             'items' => $items,
@@ -18,7 +21,9 @@ class VideoController extends Controller
 
     public function show($slug)
     {
-        $item = Video::where('slug', $slug)->published()->firstOrFail();
+        $item = $this->withCache("videos.show.$slug", function () use ($slug) {
+            return Video::where('slug', $slug)->published()->firstOrFail();
+        });
 
         $this->setSeo([
             'title' => $item->title,

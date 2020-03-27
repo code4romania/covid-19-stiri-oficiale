@@ -28,12 +28,17 @@ mix.setPublicPath('public/assets')
     .copyDirectory('resources/images', 'public/assets/images')
 
     .js('resources/js/app.js', 'public/assets')
-    .postCss('resources/css/app.pcss', 'public/assets', [
-        require('postcss-import'),
-        require('tailwindcss')('./tailwind.config.js'),
-        require('postcss-nested')({
-            bubble: ['screen'],
-        }),
-    ])
-    .purgeCss()
+    .options({
+        postCss: [
+            require('postcss-import'),
+            require('tailwindcss')('./tailwind.config.js'),
+            require('postcss-nested')({
+                bubble: ['screen'],
+            }),
+        ],
+    })
+    .postCss('resources/css/app.pcss', 'public/assets')
+    .purgeCss({
+        whitelistPatternsChildren: [/rich-text$/],
+    })
     .extract();

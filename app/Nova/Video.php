@@ -45,7 +45,7 @@ class Video extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -53,7 +53,8 @@ class Video extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
+        'short_content',
     ];
 
     /**

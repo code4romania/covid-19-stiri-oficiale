@@ -51,7 +51,7 @@
 
         <h1 class="mb-4 font-semibold">{{ $model->title }}</h1>
 
-        <div class="rich-text">
+        <div class="rich-text break-words">
             {!! $model->short_content !!}
         </div>
 

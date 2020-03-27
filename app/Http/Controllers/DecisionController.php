@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Decision;
+use Illuminate\Http\Request;
 
 class DecisionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $items = Decision::listing();
+        $page = $this->getCurrentPageNumber($request);
+        $items = $this->withCache("decisions.index.page$page", function () {
+            return Decision::paginatedListing();
+        });
 
         return view('decisions.index', [
             'items' => $items,
@@ -17,7 +21,9 @@ class DecisionController extends Controller
 
     public function show($slug)
     {
-        $item = Decision::where('slug', $slug)->published()->firstOrFail();
+        $item = $this->withCache("decisions.show.$slug", function () use ($slug) {
+            return Decision::where('slug', $slug)->published()->firstOrFail();
+        });
 
         $this->setSeo([
             'title' => $item->title,

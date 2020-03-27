@@ -1,5 +1,7 @@
-<div class="bg-blue-100">
-    <p class="container py-3 text-xs text-center text-blue-500">
-        Pentru noi, cei de la Code for Romania Task Force, timpul este o prioritate. Pentru că ne-am concentrat ca informațiile să ajungă la voi cât mai repede, unele dintre funcționalități vor fi active treptat, în zilele următoare.
+<div class="bg-yellow-500">
+    <p class="container py-3 font-normal text-center">
+        <a href="https://stirioficiale.ro/15-recomandari-privind-conduita-sociala-responsabila-in-prevenirea-raspandirii-coronavirus" class="inline-block underline hover:no-underline">
+            15 RECOMANDĂRI privind conduita socială responsabilă în prevenirea răspândirii coronavirus.
+        </a>
     </p>
 </div>

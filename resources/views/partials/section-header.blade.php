@@ -1,3 +1,7 @@
+@php
+    $currentRouteGroup = explode('.', Route::currentRouteName())[0];
+@endphp
+
 <div>
     <h1 class="flex items-center mb-4 text-xl font-normal leading-tight lg:text-3xl xl:text-4xl">
         @svg('icons/covid-all', 'w-8 h-8 mr-3')
@@ -11,8 +15,8 @@
     </p>
 
     <div class="grid gap-4 lg:grid-cols-3">
-        <x-section-button label="Ultimele informații oficiale" route="news.index" />
-        <x-section-button label="Hotărâri și legislație" route="decisions.index" />
-        <x-section-button label="Înregistrări video" route="videos.index" />
+        <x-section-button label="Ultimele informații oficiale" :url="route('news.index')" :active="$currentRouteGroup === 'news'" />
+        <x-section-button label="Hotărâri și legislație" :url="route('decisions.index')" :active="$currentRouteGroup === 'decisions'" />
+        <x-section-button label="Înregistrări video" :url="route('videos.index')" :active="$currentRouteGroup === 'videos'" />
     </div>
 </div>

@@ -10,9 +10,6 @@ use Laravel\Nova\Fields\ID;
 
 class Page extends Resource
 {
-
-
-
     public static function label(): string
     {
         return __('nova.page.plural');
@@ -34,7 +31,7 @@ class Page extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -42,7 +39,8 @@ class Page extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
+        'content'
     ];
 
     /**

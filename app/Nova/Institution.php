@@ -23,6 +23,16 @@ class Institution extends Resource
      */
     public static $title = 'name';
 
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'name',
+    ];
+
+
     public static function label(): string
     {
         return __('nova.institution.plural');
@@ -32,15 +42,6 @@ class Institution extends Resource
     {
         return __('nova.institution.singular');
     }
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
 
     /**
      * Get the fields displayed by the resource.

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DecisionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,20 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('/informatii')->group(function () {
-    Route::get('/', [NewsController::class, 'index'])->name('news.index');
-    Route::get('/{slug}', [NewsController::class, 'show'])->name('news.show');
+Route::middleware('cache.headers:public;etag;max_age=600')->group(function () {
+    Route::feeds();
 });
 
-Route::prefix('/hotarari')->group(function () {
-    Route::get('/', [DecisionController::class, 'index'])->name('decisions.index');
-    Route::get('/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
-});
+Route::get('/cautare', [SearchController::class, 'search'])->name('search')->middleware('throttle:20,1');
 
-Route::prefix('/video')->group(function () {
-    Route::get('/', [VideoController::class, 'index'])->name('videos.index');
-    // Route::get('/{slug}', [VideoController::class, 'show'])->name('videos.show');
-});
+Route::middleware('cache.headers:public;etag;max_age=300')->group(function () {
+    Route::get('informatii', [NewsController::class, 'index'])->name('news.index');
+    Route::get('informatii/{slug}', [NewsController::class, 'show'])->name('news.show');
 
-Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
-Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show')->fallback();
+    Route::get('hotarari', [DecisionController::class, 'index'])->name('decisions.index');
+    Route::get('hotarari/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
+
+    Route::get('video', [VideoController::class, 'index'])->name('videos.index');
+    // Route::get('video/{slug}', [VideoController::class, 'show'])->name('videos.show');
+
+    Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
+    Route::get('{slug}', [PageController::class, 'show'])->name('pages.show')->where('slug', '.*')->fallback();
+});

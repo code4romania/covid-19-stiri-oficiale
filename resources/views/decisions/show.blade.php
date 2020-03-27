@@ -7,15 +7,14 @@
         <div class="grid gap-12 py-16 lg:grid-cols-3">
             <section class="lg:col-span-2">
                 <h1 class="mb-4 text-lg font-normal leading-tight lg:text-2xl xl:text-3xl">
-                    Ultimele informații oficiale
+                    {{ __('content.decision.title') }}
                 </h1>
-
 
                 <x-content-card :item="$item" :read-more="false" />
 
                 <x-share :item="$item"/>
 
-                <div class="my-8 rich-text">
+                <div class="my-8 break-words rich-text">
                     {!! $item->content !!}
                 </div>
 
@@ -26,6 +25,3 @@
         </div>
     </div>
 @endsection
-
-
-

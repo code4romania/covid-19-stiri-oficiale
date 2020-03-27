@@ -12,5 +12,8 @@ $factory->define(Video::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'short_content' => $faker->paragraph,
         'institution_id' => $faker->randomElement(Institution::all()->pluck('id')->toArray()),
+
+        'created_at' => $faker->dateTimeBetween('-1 week', 'now'),
+        'updated_at' => $faker->dateTimeBetween('-1 week', 'now'),
     ];
 });

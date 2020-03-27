@@ -2,13 +2,9 @@
 
 namespace App\Providers;
 
-use App\BaseModel;
-use App\Observers\ModelObserver;
-
-
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {

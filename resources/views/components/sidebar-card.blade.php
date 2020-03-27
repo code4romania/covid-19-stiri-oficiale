@@ -7,7 +7,7 @@
     @if ($model->description || ($model->link_button && $model->text_button))
         <div class="px-6 py-4 bg-gray-100">
             @if ($model->description)
-                <div class="mb-4 rich-text">
+                <div class="mb-4 rich-text break-words">
                     {!! $model->description !!}
                 </div>
             @endif
