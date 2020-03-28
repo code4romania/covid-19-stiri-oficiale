@@ -49,13 +49,15 @@
             </div>
         @endif
 
-        @if ($readMore)
-            <a href="{{ route($route, ['slug' => $model->slug]) }}">
-                <h1 class="mb-4 font-semibold">{{ $model->title }}</h1>
-            </a>
-        @else
-            <h1 class="mb-4 font-semibold">{{ $model->title }}</h1>
-        @endif
+        <h1 class="mb-4 font-semibold">
+            @if ($readMore)
+                <a href="{{ route($route, ['slug' => $model->slug]) }}" class="inline-block underline hover:no-underline">
+                    {{ $model->title }}
+                </a>
+            @else
+                {{ $model->title }}
+            @endif
+        </h1>
 
         <div class="rich-text break-words">
             {!! $model->short_content !!}
