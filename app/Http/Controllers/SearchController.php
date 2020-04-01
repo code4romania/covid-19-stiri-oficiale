@@ -37,6 +37,8 @@ class SearchController extends Controller
             'type'  => ['string', Rule::in(array_keys($this->models))],
         ]);
 
+        $attributes['type'] ??= 'news';
+
         $this->setSeo([
             'title' => __('search.resultsFor', ['query' => $attributes['query']]),
         ]);
