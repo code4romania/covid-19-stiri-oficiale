@@ -1,19 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "code4romania/stiri-oficiale",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
+    "description": "Platform which centralizes all the official press releases, press conferences and decisions of the Committee for Special Emergency Situations.",
+    "license": "MPL-2.0",
     "require": {
         "php": "^7.4",
         "artesaos/seotools": "^0.17.1",
         "bakerkretzmar/nova-settings-tool": "^1.0",
         "benjaminhirsch/nova-slug-field": "^1.2",
-        "coderello/laravel-nova-lang": "^1.4",
         "bkintanar/advanced-nova-media-library": "^3.0",
+        "coderello/laravel-nova-lang": "^1.4",
         "emilianotisato/nova-tinymce": "^1.1",
         "epigra/nova-settings": "^1.2",
         "fideloper/proxy": "^4.2",
@@ -29,6 +25,7 @@
         "nothingworks/blade-svg": "^0.3.4",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^2.3",
+        "optimistdigital/nova-sortable": "^1.3",
         "php-ffmpeg/php-ffmpeg": "^0.14.0",
         "sentry/sentry-laravel": "1.7.0",
         "spatie/laravel-feed": "^2.6",
