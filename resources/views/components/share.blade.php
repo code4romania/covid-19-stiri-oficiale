@@ -11,14 +11,4 @@
             </button>
         @endforeach
     </div>
-
-    @if ($downloadUrl)
-        <a
-            class="w-6 h-6 mx-1 my-2 rounded hover:opacity-75 focus:outline-none focus:shadow-outline"
-            href="{{ $downloadUrl }}"
-            download
-        >
-            @svg('icons/pdf', 'w-full h-full')
-        </a>
-    @endif
 </div>
