@@ -6,10 +6,8 @@ namespace App\Providers;
 use App\Nova\Metrics\DecisionMetrics;
 use App\Nova\Metrics\NewsMetrics;
 use App\Nova\Metrics\VideosMetrics;
-use Bakerkretzmar\NovaSettingsTool\SettingsTool;
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
-use Laravel\Nova\Fields\Text;
+use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Vink\NovaCacheCard\CacheCard;
@@ -33,10 +31,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function routes()
     {
-        Nova::routes()
-            ->withAuthenticationRoutes()
-            ->withPasswordResetRoutes()
-            ->register();
+        Route::middleware('session')->group(function () {
+            Nova::routes()
+                ->withAuthenticationRoutes()
+                ->withPasswordResetRoutes()
+                ->register();
+        });
     }
 
     /**
