@@ -7,7 +7,7 @@
     <div class="grid row-gap-8">
         @include('search.form')
 
-        @foreach (\App\SidebarItem::all() as $card)
+        @foreach (\App\SidebarItem::ordered()->get() as $card)
             <x-sidebar-card :item="$card" />
         @endforeach
 

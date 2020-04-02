@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 class SidebarItem extends Resource
 {
+    use HasSortableRows;
+
     /**
      * The model the resource corresponds to.
      *
