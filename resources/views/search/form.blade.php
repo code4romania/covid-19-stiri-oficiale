@@ -20,8 +20,4 @@
             @svg('icons/search', 'w-5 h-5')
         </button>
     </form>
-
-    @error('q')
-        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
-    @enderror
 </div>
