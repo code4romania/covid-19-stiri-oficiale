@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      DEPLOY_PRODUCTION_HOSTNAME: "stirioficiale.ro"
+      DEPLOY_PRODUCTION_HOSTNAME: ${{ secrets.DEPLOY_PRODUCTION_HOSTNAME }}
       DEPLOY_PRODUCTION_PATH: "/var/www/stirioficiale.ro"
     steps:
       - uses: actions/checkout@v2
