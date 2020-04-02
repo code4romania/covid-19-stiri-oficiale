@@ -14,6 +14,8 @@
 
                 <x-share :item="$item"/>
 
+                <x-document-download :item="$item" />
+
                 <div class="my-8 break-words rich-text">
                     {!! $item->content !!}
                 </div>

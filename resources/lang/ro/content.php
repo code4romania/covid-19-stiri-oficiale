@@ -6,4 +6,6 @@ return [
     'decision.title' => 'Hotărâri și legislație',
     'video.title'    => 'Înregistrări video',
 
+    'download.document' => 'Descarcă document',
+
 ];
