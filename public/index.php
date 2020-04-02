@@ -49,6 +49,10 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+if (isset($_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO'])) {
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] = $_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO'];
+}
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
