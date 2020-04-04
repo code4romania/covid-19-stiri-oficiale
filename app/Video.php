@@ -13,6 +13,10 @@ class Video extends BaseModel implements Feedable
 {
     use Searchable;
 
+    /** @var array<string> */
+    protected $guarded = [];
+
+
     protected $with = [
         'institution',
         'tags',
