@@ -17,6 +17,8 @@
                 <x-document-download :item="$item" />
 
                 <div class="my-8 break-words rich-text">
+                    {!! $item->embed_code !!}
+
                     {!! $item->content !!}
                 </div>
 
@@ -27,6 +29,3 @@
         </div>
     </div>
 @endsection
-
-
-

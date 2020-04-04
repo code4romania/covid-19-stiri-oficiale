@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbe635d3d443f45522735c96c1d0b342",
+    "content-hash": "29a341a9c43be70934504376b29a6aa7",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -133,16 +133,16 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.17.1",
+            "version": "v0.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6"
+                "reference": "ca27cd0edf917e0bc805227013859b8b5a1f01fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
-                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/ca27cd0edf917e0bc805227013859b8b5a1f01fb",
+                "reference": "ca27cd0edf917e0bc805227013859b8b5a1f01fb",
                 "shasum": ""
             },
             "require": {
@@ -195,7 +195,7 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2020-03-11T16:35:57+00:00"
+            "time": "2020-04-02T19:53:38+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -644,6 +644,62 @@
                 "support"
             ],
             "time": "2020-03-26T15:08:27+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/47fe531de31fca4a1b997f87308e7d7804348f7e",
+                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 8",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2020-01-13T10:02:55+00:00"
         },
         {
             "name": "deployer/deployer",
@@ -1335,6 +1391,59 @@
             "time": "2020-02-13T22:36:52+00:00"
         },
         {
+            "name": "embed/embed",
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oscarotero/Embed.git",
+                "reference": "dc1dc3c126f8a78acdae06b83f591c0728ea131d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/dc1dc3c126f8a78acdae06b83f591c0728ea131d",
+                "reference": "dc1dc3c126f8a78acdae06b83f591c0728ea131d",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0",
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "^4.8|^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Embed\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oscar Otero",
+                    "email": "oom@oscarotero.com",
+                    "homepage": "http://oscarotero.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to retrieve page info using oembed, opengraph, etc",
+            "homepage": "https://github.com/oscarotero/Embed",
+            "keywords": [
+                "embed",
+                "embedly",
+                "oembed",
+                "opengraph",
+                "twitter cards"
+            ],
+            "time": "2019-09-16T19:34:02+00:00"
+        },
+        {
             "name": "emilianotisato/nova-tinymce",
             "version": "1.1.1",
             "source": {
@@ -1992,6 +2101,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -2038,6 +2148,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2244,17 +2355,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v3.1.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "5f298f21c7f214a9b22dc6ec900d2b6439377a09"
+                "reference": "aee648c3f1d997ee554a2c4120ae9ad92e857f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5f298f21c7f214a9b22dc6ec900d2b6439377a09-zip-7bf129.zip",
-                "reference": "5f298f21c7f214a9b22dc6ec900d2b6439377a09",
-                "shasum": "93478a403d0e8f6d2863cbcbabc33d6695257640"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-aee648c3f1d997ee554a2c4120ae9ad92e857f08-zip-4bd51f.zip",
+                "reference": "aee648c3f1d997ee554a2c4120ae9ad92e857f08",
+                "shasum": "2d2a472754828832681dfb31873b01ad934a3580"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -2263,7 +2374,7 @@
                 "illuminate/support": "^7.0",
                 "laravel/ui": "^2.0",
                 "moontoast/math": "^1.1",
-                "php": ">=7.2",
+                "php": "^7.2.5",
                 "spatie/once": "^1.1 | ^2.0",
                 "symfony/console": "^5.0",
                 "symfony/finder": "^5.0",
@@ -2314,7 +2425,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-03-17T18:33:18+00:00"
+            "time": "2020-04-03T16:18:38+00:00"
         },
         {
             "name": "laravel/scout",
@@ -2740,6 +2851,62 @@
             "time": "2019-04-03T23:46:42+00:00"
         },
         {
+            "name": "leewillis77/cached-embed",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leewillis77/cached-embed.git",
+                "reference": "991a3fc1047a3de3820401f87b139f5d63ef2ad5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leewillis77/cached-embed/zipball/991a3fc1047a3de3820401f87b139f5d63ef2ad5",
+                "reference": "991a3fc1047a3de3820401f87b139f5d63ef2ad5",
+                "shasum": ""
+            },
+            "require": {
+                "embed/embed": "~3.3",
+                "illuminate/cache": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6.0|~7.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Leewillis77\\CachedEmbed\\CachedEmbedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Leewillis77\\CachedEmbed\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lee Willis",
+                    "homepage": "https://www.leewillis.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package to cache embed information from https://github.com/oscarotero/Embed. Works with Laravel 5.5 or higher",
+            "homepage": "https://github.com/leewillis77/cached-embed",
+            "keywords": [
+                "cache",
+                "embed",
+                "laravel",
+                "oembed"
+            ],
+            "time": "2020-03-12T17:03:54+00:00"
+        },
+        {
             "name": "lorisleiva/laravel-deployer",
             "version": "v0.3.0",
             "source": {
@@ -2792,16 +2959,16 @@
         },
         {
             "name": "maennchen/zipstream-php",
-            "version": "1.2.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maennchen/ZipStream-PHP.git",
-                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2"
+                "reference": "9ceee828f9620b2e5c075e551ec7ed8a7035ac95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
-                "reference": "6373eefe0b3274d7b702d81f2c99aa977ff97dc2",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/9ceee828f9620b2e5c075e551ec7ed8a7035ac95",
+                "reference": "9ceee828f9620b2e5c075e551ec7ed8a7035ac95",
                 "shasum": ""
             },
             "require": {
@@ -2832,12 +2999,12 @@
                     "email": "pabs@pablotron.org"
                 },
                 {
-                    "name": "Jesse Donat",
-                    "email": "donatj@gmail.com"
-                },
-                {
                     "name": "Jonatan Männchen",
                     "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "Jesse Donat",
+                    "email": "donatj@gmail.com"
                 },
                 {
                     "name": "András Kolesár",
@@ -2849,7 +3016,7 @@
                 "stream",
                 "zip"
             ],
-            "time": "2019-07-17T11:01:58+00:00"
+            "time": "2020-02-23T01:48:39+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3579,6 +3746,106 @@
                 "optimistdigital"
             ],
             "time": "2020-03-05T07:39:52+00:00"
+        },
+        {
+            "name": "paquettg/php-html-parser",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paquettg/php-html-parser.git",
+                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paquettg/php-html-parser/zipball/668c770fc5724ea3f15b8791435f054835be8d5e",
+                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "ext-zlib": "*",
+                "paquettg/string-encode": "~1.0.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "infection/infection": "^0.13.4",
+                "mockery/mockery": "^1.2",
+                "phan/phan": "^2.4",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^7.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPHtmlParser\\": "src/PHPHtmlParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gilles Paquette",
+                    "email": "paquettg@gmail.com",
+                    "homepage": "http://gillespaquette.ca"
+                }
+            ],
+            "description": "An HTML DOM parser. It allows you to manipulate HTML. Find tags on an HTML page with selectors just like jQuery.",
+            "homepage": "https://github.com/paquettg/php-html-parser",
+            "keywords": [
+                "dom",
+                "html",
+                "parser"
+            ],
+            "time": "2020-01-20T12:59:15+00:00"
+        },
+        {
+            "name": "paquettg/string-encode",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paquettg/string-encoder.git",
+                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paquettg/string-encoder/zipball/a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
+                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "stringEncode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gilles Paquette",
+                    "email": "paquettg@gmail.com",
+                    "homepage": "http://gillespaquette.ca"
+                }
+            ],
+            "description": "Facilitating the process of altering string encoding in PHP.",
+            "homepage": "https://github.com/paquettg/string-encoder",
+            "keywords": [
+                "charset",
+                "encoding",
+                "string"
+            ],
+            "time": "2018-12-21T02:25:09+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5434,16 +5701,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.0.7",
+            "version": "8.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "d14dce6b170ee8345b286665848c50c91d54be4d"
+                "reference": "c5adacdca1db44fff93f6699887191776546a9f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/d14dce6b170ee8345b286665848c50c91d54be4d",
-                "reference": "d14dce6b170ee8345b286665848c50c91d54be4d",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/c5adacdca1db44fff93f6699887191776546a9f6",
+                "reference": "c5adacdca1db44fff93f6699887191776546a9f6",
                 "shasum": ""
             },
             "require": {
@@ -5455,7 +5722,7 @@
                 "illuminate/pipeline": "^6.18|^7.0",
                 "illuminate/support": "^6.18|^7.0",
                 "league/flysystem": "^1.0.64",
-                "maennchen/zipstream-php": "^1.0",
+                "maennchen/zipstream-php": "^1.0|^2.0",
                 "php": "^7.4",
                 "spatie/image": "^1.4.0",
                 "spatie/temporary-directory": "^1.1",
@@ -5524,9 +5791,13 @@
                 {
                     "url": "https://spatie.be/open-source/support-us",
                     "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
                 }
             ],
-            "time": "2020-03-30T09:11:38+00:00"
+            "time": "2020-04-02T09:47:42+00:00"
         },
         {
             "name": "spatie/laravel-robots-middleware",
@@ -8078,16 +8349,16 @@
         },
         {
             "name": "teamtnt/tntsearch",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/teamtnt/tntsearch.git",
-                "reference": "a24399e04b6d7f152d3b31ea4a59efc6385cfd06"
+                "reference": "01bb54c35a0c47eb41b145f76c384ef83b5a5852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/a24399e04b6d7f152d3b31ea4a59efc6385cfd06",
-                "reference": "a24399e04b6d7f152d3b31ea4a59efc6385cfd06",
+                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/01bb54c35a0c47eb41b145f76c384ef83b5a5852",
+                "reference": "01bb54c35a0c47eb41b145f76c384ef83b5a5852",
                 "shasum": ""
             },
             "require": {
@@ -8130,7 +8401,21 @@
                 "teamtnt",
                 "tntsearch"
             ],
-            "time": "2019-10-07T10:02:35+00:00"
+            "funding": [
+                {
+                    "url": "https://ko-fi.com/nticaric",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/tntsearch",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/nticaric",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-04-03T10:22:24+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
