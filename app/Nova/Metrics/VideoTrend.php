@@ -2,12 +2,11 @@
 
 namespace App\Nova\Metrics;
 
-
-use App\Decision;
+use App\Video;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Metrics\Value;
+use Laravel\Nova\Metrics\Trend;
 
-class DecisionMetrics extends Value
+class VideoTrend extends Trend
 {
     /**
      * Calculate the value of the metric.
@@ -17,7 +16,7 @@ class DecisionMetrics extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, Decision::class,'id');
+        return $this->countByDays($request, Video::class);
     }
 
     /**
@@ -25,10 +24,13 @@ class DecisionMetrics extends Value
      *
      * @return array
      */
-
     public function ranges()
     {
-
+        return [
+            7 => '7 Days',
+            14 => '14 Days',
+            30 => '30 Days',
+        ];
     }
 
     /**
@@ -38,13 +40,14 @@ class DecisionMetrics extends Value
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+        return now()->addMinutes(5);
     }
 
     public function name()
     {
-        return 'Dezicii publicate';
+        return 'Video-uri publicate';
     }
+
     /**
      * Get the URI key for the metric.
      *
@@ -52,6 +55,6 @@ class DecisionMetrics extends Value
      */
     public function uriKey()
     {
-        return 'decision-metrics';
+        return 'videos-metrics';
     }
 }
