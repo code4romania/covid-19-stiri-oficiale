@@ -5,9 +5,9 @@ namespace App\Nova\Metrics;
 
 use App\News;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Metrics\Value;
+use Laravel\Nova\Metrics\Trend;
 
-class NewsMetrics extends Value
+class NewsTrend extends Trend
 {
     /**
      * Calculate the value of the metric.
@@ -17,7 +17,7 @@ class NewsMetrics extends Value
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->count($request, News::class,'id');
+        return $this->countByDays($request, News::class, 'id');
     }
 
     /**
@@ -28,7 +28,9 @@ class NewsMetrics extends Value
     public function ranges()
     {
         return [
-
+            7 => '7 Days',
+            14 => '14 Days',
+            30 => '30 Days',
         ];
     }
 
@@ -39,7 +41,12 @@ class NewsMetrics extends Value
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+        return now()->addMinutes(5);
+    }
+
+    public function name()
+    {
+        return 'Informații publicate';
     }
 
     /**
@@ -50,9 +57,5 @@ class NewsMetrics extends Value
     public function uriKey()
     {
         return 'news-metrics';
-    }
-    public function name()
-    {
-        return 'Informații publicate';
     }
 }
