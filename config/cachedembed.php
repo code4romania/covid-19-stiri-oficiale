@@ -13,5 +13,5 @@ return [
      * The cache store to use when storing embed data. This must be the name
      * of a valid store defined in config/cache.php
      */
-    'store' => env('CACHE_DRIVER', 'file'),
+    'store' => '',
 ];
