@@ -2,7 +2,6 @@
 
 namespace App\Nova\Metrics;
 
-
 use App\News;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
@@ -17,7 +16,7 @@ class NewsTrend extends Trend
      */
     public function calculate(NovaRequest $request)
     {
-        return $this->countByDays($request, News::class, 'id');
+        return $this->countByDays($request, News::class);
     }
 
     /**
