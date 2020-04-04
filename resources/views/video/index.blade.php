@@ -12,7 +12,7 @@
 
                 <div class="grid row-gap-10">
                     @forelse ($items as $item)
-                        <x-content-card :item="$item" route="videos.show" :read-more="false" />
+                        <x-content-card :item="$item" route="videos.show" />
                     @empty
                         <p>Încă nu au fost adăugate înregistrări video.</p>
                     @endforelse
@@ -25,6 +25,3 @@
         </div>
     </div>
 @endsection
-
-
-

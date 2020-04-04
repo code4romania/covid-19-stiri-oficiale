@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use Benjaminhirsch\NovaSlugField\Slug;
+use Benjaminhirsch\NovaSlugField\TextWithSlug;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
@@ -67,9 +69,14 @@ class Video extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Titlu', 'title')
+            TextWithSlug::make('Titlu', 'title')
+                ->slug('slug')
                 ->sortable(),
-            NovaTinyMCE::make('Conținut', 'short_content')->options([
+            Slug::make('Slug', 'slug')
+                ->hideFromIndex()
+                ->creationRules('unique:news,slug')
+                ->updateRules('unique:news,slug,{{resourceId}}'),
+            NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
                     'searchreplace wordcount visualblocks visualchars code fullscreen',
@@ -86,6 +93,20 @@ class Video extends Resource
             Heading::make('<small class="info">Pentru a adauga tag-ul, apasați tasta ENTER</small>')->asHtml(),
             DateTime::make('Creat la', 'created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             DateTime::make('Actualizat la', 'updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
+            Text::make('Video URL', 'url')
+                ->rules('nullable', 'url'),
+            NovaTinyMCE::make('Content', 'content')->options([
+                'plugins' => [
+                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen',
+                    'insertdatetime media nonbreaking save table directionality',
+                    'emoticons template paste textcolor textpattern'
+                ],
+                'toolbar' => 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
+                'use_lfm' => false,
+                'lfm_url' => 'filemanager',
+                'height' => '300'
+            ])->hideFromIndex(),
             BelongsTo::make(\Institution::class)->withoutTrashed(),
             Files::make('Files', 'document'),
 

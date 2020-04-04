@@ -32,7 +32,7 @@ Route::middleware('cache.headers:public;etag;max_age=300')->group(function () {
     Route::get('hotarari/{slug}', [DecisionController::class, 'show'])->name('decisions.show');
 
     Route::get('video', [VideoController::class, 'index'])->name('videos.index');
-    // Route::get('video/{slug}', [VideoController::class, 'show'])->name('videos.show');
+    Route::get('video/{slug}', [VideoController::class, 'show'])->name('videos.show');
 
     Route::get('/', [PageController::class, 'index'])->name('pages.index')->fallback();
     Route::get('{slug}', [PageController::class, 'show'])->name('pages.show')->where('slug', '.*')->fallback();

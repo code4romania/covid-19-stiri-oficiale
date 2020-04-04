@@ -21,6 +21,7 @@
         "laravel/scout": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "leewillis77/cached-embed": "^0.8.1",
         "lorisleiva/laravel-deployer": "^0.3.0",
         "nothingworks/blade-svg": "^0.3.4",
         "optimistdigital/nova-drafts": "^1.1",

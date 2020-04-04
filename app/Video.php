@@ -3,7 +3,9 @@
 namespace App;
 
 use App\Institution;
+use Embed\Adapters\Adapter;
 use Laravel\Scout\Searchable;
+use Leewillis77\CachedEmbed\CachedEmbed;
 use Spatie\Feed\FeedItem;
 use Spatie\Feed\Feedable;
 
@@ -54,5 +56,24 @@ class Video extends BaseModel implements Feedable
     public function getFeedItems()
     {
         return Video::listing()->get();
+    }
+
+    private function embedObject(): ?Adapter
+    {
+        if (!$this->url) {
+            return null;
+        }
+
+        return CachedEmbed::create($this->url);
+    }
+
+    public function getEmbedCodeAttribute(): ?string
+    {
+        return $this->embedObject()->code ?? null;
+    }
+
+    public function getEmbedImageAttribute(): ?string
+    {
+        return $this->embedObject()->image ?? null;
     }
 }

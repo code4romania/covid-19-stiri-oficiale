@@ -59,8 +59,14 @@
             @endif
         </h1>
 
-        <div class="rich-text break-words">
+        <div class="break-words rich-text">
             {!! $model->short_content !!}
+
+            @if ($model->embed_image && $readMore)
+                <a href="{{ route($route, ['slug' => $model->slug]) }}" class="block hover:opacity-75 focus:outline-none focus:shadow-outline">
+                    <img src="{{ $model->embed_image }}" class="w-full" alt="">
+                </a>
+            @endif
         </div>
 
         @if ($readMore)
