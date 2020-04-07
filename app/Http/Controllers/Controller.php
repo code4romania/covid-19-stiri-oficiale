@@ -21,17 +21,34 @@ class Controller extends BaseController
         $defaults = [
             'title'       => '',
             'description' => '',
+            'routeName'   => '',
+            'routeArg'    => '',
         ];
 
         $params = array_merge($defaults, $params);
 
-        if (!empty($params['title'])) {
-            SEOTools::setTitle($params['title']);
+        $page = $page ?? 1;
+
+        extract($params);
+
+        $title = trim($title);
+        if (!empty($title)) {
+            if ($page > 1) {
+                $title .= ' - ' . __('pagination.page', compact('page'));
+            }
+
+            SEOTools::setTitle($title);
         }
 
-        $description = Str::limit(strip_tags($params['description']), 170);
+        $description = Str::limit(strip_tags($description), 170);
         if (!empty($description)) {
             SEOTools::setDescription($description);
+        }
+
+        if (!empty($routeName) && !empty($routeArg) && isset($$routeArg)) {
+            $routeArg = ($routeArg !== 'page' || $page > 1) ? compact($routeArg) : [];
+
+            SEOTools::setCanonical(route($routeName, $routeArg));
         }
     }
 
@@ -40,8 +57,8 @@ class Controller extends BaseController
         return Cache::remember($key, config('cache.ttl'), $callback);
     }
 
-    protected function getCurrentPageNumber(Request $request): string
+    protected function getCurrentPageNumber(Request $request): int
     {
-        return $request->get('page') ?? 1;
+        return abs($request->get('page')) ?: 1;
     }
 }

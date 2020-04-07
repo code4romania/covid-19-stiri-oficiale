@@ -18,8 +18,11 @@ class PageController extends Controller
         });
 
         $this->setSeo([
-            'title' => $item->title,
+            'title'       => $item->title,
             'description' => $item->content,
+            'routeName'   => 'pages.show',
+            'routeArg'    => 'slug',
+            'slug'        => $slug,
         ]);
 
         return view('pages.show', [
