@@ -10,9 +10,17 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $page = $this->getCurrentPageNumber($request);
+
         $items = $this->withCache("news.index.page$page", function () {
             return News::paginatedListing();
         });
+
+        $this->setSeo([
+            'title'     => __('content.news.title'),
+            'routeName' => 'news.index',
+            'routeArg'  => 'page',
+            'page'      => $page,
+        ]);
 
         return view('news.index', [
             'items' => $items,
@@ -26,8 +34,11 @@ class NewsController extends Controller
         });
 
         $this->setSeo([
-            'title' => $item->title,
+            'title'       => $item->title,
             'description' => $item->content,
+            'routeName'   => 'news.show',
+            'routeArg'    => 'slug',
+            'slug'        => $slug,
         ]);
 
         return view('news.show', [

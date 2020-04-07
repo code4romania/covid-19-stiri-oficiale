@@ -15,5 +15,6 @@ return [
 
     'previous' => '&larr; Înapoi',
     'next' => 'Înainte &rarr;',
+    'page' => 'Pagina :page',
 
 ];
