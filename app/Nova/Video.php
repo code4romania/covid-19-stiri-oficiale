@@ -74,8 +74,8 @@ class Video extends Resource
                 ->sortable(),
             Slug::make('Slug', 'slug')
                 ->hideFromIndex()
-                ->creationRules('unique:news,slug')
-                ->updateRules('unique:news,slug,{{resourceId}}'),
+                ->creationRules('unique:videos,slug')
+                ->updateRules('unique:videos,slug,{{resourceId}}'),
             NovaTinyMCE::make('Descriere scurta', 'short_content')->options([
                 'plugins' => [
                     'advlist autolink lists link image charmap print preview hr anchor pagebreak',
