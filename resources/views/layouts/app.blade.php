@@ -21,6 +21,7 @@
     @include('feed::links')
 </head>
 <body class="flex flex-col min-h-screen font-light">
+    @include('partials.notice')
     @include('partials.header')
 
     <main class="flex-1 py-20 md:text-lg">
