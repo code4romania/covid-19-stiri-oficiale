@@ -2,8 +2,6 @@
 
 namespace App\View\Components;
 
-
-use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
 
 class SectionButton extends Component
@@ -17,16 +15,20 @@ class SectionButton extends Component
     /** @var bool */
     public $active;
 
+    /** @var bool */
+    public $external;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $label, string $url, ?bool $active = null)
+    public function __construct(string $label, string $url, bool $active = false, bool $external = false)
     {
         $this->label = $label;
         $this->url = $url;
         $this->active = $active;
+        $this->external = $external;
     }
 
     /**

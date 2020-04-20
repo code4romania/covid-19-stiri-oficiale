@@ -16,6 +16,8 @@
 
     <div class="grid gap-4 lg:grid-cols-3">
         <x-section-button label="Ultimele informații oficiale" :url="route('news.index')" :active="$currentRouteGroup === 'news'" />
+        <x-section-button label="Date la zi" url="https://datelazi.ro/" :external="true" />
+        <x-section-button label="Întrebări frecvente" url="https://cetrebuiesafac.ro/" :external="true" />
         <x-section-button label="Hotărâri și legislație" :url="route('decisions.index')" :active="$currentRouteGroup === 'decisions'" />
         <x-section-button label="Înregistrări video" :url="route('videos.index')" :active="$currentRouteGroup === 'videos'" />
     </div>
