@@ -68,7 +68,11 @@ class Video extends BaseModel implements Feedable
             return null;
         }
 
-        return CachedEmbed::create($this->url);
+        try {
+            return CachedEmbed::create($this->url);
+        } catch (\Exception $exception) {
+            return null;
+        }
     }
 
     public function getEmbedCodeAttribute(): ?string
