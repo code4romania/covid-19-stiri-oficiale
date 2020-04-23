@@ -3,11 +3,9 @@
 return [
 
     /**
-     * The time to store a cached embed for (in minutes).
-     *
-     * 43200 = 30 days.
+     * The time to store a cached embed for (in seconds).
      */
-    'expiry' => 43200,
+    'expiry' => 60 * 60 * 24 * 30,
 
     /**
      * The cache store to use when storing embed data. This must be the name
