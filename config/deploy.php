@@ -141,6 +141,10 @@ return [
         'php_fpm_service'     => 'php7.4-fpm',
         'writable_use_sudo'   => true,
         'writable_chmod_mode' => '0775',
+        'shared_files'        => [
+            '.env',
+            'public/sitemap.xml',
+        ],
     ],
 
     /*
