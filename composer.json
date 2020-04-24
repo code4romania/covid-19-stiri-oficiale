@@ -6,12 +6,10 @@
     "require": {
         "php": "^7.4",
         "artesaos/seotools": "^0.17.1",
-        "bakerkretzmar/nova-settings-tool": "^1.0",
         "benjaminhirsch/nova-slug-field": "^1.2",
         "bkintanar/advanced-nova-media-library": "^3.0",
         "coderello/laravel-nova-lang": "^1.4",
         "emilianotisato/nova-tinymce": "^1.1",
-        "epigra/nova-settings": "^1.2",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
