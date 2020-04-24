@@ -49,6 +49,11 @@ class BaseModel extends Model implements HasMedia
         return $query->listing()->paginate();
     }
 
+    public function scopeWithoutEagerLoading($query)
+    {
+        return $query->without($this->with);
+    }
+
     /**
      * Get the normalized indexable data array for the model.
      *

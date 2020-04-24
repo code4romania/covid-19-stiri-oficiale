@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "068484a07458b668368f6e9aacb7b433",
+    "content-hash": "57d3f7f13fd5df1e416a71d3062ca907",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -718,6 +718,71 @@
             "time": "2020-04-08T08:27:21+00:00"
         },
         {
+            "name": "composer/package-versions-deprecated",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/package-versions-deprecated.git",
+                "reference": "98df7f1b293c0550bd5b1ce6b60b59bdda23aa47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/98df7f1b293c0550bd5b1ce6b60b59bdda23aa47",
+                "reference": "98df7f1b293c0550bd5b1ce6b60b59bdda23aa47",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1.0 || ^2.0",
+                "php": "^7"
+            },
+            "replace": {
+                "ocramius/package-versions": "1.2 - 1.8.99"
+            },
+            "require-dev": {
+                "composer/composer": "^1.9.3 || ^2.0@dev",
+                "ext-zip": "^1.13",
+                "phpunit/phpunit": "^6.5 || ^7"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-23T11:49:37+00:00"
+        },
+        {
             "name": "deployer/deployer",
             "version": "v6.7.3",
             "source": {
@@ -1424,21 +1489,22 @@
         },
         {
             "name": "embed/embed",
-            "version": "v3.4.2",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Embed.git",
-                "reference": "dc1dc3c126f8a78acdae06b83f591c0728ea131d"
+                "reference": "aadfc68b11265606344919431d420c3e084ad647"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/dc1dc3c126f8a78acdae06b83f591c0728ea131d",
-                "reference": "dc1dc3c126f8a78acdae06b83f591c0728ea131d",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/aadfc68b11265606344919431d420c3e084ad647",
+                "reference": "aadfc68b11265606344919431d420c3e084ad647",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.0",
                 "ext-curl": "*",
+                "ext-dom": "*",
                 "ext-mbstring": "*",
                 "php": "^5.6|^7.0"
             },
@@ -1473,7 +1539,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2019-09-16T19:34:02+00:00"
+            "time": "2020-04-24T15:07:07+00:00"
         },
         {
             "name": "emilianotisato/nova-tinymce",
@@ -2095,20 +2161,20 @@
         },
         {
             "name": "jean85/pretty-package-versions",
-            "version": "1.2",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jean85/pretty-package-versions.git",
-                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48"
+                "reference": "e3517fb11b67e798239354fe8213927d012ad8f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/75c7effcf3f77501d0e0caa75111aff4daa0dd48",
-                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48",
+                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/e3517fb11b67e798239354fe8213927d012ad8f9",
+                "reference": "e3517fb11b67e798239354fe8213927d012ad8f9",
                 "shasum": ""
             },
             "require": {
-                "ocramius/package-versions": "^1.2.0",
+                "composer/package-versions-deprecated": "^1.8.0",
                 "php": "^7.0"
             },
             "require-dev": {
@@ -2142,7 +2208,7 @@
                 "release",
                 "versions"
             ],
-            "time": "2018-06-13T13:22:40+00:00"
+            "time": "2020-04-24T14:19:45+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2557,16 +2623,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "c995966d35424bae20f76f8b31248099487a3f57"
+                "reference": "9e780d972185e4f737a03bade0fd34a9e67bbf31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c995966d35424bae20f76f8b31248099487a3f57",
-                "reference": "c995966d35424bae20f76f8b31248099487a3f57",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/9e780d972185e4f737a03bade0fd34a9e67bbf31",
+                "reference": "9e780d972185e4f737a03bade0fd34a9e67bbf31",
                 "shasum": ""
             },
             "require": {
@@ -2653,7 +2719,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-20T13:36:51+00:00"
+            "time": "2020-04-24T13:39:56+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3274,6 +3340,42 @@
             "time": "2020-02-17T15:27:36+00:00"
         },
         {
+            "name": "nicmart/tree",
+            "version": "v0.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicmart/Tree.git",
+                "reference": "0616b54bb49938e1a816141d7943db48ebf76938"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicmart/Tree/zipball/0616b54bb49938e1a816141d7943db48ebf76938",
+                "reference": "0616b54bb49938e1a816141d7943db48ebf76938",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tree\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolò Martini",
+                    "email": "nicmartnic@gmail.com"
+                }
+            ],
+            "description": "A basic but flexible php tree data structure and a fluent tree builder implementation.",
+            "time": "2015-08-20T20:50:35+00:00"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v4.4.0",
             "source": {
@@ -3374,67 +3476,6 @@
                 }
             ],
             "time": "2020-03-03T13:55:12+00:00"
-        },
-        {
-            "name": "ocramius/package-versions",
-            "version": "1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "421679846270a5772534828013a93be709fb13df"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/421679846270a5772534828013a93be709fb13df",
-                "reference": "421679846270a5772534828013a93be709fb13df",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7.4.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.9.3 || ^2.0@dev",
-                "doctrine/coding-standard": "^7.0.2",
-                "ext-zip": "^1.15.0",
-                "infection/infection": "^0.15.3",
-                "phpunit/phpunit": "^9.0.1",
-                "vimeo/psalm": "^3.9.3"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "1.99.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "funding": [
-                {
-                    "url": "https://github.com/Ocramius",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/ocramius/package-versions",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-04-06T17:43:35+00:00"
         },
         {
             "name": "opis/closure",
@@ -3543,16 +3584,16 @@
         },
         {
             "name": "optimistdigital/nova-locale-field",
-            "version": "2.0.7",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-locale-field.git",
-                "reference": "d786e3314c97b17b8f8f23baa49f78af3dd20d64"
+                "reference": "c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/d786e3314c97b17b8f8f23baa49f78af3dd20d64",
-                "reference": "d786e3314c97b17b8f8f23baa49f78af3dd20d64",
+                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7",
+                "reference": "c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7",
                 "shasum": ""
             },
             "require": {
@@ -3595,20 +3636,20 @@
                 "nova",
                 "optimistdigital"
             ],
-            "time": "2020-04-14T12:48:29+00:00"
+            "time": "2020-04-24T08:45:16+00:00"
         },
         {
             "name": "optimistdigital/nova-menu-builder",
-            "version": "2.3.5",
+            "version": "2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-menu-builder.git",
-                "reference": "70e58de606f58b0a0ac7b9f45b895400fb621a78"
+                "reference": "8d6837ac5d61958f9e34fa66fac89fe86eb8e2ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/70e58de606f58b0a0ac7b9f45b895400fb621a78",
-                "reference": "70e58de606f58b0a0ac7b9f45b895400fb621a78",
+                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/8d6837ac5d61958f9e34fa66fac89fe86eb8e2ef",
+                "reference": "8d6837ac5d61958f9e34fa66fac89fe86eb8e2ef",
                 "shasum": ""
             },
             "require": {
@@ -3656,7 +3697,7 @@
                 "nova",
                 "optimistdigital"
             ],
-            "time": "2020-04-20T10:15:22+00:00"
+            "time": "2020-04-24T08:38:29+00:00"
         },
         {
             "name": "optimistdigital/nova-sortable",
@@ -5428,6 +5469,133 @@
             "time": "2020-04-01T10:30:44+00:00"
         },
         {
+            "name": "spatie/browsershot",
+            "version": "3.36.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/browsershot.git",
+                "reference": "5e5210438857148c126fa1867eb037e98b73ebc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/5e5210438857148c126fa1867eb037e98b73ebc2",
+                "reference": "5e5210438857148c126fa1867eb037e98b73ebc2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "spatie/image": "^1.5.3",
+                "spatie/temporary-directory": "^1.1",
+                "symfony/process": "^4.2|^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1|^7.5",
+                "spatie/phpunit-snapshot-assertions": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Browsershot\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://github.com/freekmurze",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Convert a webpage to an image or pdf using headless Chrome",
+            "homepage": "https://github.com/spatie/browsershot",
+            "keywords": [
+                "chrome",
+                "convert",
+                "headless",
+                "image",
+                "pdf",
+                "puppeteer",
+                "screenshot",
+                "webpage"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/spatie",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-04-20T10:33:41+00:00"
+        },
+        {
+            "name": "spatie/crawler",
+            "version": "4.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/crawler.git",
+                "reference": "3ec6b08ede3215d29ba8f5f2ed1df0fba5e2ea17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/3ec6b08ede3215d29ba8f5f2ed1df0fba5e2ea17",
+                "reference": "3ec6b08ede3215d29ba8f5f2ed1df0fba5e2ea17",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3 || ^7.0",
+                "guzzlehttp/psr7": "^1.4",
+                "nicmart/tree": "^0.2.7",
+                "php": "^7.1",
+                "spatie/browsershot": "^3.14",
+                "spatie/robots-txt": "^1.0.1",
+                "symfony/dom-crawler": "^4.0 || ^5.0",
+                "tightenco/collect": "^5.6|^6.0|^7.0"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Crawler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be"
+                }
+            ],
+            "description": "Crawl all internal links found on a website",
+            "homepage": "https://github.com/spatie/crawler",
+            "keywords": [
+                "crawler",
+                "link",
+                "spatie",
+                "website"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/spatie",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-04-14T14:38:37+00:00"
+        },
+        {
             "name": "spatie/eloquent-sortable",
             "version": "3.8.0",
             "source": {
@@ -5821,6 +5989,72 @@
             "time": "2020-03-03T08:39:21+00:00"
         },
         {
+            "name": "spatie/laravel-sitemap",
+            "version": "5.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-sitemap.git",
+                "reference": "b2ce1f09f222fa9b79284b8952f967356a3ae0af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/b2ce1f09f222fa9b79284b8952f967356a3ae0af",
+                "reference": "b2ce1f09f222fa9b79284b8952f967356a3ae0af",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.8.0|^6.0|^7.0",
+                "nesbot/carbon": "^1.21|^2.0",
+                "php": "^7.2",
+                "spatie/crawler": "^4.1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "orchestra/testbench": "~3.8.8|^4.0|^5.0",
+                "phpunit/phpunit": "^8.3|^9.0",
+                "spatie/phpunit-snapshot-assertions": "^3.0.0",
+                "spatie/temporary-directory": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Sitemap\\SitemapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Sitemap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create and generate sitemaps with ease",
+            "homepage": "https://github.com/spatie/laravel-sitemap",
+            "keywords": [
+                "laravel-sitemap",
+                "spatie"
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-03-03T07:05:15+00:00"
+        },
+        {
             "name": "spatie/laravel-tags",
             "version": "2.6.1",
             "source": {
@@ -6075,6 +6309,53 @@
                 "spatie"
             ],
             "time": "2020-02-18T15:10:38+00:00"
+        },
+        {
+            "name": "spatie/robots-txt",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/robots-txt.git",
+                "reference": "64e4c984cd37e6b45d9b3201d0026332290442ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/64e4c984cd37e6b45d9b3201d0026332290442ec",
+                "reference": "64e4c984cd37e6b45d9b3201d0026332290442ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Robots\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Determine if a page may be crawled from robots.txt and robots meta tags",
+            "homepage": "https://github.com/spatie/robots-txt",
+            "keywords": [
+                "robots-txt",
+                "spatie"
+            ],
+            "time": "2020-04-18T17:37:31+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -6393,6 +6674,81 @@
                 }
             ],
             "time": "2020-03-27T16:56:45+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v5.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "892311d23066844a267ac1a903d8a9d79968a1a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/892311d23066844a267ac1a903d8a9d79968a1a7",
+                "reference": "892311d23066844a267ac1a903d8a9d79968a1a7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "masterminds/html5": "<2.6"
+            },
+            "require-dev": {
+                "masterminds/html5": "^2.6",
+                "symfony/css-selector": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-03-30T11:42:42+00:00"
         },
         {
             "name": "symfony/error-handler",
@@ -8381,6 +8737,56 @@
                 }
             ],
             "time": "2020-04-03T10:22:24+00:00"
+        },
+        {
+            "name": "tightenco/collect",
+            "version": "v7.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/collect.git",
+                "reference": "4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0",
+                "reference": "4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/var-dumper": "^3.4 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "nesbot/carbon": "^2.23.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Collect/Support/helpers.php",
+                    "src/Collect/Support/alias.php"
+                ],
+                "psr-4": {
+                    "Tightenco\\Collect\\": "src/Collect"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Collect - Illuminate Collections as a separate package.",
+            "keywords": [
+                "collection",
+                "laravel"
+            ],
+            "time": "2020-04-17T18:15:55+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
