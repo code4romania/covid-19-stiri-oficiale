@@ -23,6 +23,11 @@
                 </div>
 
                 <x-share :item="$item"/>
+
+                @include('partials.page-navigation', [
+                    'route' => 'videos.show',
+                    'item' => $item,
+                ])
             </section>
 
             @include('partials.sidebar')

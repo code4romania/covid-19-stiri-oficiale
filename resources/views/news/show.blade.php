@@ -21,6 +21,11 @@
                 </div>
 
                 <x-share :item="$item"/>
+
+                @include('partials.page-navigation', [
+                    'route' => 'news.show',
+                    'item' => $item,
+                ])
             </section>
 
             @include('partials.sidebar')

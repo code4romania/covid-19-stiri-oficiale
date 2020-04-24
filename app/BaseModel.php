@@ -71,4 +71,22 @@ class BaseModel extends Model implements HasMedia
             ->map(fn ($field): string => Normalize::string($field))
             ->toArray();
     }
+
+    public function next()
+    {
+        return $this
+            ->where('updated_at', '>', $this->updated_at)
+            ->orderBy('updated_at', 'asc')
+            ->limit(1)
+            ->first();
+    }
+
+    public function previous()
+    {
+        return $this
+            ->where('updated_at', '<', $this->updated_at)
+            ->orderBy('updated_at', 'desc')
+            ->limit(1)
+            ->first();
+    }
 }
