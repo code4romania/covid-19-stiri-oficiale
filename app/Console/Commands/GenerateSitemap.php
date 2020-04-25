@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Decision;
 use App\News;
+use App\Page;
 use App\Video;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
@@ -49,20 +50,23 @@ class GenerateSitemap extends Command
         $this->addItemsForModel('news', News::withoutEagerLoading()->listing()->get($this->columns));
         $this->addItemsForModel('decisions', Decision::withoutEagerLoading()->listing()->get($this->columns));
         $this->addItemsForModel('videos', Video::withoutEagerLoading()->listing()->get($this->columns));
+        $this->addItemsForModel('pages', Page::all(['slug', 'updated_at']), false);
 
         $this->sitemap->writeToFile(public_path('sitemap.xml'));
     }
 
-    protected function addItemsForModel(string $name, Collection $items): void
+    protected function addItemsForModel(string $name, Collection $items, bool $hasIndex = true): void
     {
-        // Index: first page
-        $latestItem = $items->first();
-        $this->tag(route("{$name}.index"), $latestItem->updated_at);
+        if ($hasIndex) {
+            // Index: first page
+            $latestItem = $items->first();
+            $this->tag(route("{$name}.index"), $latestItem->updated_at);
 
-        // Index: numbered pages
-        $pageCount = intval(ceil($items->count() / $latestItem->getPerPage()));
-        for ($page = 2; $page <= $pageCount; $page++) {
-            $this->tag(route("{$name}.index", ['page' => $page]), $latestItem->updated_at);
+            // Index: numbered pages
+            $pageCount = intval(ceil($items->count() / $latestItem->getPerPage()));
+            for ($page = 2; $page <= $pageCount; $page++) {
+                $this->tag(route("{$name}.index", ['page' => $page]), $latestItem->updated_at);
+            }
         }
 
         // Items
