@@ -20,5 +20,6 @@
         <x-section-button label="Întrebări frecvente" url="https://cetrebuiesafac.ro/" :external="true" />
         <x-section-button label="Hotărâri și legislație" :url="route('decisions.index')" :active="$currentRouteGroup === 'decisions'" />
         <x-section-button label="Înregistrări video" :url="route('videos.index')" :active="$currentRouteGroup === 'videos'" />
+        <x-section-button label="Conduită sanitară" :url="route('pages.show', 'conduita')" />
     </div>
 </div>
