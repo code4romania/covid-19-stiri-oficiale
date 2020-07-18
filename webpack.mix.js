@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
 
 mix.config.fileLoaderDirs.fonts = 'fonts';
 
@@ -38,7 +37,4 @@ mix.setPublicPath('public/assets')
         ],
     })
     .postCss('resources/css/app.pcss', 'public/assets')
-    .purgeCss({
-        whitelistPatternsChildren: [/rich-text$/],
-    })
     .extract();
