@@ -254,4 +254,13 @@ module.exports = {
             componentPrefix: '', // the prefix to use for text style classes
         }),
     ],
+    purge: {
+        content: [
+            "app/**/*.php",
+            'resources/**/*.blade.php',
+        ],
+        options: {
+            whitelist: ['rich-text'],
+        },
+    },
 };
