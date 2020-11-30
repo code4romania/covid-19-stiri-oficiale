@@ -137,7 +137,7 @@ return [
 
     'options' => [
         'application'         => env('APP_NAME', 'Laravel'),
-        'repository'          => env('DEPLOY_REPOSITORY', 'git@github.com:code4romania/stiri-oficiale.git'),
+        'repository'          => env('DEPLOY_REPOSITORY', 'git@github.com:code4romania/covid-19-stiri-oficiale.git'),
         'php_fpm_service'     => 'php7.4-fpm',
         'writable_use_sudo'   => true,
         'writable_chmod_mode' => '0775',
