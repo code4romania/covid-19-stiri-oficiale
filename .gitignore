@@ -3,6 +3,7 @@
 /public/storage
 /public/assets
 /public/sitemap.xml
+/public/vendor/nova
 /storage/*.key
 /vendor
 .env

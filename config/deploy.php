@@ -106,6 +106,7 @@ return [
             'artisan:config:cache',
             'artisan:route:cache',
             'artisan:migrate',
+            'artisan:nova:publish',
         ],
 
         // Deployment is done and live
