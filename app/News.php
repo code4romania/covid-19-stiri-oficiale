@@ -39,7 +39,7 @@ class News extends BaseModel implements Feedable
         return parent::toSearchableArray();
     }
 
-    public function toFeedItem()
+    public function toFeedItem(): FeedItem
     {
         return FeedItem::create()
             ->id($this->id)
