@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-
 use App\Nova\Metrics\DecisionTrend;
 use App\Nova\Metrics\NewsTrend;
 use App\Nova\Metrics\VideoTrend;
@@ -31,12 +30,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function routes()
     {
-        Route::middleware('session')->group(function () {
-            Nova::routes()
-                ->withAuthenticationRoutes()
-                ->withPasswordResetRoutes()
-                ->register();
-        });
+        Nova::routes()
+            ->withAuthenticationRoutes()
+            ->withPasswordResetRoutes()
+            ->register();
     }
 
     /**

@@ -99,7 +99,6 @@ return [
 
     'middleware' => [
         'web',
-        'session',
         Authenticate::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
