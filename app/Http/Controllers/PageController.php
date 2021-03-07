@@ -13,9 +13,7 @@ class PageController extends Controller
 
     public function show(string $slug)
     {
-        $item = $this->withCache("pages.show.$slug", function () use ($slug) {
-            return Page::where('slug', $slug)->firstOrFail();
-        });
+        $item = Page::where('slug', $slug)->firstOrFail();
 
         $this->setSeo([
             'title'       => $item->title,

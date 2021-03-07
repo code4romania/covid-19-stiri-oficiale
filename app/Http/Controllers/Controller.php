@@ -52,11 +52,6 @@ class Controller extends BaseController
         }
     }
 
-    protected function withCache(string $key, Closure $callback)
-    {
-        return Cache::remember($key, config('cache.ttl'), $callback);
-    }
-
     protected function getCurrentPageNumber(Request $request): int
     {
         return abs($request->get('page')) ?: 1;

@@ -9,29 +9,21 @@ class VideoController extends Controller
 {
     public function index(Request $request)
     {
-        $page = $this->getCurrentPageNumber($request);
-
-        $items = $this->withCache("video.index.page{$page}", function () {
-            return Video::paginatedListing();
-        });
-
         $this->setSeo([
             'title'     => __('content.video.title'),
             'routeName' => 'videos.index',
             'routeArg'  => 'page',
-            'page'      => $page,
+            'page'      => $this->getCurrentPageNumber($request),
         ]);
 
         return view('video.index', [
-            'items' => $items,
+            'items' => Video::paginatedListing(),
         ]);
     }
 
     public function show($slug)
     {
-        $item = $this->withCache("videos.show.$slug", function () use ($slug) {
-            return Video::where('slug', $slug)->firstOrFail();
-        });
+        $item = Video::where('slug', $slug)->firstOrFail();
 
         $this->setSeo([
             'title'       => $item->title,

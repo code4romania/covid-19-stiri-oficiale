@@ -9,29 +9,21 @@ class DecisionController extends Controller
 {
     public function index(Request $request)
     {
-        $page = $this->getCurrentPageNumber($request);
-
-        $items = $this->withCache("decisions.index.page$page", function () {
-            return Decision::paginatedListing();
-        });
-
         $this->setSeo([
             'title'     => __('content.decision.title'),
             'routeName' => 'decisions.index',
             'routeArg'  => 'page',
-            'page'      => $page,
+            'page'      => $this->getCurrentPageNumber($request),
         ]);
 
         return view('decisions.index', [
-            'items' => $items,
+            'items' => Decision::paginatedListing(),
         ]);
     }
 
     public function show($slug)
     {
-        $item = $this->withCache("decisions.show.$slug", function () use ($slug) {
-            return Decision::where('slug', $slug)->firstOrFail();
-        });
+        $item = Decision::where('slug', $slug)->firstOrFail();
 
         $this->setSeo([
             'title'       => $item->title,

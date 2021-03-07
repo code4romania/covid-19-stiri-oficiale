@@ -9,29 +9,21 @@ class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        $page = $this->getCurrentPageNumber($request);
-
-        $items = $this->withCache("news.index.page$page", function () {
-            return News::paginatedListing();
-        });
-
         $this->setSeo([
             'title'     => __('content.news.title'),
             'routeName' => 'news.index',
             'routeArg'  => 'page',
-            'page'      => $page,
+            'page'      => $this->getCurrentPageNumber($request),
         ]);
 
         return view('news.index', [
-            'items' => $items,
+            'items' => News::paginatedListing(),
         ]);
     }
 
     public function show(string $slug)
     {
-        $item = $this->withCache("news.show.$slug", function () use ($slug) {
-            return News::where('slug', $slug)->firstOrFail();
-        });
+        $item = News::where('slug', $slug)->firstOrFail();
 
         $this->setSeo([
             'title'       => $item->title,
