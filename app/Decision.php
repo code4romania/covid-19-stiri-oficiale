@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Institution;
+use Illuminate\Database\Eloquent\Builder;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\FeedItem;
 use Spatie\Feed\Feedable;
@@ -23,6 +24,11 @@ class Decision extends BaseModel implements Feedable
         'short_content',
         'content',
     ];
+
+    public static function booted()
+    {
+        static::addGlobalScope(fn (Builder $query) => $query->published());
+    }
 
     public function childDraft()
     {

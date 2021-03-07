@@ -4,6 +4,7 @@ namespace App;
 
 use App\Institution;
 use Embed\Adapters\Adapter;
+use Illuminate\Database\Eloquent\Builder;
 use Laravel\Scout\Searchable;
 use Leewillis77\CachedEmbed\CachedEmbed;
 use Spatie\Feed\FeedItem;
@@ -28,6 +29,11 @@ class Video extends BaseModel implements Feedable
         'title',
         'short_content',
     ];
+
+    public static function booted()
+    {
+        static::addGlobalScope(fn (Builder $query) => $query->published());
+    }
 
     public function childDraft()
     {

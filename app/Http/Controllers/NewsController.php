@@ -30,7 +30,7 @@ class NewsController extends Controller
     public function show(string $slug)
     {
         $item = $this->withCache("news.show.$slug", function () use ($slug) {
-            return News::where('slug', $slug)->published()->firstOrFail();
+            return News::where('slug', $slug)->firstOrFail();
         });
 
         $this->setSeo([

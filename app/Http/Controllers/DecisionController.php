@@ -30,7 +30,7 @@ class DecisionController extends Controller
     public function show($slug)
     {
         $item = $this->withCache("decisions.show.$slug", function () use ($slug) {
-            return Decision::where('slug', $slug)->published()->firstOrFail();
+            return Decision::where('slug', $slug)->firstOrFail();
         });
 
         $this->setSeo([

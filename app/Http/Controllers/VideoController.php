@@ -30,7 +30,7 @@ class VideoController extends Controller
     public function show($slug)
     {
         $item = $this->withCache("videos.show.$slug", function () use ($slug) {
-            return Video::where('slug', $slug)->published()->firstOrFail();
+            return Video::where('slug', $slug)->firstOrFail();
         });
 
         $this->setSeo([
