@@ -36,7 +36,9 @@ class BaseModel extends Model implements HasMedia
 
     public function scopePublished($query)
     {
-        return $query->where('published', 1);
+        $table = $this->getTable();
+
+        return $query->where("$table.published", 1);
     }
 
     public function scopeListing($query)
