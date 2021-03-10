@@ -33,7 +33,9 @@ class PageMenuItem extends MenuItemSelectType
      **/
     public static function getOptions($locale): array
     {
-        return Page::all(['id', 'title'])->toArray();
+        return Page::all(['id', 'title'])
+            ->pluck('title', 'id')
+            ->toArray();
     }
 
     /**
@@ -43,9 +45,11 @@ class PageMenuItem extends MenuItemSelectType
      * @param array|null $data The data from item fields.
      * @return string
      */
-    public static function getDisplayValue($value = null, array $data = null)
+    public static function getDisplayValue($value = null, array $data = null, $locale)
     {
-        return 'Page: '. optional(Page::find($value))->title;
+        $page = Page::find($value);
+
+        return 'Page: '. optional($page)->title ?? '–';
     }
 
     /**
@@ -61,10 +65,14 @@ class PageMenuItem extends MenuItemSelectType
      * @param array|null $data The data from item fields.
      * @return any
      */
-    public static function getValue($value = null, array $data = null)
+    public static function getValue($value = null, array $data = null, $locale)
     {
+        if (null === ($page = Page::find($value))) {
+            return null;
+        }
+
         return route('pages.show', [
-            'slug' => optional(Page::find($value))->slug
+            'slug' => $page->slug,
         ]);
     }
 
