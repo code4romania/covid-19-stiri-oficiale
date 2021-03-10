@@ -5,7 +5,7 @@
         @foreach ($platforms as $platform)
             <button
                 @click="popup('{{ $url }}', '{{ $platform['uri'] }}')"
-                class="w-8 h-8 mx-1 my-2 rounded-full hover:opacity-75 focus:outline-none focus:shadow-outline"
+                class="w-8 h-8 mx-1 my-2 rounded-full hover:opacity-75 focus:outline-none focus:ring"
                 aria-label="{{ __('share.platform', ['platform' => ucfirst($platform['id']) ]) }}"
             >
                 @svg("icons/{$platform['id']}", 'w-full h-full')

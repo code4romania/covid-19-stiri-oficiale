@@ -4,7 +4,7 @@
         <span>Instrumente utile</span>
     </h1>
 
-    <div class="grid row-gap-8">
+    <div class="grid gap-y-8">
         @include('search.form')
 
         @foreach (\App\SidebarItem::ordered()->get() as $card)

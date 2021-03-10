@@ -10,7 +10,7 @@
                     {{ __('content.video.title') }}
                 </h1>
 
-                <div class="grid row-gap-10">
+                <div class="grid gap-y-10">
                     @forelse ($items as $item)
                         <x-content-card :item="$item" route="videos.show" />
                     @empty

@@ -15,4 +15,4 @@ export default {
             popup.focus();
         }
     },
-}
+};

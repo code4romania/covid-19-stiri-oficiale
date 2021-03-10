@@ -63,7 +63,7 @@
             {!! $model->short_content !!}
 
             @if ($model->embed_image && $readMore)
-                <a href="{{ route($route, ['slug' => $model->slug]) }}" class="block hover:opacity-75 focus:outline-none focus:shadow-outline">
+                <a href="{{ route($route, ['slug' => $model->slug]) }}" class="block hover:opacity-75 focus:outline-none focus:ring">
                     <img src="{{ $model->embed_image }}" class="w-full" alt="">
                 </a>
             @endif
@@ -73,7 +73,7 @@
             <div class="mt-4 text-right">
                 <a
                     href="{{ route($route, ['slug' => $model->slug]) }}"
-                    class="text-base font-normal text-blue-500 underline focus:outline-none focus:shadow-outline hover:no-underline"
+                    class="text-base font-normal text-blue-500 underline focus:outline-none focus:ring hover:no-underline"
                 >
                     Citește mai mult
                 </a>

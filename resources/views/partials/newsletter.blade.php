@@ -9,7 +9,7 @@
     <div class="mc-field-group">
         <label>
             <span class="sr-only">Email Address</span>
-            <input type="email" name="EMAIL" required placeholder="Introdu aici adresa de e-mail" class="block w-full px-4 py-2 mb-3 leading-tight bg-white rounded appearance-none focus:outline-none focus:shadow-outline" />
+            <input type="email" name="EMAIL" required placeholder="Introdu aici adresa de e-mail" class="block w-full px-4 py-2 mb-3 leading-tight bg-white rounded appearance-none focus:outline-none focus:ring" />
         </label>
     </div>
 
@@ -17,5 +17,5 @@
         <input type="text" name="b_046bd86a80966c2ecaa0d84bf_10738ac8bf" tabindex="-1" value=""/>
     </div>
 
-    <input type="submit" value="Abonează-te" name="subscribe" class="block w-full px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-green-500 rounded curspo hover:opacity-75 focus:outline-none focus:shadow-outline">
+    <input type="submit" value="Abonează-te" name="subscribe" class="block w-full px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-green-500 rounded curspo hover:opacity-75 focus:outline-none focus:ring">
 </form>

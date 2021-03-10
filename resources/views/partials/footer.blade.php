@@ -1,7 +1,7 @@
 @php
     $menus = [
-        nova_get_menu('footer1'),
-        nova_get_menu('footer2'),
+        nova_get_menu_by_slug('footer1'),
+        nova_get_menu_by_slug('footer2'),
     ];
 @endphp
 
@@ -16,7 +16,7 @@
 
 
 <footer class="text-blue-100 bg-blue-500">
-    <div class="container grid items-end row-gap-10 col-gap-6 py-12 lg:py-24 lg:grid-cols-2">
+    <div class="container grid items-end gap-y-10 gap-x-6 py-12 lg:py-24 lg:grid-cols-2">
         <div class="flex flex-wrap">
             @foreach ($menus as $menu)
                 @continue(is_null($menu))

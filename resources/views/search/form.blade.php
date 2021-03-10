@@ -16,7 +16,7 @@
 
         <input type="hidden" name="type" value="{{ $type }}" />
 
-        <button type="submit" class="inline-flex p-4 ease-in-out rounded-r-md hover:text-cyan-500 focus:text-cyan-700 focus:outline-none focus:shadow-outline">
+        <button type="submit" class="inline-flex p-4 ease-in-out rounded-r-md hover:text-cyan-500 focus:text-cyan-700 focus:outline-none focus:ring">
             @svg('icons/search', 'w-5 h-5')
         </button>
     </form>
