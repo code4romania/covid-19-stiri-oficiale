@@ -1,7 +1,7 @@
 @php
     $menus = [
-        nova_get_menu('footer1'),
-        nova_get_menu('footer2'),
+        nova_get_menu_by_slug('footer1'),
+        nova_get_menu_by_slug('footer2'),
     ];
 @endphp
 

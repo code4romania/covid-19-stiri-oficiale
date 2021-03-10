@@ -1,5 +1,5 @@
 @php
-    $menu = nova_get_menu('header');
+    $menu = nova_get_menu_by_slug('header');
 @endphp
 
 <nav class="lg:shadow-none" x-data="{ open: false }" :class="{ 'shadow-lg': open }">

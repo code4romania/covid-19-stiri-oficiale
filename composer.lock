@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50e036ccc12195fcb485cd67b92fe018",
+    "content-hash": "4562f080022edaf71e40af358b284b06",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -3854,82 +3854,24 @@
             "time": "2021-02-22T07:18:03+00:00"
         },
         {
-            "name": "optimistdigital/nova-locale-field",
-            "version": "2.0.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/optimistdigital/nova-locale-field.git",
-                "reference": "d00c010a16a022e1597988dfefce2069cba0f218"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/d00c010a16a022e1597988dfefce2069cba0f218",
-                "reference": "d00c010a16a022e1597988dfefce2069cba0f218",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^2.0.11 || ^3.0",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "OptimistDigital\\NovaLocaleField\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "OptimistDigital\\NovaLocaleField\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tarvo Reinpalu",
-                    "email": "tarvoreinpalu@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Optimist Digital",
-                    "email": "info@optimistdigital.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "A Laravel Nova field.",
-            "keywords": [
-                "field",
-                "laravel",
-                "nova",
-                "optimistdigital"
-            ],
-            "support": {
-                "issues": "https://github.com/optimistdigital/nova-locale-field/issues",
-                "source": "https://github.com/optimistdigital/nova-locale-field/tree/2.0.14"
-            },
-            "time": "2021-02-25T14:35:03+00:00"
-        },
-        {
             "name": "optimistdigital/nova-menu-builder",
-            "version": "2.3.9",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-menu-builder.git",
-                "reference": "6a1dc2542760defca91165557173fa547bcc6e1c"
+                "reference": "94d6660fa9ca4211a3fce534ac90e48cde7e028f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/6a1dc2542760defca91165557173fa547bcc6e1c",
-                "reference": "6a1dc2542760defca91165557173fa547bcc6e1c",
+                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/94d6660fa9ca4211a3fce534ac90e48cde7e028f",
+                "reference": "94d6660fa9ca4211a3fce534ac90e48cde7e028f",
                 "shasum": ""
             },
             "require": {
-                "laravel/nova": "^2.0.11 || ^3.0",
-                "optimistdigital/nova-locale-field": "^2.0.0",
+                "doctrine/dbal": ">=2.0.0",
+                "laravel/nova": "^3.0",
+                "optimistdigital/nova-tailwind": "^1.0.2",
+                "optimistdigital/nova-translations-loader": "^1.0.3",
                 "php": ">=7.1.0"
             },
             "type": "library",
@@ -3964,7 +3906,7 @@
                     "role": "Maintainer"
                 }
             ],
-            "description": "Menu Builder Tool for Laravel Nova.",
+            "description": "This Laravel Nova package allows you to create and manage menus and menu items.",
             "keywords": [
                 "builder",
                 "laravel",
@@ -3974,35 +3916,28 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-menu-builder/issues",
-                "source": "https://github.com/optimistdigital/nova-menu-builder/tree/2.3.9"
+                "source": "https://github.com/optimistdigital/nova-menu-builder/tree/4.0.0"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/optimistdigital",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-10-29T08:10:30+00:00"
+            "time": "2020-09-18T09:26:39+00:00"
         },
         {
             "name": "optimistdigital/nova-sortable",
-            "version": "2.1.7",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-sortable.git",
-                "reference": "c6a947fb156f80f642e8b94ef0d92b78f8cde611"
+                "reference": "a9023629805eaeecf7cb3be0a3639bd91875f493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/c6a947fb156f80f642e8b94ef0d92b78f8cde611",
-                "reference": "c6a947fb156f80f642e8b94ef0d92b78f8cde611",
+                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/a9023629805eaeecf7cb3be0a3639bd91875f493",
+                "reference": "a9023629805eaeecf7cb3be0a3639bd91875f493",
                 "shasum": ""
             },
             "require": {
-                "laravel/nova": "^3.0",
-                "optimistdigital/nova-translations-loader": "^3.0.0",
-                "php": ">=7.3.0",
-                "spatie/eloquent-sortable": "^3.10.0"
+                "laravel/nova": "^2.0.11 || ^3.0",
+                "php": ">=7.1.0",
+                "spatie/eloquent-sortable": "^3.9.0"
             },
             "type": "library",
             "extra": {
@@ -4030,7 +3965,7 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-sortable/issues",
-                "source": "https://github.com/optimistdigital/nova-sortable/tree/2.1.7"
+                "source": "https://github.com/optimistdigital/nova-sortable/tree/1.6.2"
             },
             "funding": [
                 {
@@ -4038,26 +3973,86 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-04T11:35:52+00:00"
+            "time": "2020-11-25T12:52:11+00:00"
         },
         {
-            "name": "optimistdigital/nova-translations-loader",
-            "version": "3.1.0",
+            "name": "optimistdigital/nova-tailwind",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/optimistdigital/nova-translations-loader.git",
-                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730"
+                "url": "https://github.com/optimistdigital/nova-tailwind.git",
+                "reference": "fd2b4791185b3ec26a12f7f193db3725a38ec27a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-translations-loader/zipball/ce511b1685bd975ec0f86087bbec33949ad04730",
-                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730",
+                "url": "https://api.github.com/repos/optimistdigital/nova-tailwind/zipball/fd2b4791185b3ec26a12f7f193db3725a38ec27a",
+                "reference": "fd2b4791185b3ec26a12f7f193db3725a38ec27a",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0 || ^8.0",
-                "laravel/nova": "^3.0",
-                "php": ">=7.2.0"
+                "laravel/nova": "^1.0 || ^2.0 || ^3.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\Tailwind\\TailwindServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\Tailwind\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Tailwind loader for Laravel Nova.",
+            "keywords": [
+                "css",
+                "laravel",
+                "nova",
+                "tailwind"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-tailwind/issues",
+                "source": "https://github.com/optimistdigital/nova-tailwind/tree/1.1.0"
+            },
+            "time": "2021-01-21T11:26:54+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-translations-loader",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-translations-loader.git",
+                "reference": "f57bd768eaba81b8d655871bb679a4da50ba2a70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-translations-loader/zipball/f57bd768eaba81b8d655871bb679a4da50ba2a70",
+                "reference": "f57bd768eaba81b8d655871bb679a4da50ba2a70",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.0 || ^7.0 || ^8.0",
+                "laravel/nova": "^2.0 || ^3.0",
+                "php": ">=7.1.0"
             },
             "type": "library",
             "extra": {
@@ -4084,9 +4079,9 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-translations-loader/issues",
-                "source": "https://github.com/optimistdigital/nova-translations-loader/tree/3.1.0"
+                "source": "https://github.com/optimistdigital/nova-translations-loader/tree/1.0.5"
             },
-            "time": "2020-11-20T10:46:16+00:00"
+            "time": "2020-10-22T10:36:50+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
