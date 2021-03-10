@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6de5a2fca9969226788308ddd9c6a73",
+    "content-hash": "50e036ccc12195fcb485cd67b92fe018",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -3986,22 +3986,23 @@
         },
         {
             "name": "optimistdigital/nova-sortable",
-            "version": "1.6.2",
+            "version": "2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-sortable.git",
-                "reference": "a9023629805eaeecf7cb3be0a3639bd91875f493"
+                "reference": "c6a947fb156f80f642e8b94ef0d92b78f8cde611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/a9023629805eaeecf7cb3be0a3639bd91875f493",
-                "reference": "a9023629805eaeecf7cb3be0a3639bd91875f493",
+                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/c6a947fb156f80f642e8b94ef0d92b78f8cde611",
+                "reference": "c6a947fb156f80f642e8b94ef0d92b78f8cde611",
                 "shasum": ""
             },
             "require": {
-                "laravel/nova": "^2.0.11 || ^3.0",
-                "php": ">=7.1.0",
-                "spatie/eloquent-sortable": "^3.9.0"
+                "laravel/nova": "^3.0",
+                "optimistdigital/nova-translations-loader": "^3.0.0",
+                "php": ">=7.3.0",
+                "spatie/eloquent-sortable": "^3.10.0"
             },
             "type": "library",
             "extra": {
@@ -4029,7 +4030,7 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-sortable/issues",
-                "source": "https://github.com/optimistdigital/nova-sortable/tree/1.6.2"
+                "source": "https://github.com/optimistdigital/nova-sortable/tree/2.1.7"
             },
             "funding": [
                 {
@@ -4037,7 +4038,55 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-25T12:52:11+00:00"
+            "time": "2021-03-04T11:35:52+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-translations-loader",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-translations-loader.git",
+                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-translations-loader/zipball/ce511b1685bd975ec0f86087bbec33949ad04730",
+                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0 || ^8.0",
+                "laravel/nova": "^3.0",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaTranslationsLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This Laravel Nova package helps developers load translations into their packages.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "optimistdigital",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-translations-loader/issues",
+                "source": "https://github.com/optimistdigital/nova-translations-loader/tree/3.1.0"
+            },
+            "time": "2020-11-20T10:46:16+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
