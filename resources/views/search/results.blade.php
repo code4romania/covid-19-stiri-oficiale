@@ -14,12 +14,12 @@
         </div>
 
         <div class="grid gap-12 py-16 lg:grid-cols-3">
-            <div class="grid row-gap-12 lg:col-span-2">
+            <div class="grid gap-y-12 lg:col-span-2">
                 <section>
                     <h1 class="mb-4 text-lg font-normal leading-tight lg:text-2xl xl:text-3xl">
                         {{ __("content.{$type}.title") }}
                     </h1>
-                    <div class="grid row-gap-10">
+                    <div class="grid gap-y-10">
                         @if ($type == 'video')
                             @forelse ($items as $item)
                                 <x-content-card :item="$item" :read-more="false" />

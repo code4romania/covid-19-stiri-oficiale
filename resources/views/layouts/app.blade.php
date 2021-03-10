@@ -8,7 +8,7 @@
 
     {!! SEO::generate() !!}
 
-    <link href="{{ asset(mix('app.css', 'assets')) }}" rel="stylesheet">
+    <link href="{{ mix('app.css', 'assets') }}" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/images/favicons/favicon-96x96.png') }}">
@@ -31,8 +31,8 @@
     @include('partials.footer')
     @include('partials.analytics')
 
-    <script src="{{ asset(mix('manifest.js', 'assets')) }}"></script>
-    <script src="{{ asset(mix('vendor.js', 'assets')) }}"></script>
-    <script src="{{ asset(mix('app.js', 'assets')) }}"></script>
+    <script src="{{ mix('manifest.js', 'assets') }}"></script>
+    <script src="{{ mix('vendor.js', 'assets') }}"></script>
+    <script src="{{ mix('app.js', 'assets') }}"></script>
 </body>
 </html>

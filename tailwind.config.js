@@ -1,9 +1,9 @@
 module.exports = {
     theme: {
-        container: {
-            padding: '1.25rem',
+        container: (theme) => ({
+            padding: theme('spacing.5'),
             center: true,
-        },
+        }),
         extend: {
             fontFamily: {
                 sans: [
@@ -247,7 +247,17 @@ module.exports = {
             },
         }),
     },
-    variants: {},
+    variants: {
+        extend: {
+            //
+        },
+    },
+    corePlugins: {
+        backgroundOpacity: false,
+        borderOpacity: false,
+        divideOpacity: false,
+        textOpacity: false,
+    },
     plugins: [
         //
         require('tailwindcss-typography')({
@@ -260,7 +270,7 @@ module.exports = {
             'resources/**/*.blade.php',
         ],
         options: {
-            whitelist: ['rich-text'],
+            safelist: ['rich-text'],
         },
     },
 };

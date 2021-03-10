@@ -7,6 +7,6 @@
             <span>{{ __('errors.404') }}</span>
         </h1>
 
-        <a href="{{ url('/') }}" class="px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-blue-500 rounded curspo hover:opacity-75 focus:outline-none focus:shadow-outline">{{ __('errors.back') }}</a>
+        <a href="{{ url('/') }}" class="px-4 py-2 text-base font-bold tracking-wide text-center text-white transition-opacity duration-100 bg-blue-500 rounded curspo hover:opacity-75 focus:outline-none focus:ring">{{ __('errors.back') }}</a>
     </article>
 @endsection

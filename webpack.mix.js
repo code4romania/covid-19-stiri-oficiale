@@ -1,40 +1,23 @@
 const mix = require('laravel-mix');
 
-mix.config.fileLoaderDirs.fonts = 'fonts';
+require('laravel-mix-valet');
 
-mix.webpackConfig({
-    devtool: mix.config.production ? 'none' : 'source-map',
-});
-
-if (mix.config.production) {
+if (mix.inProduction()) {
     mix.version();
+} else {
+    mix.sourceMaps();
 }
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-mix.setPublicPath('public/assets')
+mix.valet('stiri.test')
+    .setPublicPath('public/assets')
     .setResourceRoot('./')
-
     .copyDirectory('resources/images', 'public/assets/images')
-
     .js('resources/js/app.js', 'public/assets')
-    .options({
-        postCss: [
-            require('postcss-import'),
-            require('tailwindcss')('./tailwind.config.js'),
-            require('postcss-nested')({
-                bubble: ['screen'],
-            }),
-        ],
-    })
-    .postCss('resources/css/app.pcss', 'public/assets')
+    .postCss('resources/css/app.pcss', 'public/assets', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('postcss-nested')({
+            bubble: ['screen'],
+        }),
+    ])
     .extract();
