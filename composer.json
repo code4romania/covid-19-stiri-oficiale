@@ -10,6 +10,7 @@
         "blade-ui-kit/blade-icons": "^0.5.1",
         "coderello/laravel-nova-lang": "^1.4",
         "ebess/advanced-nova-media-library": "^3.4",
+        "embed/embed": "^4.3",
         "emilianotisato/nova-tinymce": "^1.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
