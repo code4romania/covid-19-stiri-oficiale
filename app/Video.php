@@ -81,25 +81,25 @@ class Video extends BaseModel implements Feedable
 
         return Cache::store($this->embedCacheStore)->rememberForever("video-embed-{$this->id}", function () {
             try {
-                $data = Embed::create($this->url);
+                $data = (new Embed)->get($this->url);
+
+                return (object) [
+                    'code'  => optional($data->code)->html,
+                    'image' => $data->image,
+                ];
             } catch (\Throwable $exception) {
                 return null;
             }
-
-            return (object) [
-                'code'  => optional($data)->code,
-                'image' => optional($data)->image,
-            ];
         });
     }
 
     public function getEmbedCodeAttribute(): ?string
     {
-        return $this->embedObject()->code;
+        return optional($this->embedObject())->code;
     }
 
     public function getEmbedImageAttribute(): ?string
     {
-        return $this->embedObject()->image;
+        return optional($this->embedObject())->image;
     }
 }
