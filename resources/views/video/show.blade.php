@@ -17,7 +17,9 @@
                 <x-document-download :item="$item" />
 
                 <div class="my-8 break-words rich-text">
-                    {!! $item->embed_code !!}
+                    <div class="aspect-w-16 aspect-h-9">
+                        {!! $item->embed_code !!}
+                    </div>
 
                     {!! $item->content !!}
                 </div>
