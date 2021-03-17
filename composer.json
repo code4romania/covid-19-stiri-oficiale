@@ -19,7 +19,6 @@
         "laravel/nova": "~3.0",
         "laravel/scout": "^8.0",
         "laravel/tinker": "^2.0",
-        "leewillis77/cached-embed": "^0.8.1",
         "lorisleiva/laravel-deployer": "^0.3.0",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^5.2",

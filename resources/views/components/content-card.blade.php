@@ -1,3 +1,5 @@
+@props(['model', 'route', 'readMore' => true])
+
 <article class="flex bg-gray-300">
     <i class="px-4 py-5 bg-blue-200"></i>
     <div class="flex-1 px-8 py-5">

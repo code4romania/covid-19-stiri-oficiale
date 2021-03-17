@@ -3,10 +3,10 @@
 namespace App;
 
 use App\Institution;
-use Embed\Adapters\Adapter;
+use Embed\Embed;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Cache;
 use Laravel\Scout\Searchable;
-use Leewillis77\CachedEmbed\CachedEmbed;
 use Spatie\Feed\FeedItem;
 use Spatie\Feed\Feedable;
 
@@ -30,9 +30,14 @@ class Video extends BaseModel implements Feedable
         'short_content',
     ];
 
+    protected string $embedCacheStore = 'file';
+
     public static function booted()
     {
         static::addGlobalScope(fn (Builder $query) => $query->published());
+
+        static::updated(fn (self $model) => Cache::store($model->embedCacheStore)->forget("video-embed-{$model->id}"));
+        static::deleted(fn (self $model) => Cache::store($model->embedCacheStore)->forget("video-embed-{$model->id}"));
     }
 
     public function childDraft()
@@ -68,26 +73,33 @@ class Video extends BaseModel implements Feedable
         return Video::listing()->get();
     }
 
-    private function embedObject(): ?Adapter
+    private function embedObject(): ?object
     {
         if (!$this->url) {
             return null;
         }
 
-        try {
-            return CachedEmbed::create($this->url);
-        } catch (\Exception $exception) {
-            return null;
-        }
+        return Cache::store($this->embedCacheStore)->rememberForever("video-embed-{$this->id}", function () {
+            try {
+                $data = Embed::create($this->url);
+            } catch (\Throwable $exception) {
+                return null;
+            }
+
+            return (object) [
+                'code'  => optional($data)->code,
+                'image' => optional($data)->image,
+            ];
+        });
     }
 
     public function getEmbedCodeAttribute(): ?string
     {
-        return $this->embedObject()->code ?? null;
+        return $this->embedObject()->code;
     }
 
     public function getEmbedImageAttribute(): ?string
     {
-        return $this->embedObject()->image ?? null;
+        return $this->embedObject()->image;
     }
 }

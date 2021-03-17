@@ -10,7 +10,7 @@
                     {{ __('content.news.title') }}
                 </h1>
 
-                <x-content-card :item="$item" :read-more="false" />
+                <x-content-card :model="$item" :read-more="false" />
 
                 <x-share :item="$item"/>
 

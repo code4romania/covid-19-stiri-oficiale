@@ -22,13 +22,13 @@
                     <div class="grid gap-y-10">
                         @if ($type == 'video')
                             @forelse ($items as $item)
-                                <x-content-card :item="$item" :read-more="false" />
+                                <x-content-card :model="$item" :read-more="false" />
                             @empty
                                 <p>{{ __('search.noResults') }}</p>
                             @endforelse
                         @else
                             @forelse ($items as $item)
-                                <x-content-card :item="$item" :route="$route" />
+                                <x-content-card :model="$item" :route="$route" />
                             @empty
                                 <p>{{ __('search.noResults') }}</p>
                             @endforelse

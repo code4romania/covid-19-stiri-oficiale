@@ -12,7 +12,7 @@
 
                 <div class="grid gap-y-10">
                     @forelse ($items as $item)
-                        <x-content-card :item="$item" route="news.show" />
+                        <x-content-card :model="$item" route="news.show" />
                     @empty
                         <p>Încă nu au fost adăugate informații.</p>
                     @endforelse

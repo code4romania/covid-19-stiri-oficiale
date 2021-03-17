@@ -260,6 +260,7 @@ module.exports = {
     },
     plugins: [
         //
+        require('@tailwindcss/aspect-ratio'),
         require('tailwindcss-typography')({
             componentPrefix: '', // the prefix to use for text style classes
         }),
