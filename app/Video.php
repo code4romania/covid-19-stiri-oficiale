@@ -34,8 +34,6 @@ class Video extends BaseModel implements Feedable
 
     public static function booted()
     {
-        static::addGlobalScope(fn (Builder $query) => $query->published());
-
         static::updated(fn (self $model) => Cache::store($model->embedCacheStore)->forget("video-embed-{$model->id}"));
         static::deleted(fn (self $model) => Cache::store($model->embedCacheStore)->forget("video-embed-{$model->id}"));
     }

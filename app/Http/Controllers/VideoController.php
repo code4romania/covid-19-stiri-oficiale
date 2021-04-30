@@ -23,7 +23,10 @@ class VideoController extends Controller
 
     public function show($slug)
     {
-        $item = Video::where('slug', $slug)->firstOrFail();
+        $item = Video::query()
+            ->where('slug', $slug)
+            ->published()
+            ->firstOrFail();
 
         $this->setSeo([
             'title'       => $item->title,

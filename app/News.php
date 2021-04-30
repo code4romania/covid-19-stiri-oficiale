@@ -25,11 +25,6 @@ class News extends BaseModel implements Feedable
         'content',
     ];
 
-    public static function booted()
-    {
-        static::addGlobalScope(fn (Builder $query) => $query->published());
-    }
-
     public function childDraft()
     {
         return $this->hasOne(News::class, 'draft_parent_id', 'id');

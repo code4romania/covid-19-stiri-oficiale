@@ -25,10 +25,6 @@ class Decision extends BaseModel implements Feedable
         'content',
     ];
 
-    public static function booted()
-    {
-        static::addGlobalScope(fn (Builder $query) => $query->published());
-    }
 
     public function childDraft()
     {
