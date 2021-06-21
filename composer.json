@@ -20,6 +20,7 @@
         "laravel/nova": "~3.0",
         "laravel/scout": "^8.0",
         "laravel/tinker": "^2.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^5.2",
         "optimistdigital/nova-sortable": "^2.1",
