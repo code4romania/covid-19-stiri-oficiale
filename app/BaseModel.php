@@ -5,6 +5,7 @@ namespace App;
 use App\Helpers\Normalize;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Cache;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -42,7 +43,18 @@ class BaseModel extends Model implements HasMedia
 
     public function scopeListing($query)
     {
-        return $query->published()->orderBy('updated_at', 'DESC');
+        return $query
+            ->select([
+                'id',
+                'slug',
+                'title',
+                'short_content',
+                'created_at',
+                'updated_at',
+                'institution_id',
+            ])
+            ->published()
+            ->orderByDesc('updated_at');
     }
 
     public function scopePaginatedListing($query)
@@ -73,21 +85,27 @@ class BaseModel extends Model implements HasMedia
             ->toArray();
     }
 
-    public function next()
+    public function next(): ?self
     {
-        return $this
-            ->where('updated_at', '>', $this->updated_at)
-            ->orderBy('updated_at', 'asc')
-            ->limit(1)
-            ->first();
+        return Cache::driver('array')->rememberForever('next-'. $this->getMorphClass(). '-'. $this->id, function () {
+            return $this
+                ->withoutEagerLoading()
+                ->select('id', 'title', 'slug')
+                ->where('updated_at', '>', $this->updated_at)
+                ->orderBy('updated_at', 'asc')
+                ->first();
+        });
     }
 
-    public function previous()
+    public function previous(): ?self
     {
-        return $this
-            ->where('updated_at', '<', $this->updated_at)
-            ->orderBy('updated_at', 'desc')
-            ->limit(1)
-            ->first();
+        return Cache::driver('array')->rememberForever('prev-'. $this->getMorphClass(). '-'. $this->id, function () {
+            return $this
+                ->withoutEagerLoading()
+                ->select('id', 'title', 'slug')
+                ->where('updated_at', '<', $this->updated_at)
+                ->orderBy('updated_at', 'desc')
+                ->first();
+        });
     }
 }
