@@ -24,14 +24,6 @@
                     {{ $model->institution->name }}
                 </span>
             </div>
-
-            @if ($model->tags)
-                <div>
-                    @foreach ($model->tags as $tag)
-                        <span class="inline-block px-2 text-xs text-center bg-gray-100 rounded">{{ $tag->name }}</span>
-                    @endforeach
-                </div>
-            @endif
         </div>
 
         @if ($model->updated_at->greaterThan($model->created_at))

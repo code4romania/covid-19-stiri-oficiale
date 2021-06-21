@@ -15,7 +15,6 @@ use Laravel\Nova\Fields\Text;
 use OptimistDigital\NovaDrafts\DraftButton;
 use OptimistDigital\NovaDrafts\PublishedField;
 use OptimistDigital\NovaDrafts\UnpublishButton;
-use Spatie\TagsField\Tags;
 
 class Video extends Resource
 {
@@ -89,7 +88,6 @@ class Video extends Resource
                 'height' => '300',
                 'max' => '120'
             ])->rules('required'),
-            Tags::make('Tag-uri', 'tags'),
             Heading::make('<small class="info">Pentru a adauga tag-ul, apasați tasta ENTER</small>')->asHtml(),
             DateTime::make('Creat la', 'created_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
             DateTime::make('Actualizat la', 'updated_at')->format('DD MMM YYYY hh:mm:ss')->readonly()->sortable(),
