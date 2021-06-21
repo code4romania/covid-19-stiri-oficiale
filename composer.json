@@ -20,7 +20,6 @@
         "laravel/nova": "~3.0",
         "laravel/scout": "^8.0",
         "laravel/tinker": "^2.0",
-        "lorisleiva/laravel-deployer": "^0.3.0",
         "optimistdigital/nova-drafts": "^1.1",
         "optimistdigital/nova-menu-builder": "^5.2",
         "optimistdigital/nova-sortable": "^2.1",
@@ -34,6 +33,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
+        "deployer/deployer": "^7.0-beta",
         "facade/ignition": "^2.4",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
