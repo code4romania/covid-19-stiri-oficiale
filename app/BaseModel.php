@@ -42,7 +42,18 @@ class BaseModel extends Model implements HasMedia
 
     public function scopeListing($query)
     {
-        return $query->published()->orderBy('updated_at', 'DESC');
+        return $query
+            ->select([
+                'id',
+                'slug',
+                'title',
+                'short_content',
+                'created_at',
+                'updated_at',
+                'institution_id',
+            ])
+            ->published()
+            ->orderByDesc('updated_at');
     }
 
     public function scopePaginatedListing($query)

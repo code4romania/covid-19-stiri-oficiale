@@ -55,6 +55,7 @@ class SearchController extends Controller
     {
         return app($this->models[$modelName])
             ->search(Normalize::string($query))
+            ->query(fn ($query) => $query->listing())
             ->paginate()
             ->appends(['type' => $modelName]);
     }
