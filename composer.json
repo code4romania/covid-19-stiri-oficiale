@@ -24,6 +24,7 @@
         "optimistdigital/nova-menu-builder": "^5.2",
         "optimistdigital/nova-sortable": "^2.1",
         "sentry/sentry-laravel": "^2.3.1",
+        "spatie/laravel-backup": "^6.16",
         "spatie/laravel-feed": "^3.1",
         "spatie/laravel-robots-middleware": "^1.2",
         "spatie/laravel-sitemap": "^5.7",
