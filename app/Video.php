@@ -20,7 +20,6 @@ class Video extends BaseModel implements Feedable
 
     protected $with = [
         'institution',
-        'tags',
     ];
 
     /** @var array<string> */
