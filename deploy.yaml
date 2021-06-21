@@ -1,0 +1,43 @@
+import:
+  - recipe/laravel.php
+  - contrib/php-fpm.php
+  - deploy/tasks/npm.php
+  - deploy/tasks/artisan.php
+
+config:
+  application: 'stiri-oficiale'
+  repository: 'https://github.com/code4romania/covid-19-stiri-oficiale.git'
+  php_fpm_version: '7.4'
+  remote_user: 'ubuntu'
+  shared_files:
+    - .env
+    - public/sitemap.xml
+
+hosts:
+  production:
+    hostname: 'origin.stirioficiale.ro'
+    deploy_path: '/var/www/production'
+    labels:
+      stage: production
+
+tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - artisan:storage:link
+    - artisan:view:cache
+    - artisan:config:cache
+    - artisan:route:cache
+    - artisan:event:cache
+    - artisan:migrate
+    - artisan:nova:publish
+    - assets:build
+    - deploy:publish
+    - php-fpm:reload
+  assets:build:
+    - npm:install
+    - npm:build
+    - npm:upload
+
+after:
+  deploy:failed: deploy:unlock
