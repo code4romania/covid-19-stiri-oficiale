@@ -1,4 +1,3 @@
-
 <x-header-menu />
 
 <aside class="container flex flex-wrap text-sm lg:justify-end">
