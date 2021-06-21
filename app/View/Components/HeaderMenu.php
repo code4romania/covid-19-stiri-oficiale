@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 
 class HeaderMenu extends Component
 {
-    public array $menu;
+    public ?array $menu;
 
     /**
      * Create a new component instance.
