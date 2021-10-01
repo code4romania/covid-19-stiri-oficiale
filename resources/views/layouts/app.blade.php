@@ -17,6 +17,7 @@
     <link rel="manifest" href="{{ asset('assets/images/favicons/manifest.json') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <meta name="msapplication-config" content="{{ asset('assets/images/favicons/browserconfig.xml') }}">
+    <meta name="theme-color" content="#05d6c7" />
 
     @include('feed::links')
 </head>
