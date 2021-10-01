@@ -4341,16 +4341,16 @@
         },
         {
             "name": "optimistdigital/nova-menu-builder",
-            "version": "6.0.1",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-menu-builder.git",
-                "reference": "e0bc56f92e0801b8721bb24af03284f9c06361cc"
+                "reference": "20a23e71e400c6776e9de4afb4ce13fd492f5fdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/e0bc56f92e0801b8721bb24af03284f9c06361cc",
-                "reference": "e0bc56f92e0801b8721bb24af03284f9c06361cc",
+                "url": "https://api.github.com/repos/optimistdigital/nova-menu-builder/zipball/20a23e71e400c6776e9de4afb4ce13fd492f5fdb",
+                "reference": "20a23e71e400c6776e9de4afb4ce13fd492f5fdb",
                 "shasum": ""
             },
             "require": {
@@ -4407,7 +4407,7 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-menu-builder/issues",
-                "source": "https://github.com/optimistdigital/nova-menu-builder/tree/6.0.1"
+                "source": "https://github.com/optimistdigital/nova-menu-builder/tree/6.0.2"
             },
             "funding": [
                 {
@@ -4415,20 +4415,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-02T15:32:56+00:00"
+            "time": "2021-10-01T11:49:33+00:00"
         },
         {
             "name": "optimistdigital/nova-sortable",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-sortable.git",
-                "reference": "c3c5b841d17e9c80e5b8a3112465a8cb0559df46"
+                "reference": "41b07f5fd8d7d48d06c28ac919210fb7a1137bcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/c3c5b841d17e9c80e5b8a3112465a8cb0559df46",
-                "reference": "c3c5b841d17e9c80e5b8a3112465a8cb0559df46",
+                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/41b07f5fd8d7d48d06c28ac919210fb7a1137bcc",
+                "reference": "41b07f5fd8d7d48d06c28ac919210fb7a1137bcc",
                 "shasum": ""
             },
             "require": {
@@ -4463,7 +4463,7 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-sortable/issues",
-                "source": "https://github.com/optimistdigital/nova-sortable/tree/2.4.0"
+                "source": "https://github.com/optimistdigital/nova-sortable/tree/2.4.1"
             },
             "funding": [
                 {
@@ -4471,7 +4471,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-09T15:03:08+00:00"
+            "time": "2021-10-01T14:53:56+00:00"
         },
         {
             "name": "optimistdigital/nova-tailwind",
@@ -10980,16 +10980,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.13.1",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78"
+                "reference": "c6126e291bd44ad3fe482537a145fc70e3320598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78",
-                "reference": "e3f49bef7b4165fa4b8a9dc579e7b63fa06aef78",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/c6126e291bd44ad3fe482537a145fc70e3320598",
+                "reference": "c6126e291bd44ad3fe482537a145fc70e3320598",
                 "shasum": ""
             },
             "require": {
@@ -11052,7 +11052,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-09-13T13:01:30+00:00"
+            "time": "2021-10-01T12:58:45+00:00"
         },
         {
             "name": "facade/ignition-contracts",
