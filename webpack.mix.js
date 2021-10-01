@@ -2,12 +2,6 @@ const mix = require('laravel-mix');
 
 require('laravel-mix-valet');
 
-if (mix.inProduction()) {
-    mix.version();
-} else {
-    mix.sourceMaps();
-}
-
 mix.valet('stiri.test')
     .setPublicPath('public/assets')
     .setResourceRoot('./')
@@ -20,4 +14,6 @@ mix.valet('stiri.test')
             bubble: ['screen'],
         }),
     ])
+    .sourceMaps(false)
+    .version()
     .extract();
