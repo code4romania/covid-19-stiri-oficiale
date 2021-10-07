@@ -1981,16 +1981,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
                 "shasum": ""
             },
             "require": {
@@ -2002,7 +2002,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -2019,9 +2019,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -2030,9 +2045,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.0"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-07T13:05:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2208,12 +2237,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreiio/Nova-Filemanager.git",
-                "reference": "d6ec4017903a2f4fdc6c85332c4150b5070f34ef"
+                "reference": "2bb9f77e714ec9c27ba97cfd86bd1d2130b79c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreiio/Nova-Filemanager/zipball/d6ec4017903a2f4fdc6c85332c4150b5070f34ef",
-                "reference": "d6ec4017903a2f4fdc6c85332c4150b5070f34ef",
+                "url": "https://api.github.com/repos/andreiio/Nova-Filemanager/zipball/2bb9f77e714ec9c27ba97cfd86bd1d2130b79c17",
+                "reference": "2bb9f77e714ec9c27ba97cfd86bd1d2130b79c17",
                 "shasum": ""
             },
             "require": {
@@ -2274,7 +2303,7 @@
                     "url": "https://github.com/andreiio"
                 }
             ],
-            "time": "2021-10-07T12:26:02+00:00"
+            "time": "2021-10-07T13:16:57+00:00"
         },
         {
             "name": "intervention/image",
