@@ -63,4 +63,4 @@ jobs:
         uses: deployphp/action@master
         with:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          dep: deploy stage=production -v
+          dep: deploy stage=production
