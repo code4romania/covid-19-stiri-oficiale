@@ -8,23 +8,23 @@ set('bin/npm', fn () => locateBinaryPath('npm'));
 
 desc('Install npm packages');
 task('npm:install', function () {
-    if (test('[ -d node_modules ]')) {
+    if (testLocally('[ -d node_modules ]')) {
         return;
     }
 
-    run('{{bin/npm}} ci --prefer-offline');
-})->local();
+    runLocally('{{bin/npm}} ci --prefer-offline');
+});
 
 desc('Build frontend assets locally');
 task('npm:build', function () {
-    if (test('[ -d public/assets ]')) {
+    if (testLocally('[ -d public/assets ]')) {
         return;
     }
 
-    run('{{bin/npm}} run production');
-})->local();
+    runLocally('{{bin/npm}} run production');
+});
 
-desc('Upload assets to your hosts');
+desc('Upload the assets to all hosts');
 task('npm:upload', function () {
     upload('public/assets/', '{{release_path}}/public/assets/');
 });
