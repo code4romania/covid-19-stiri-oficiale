@@ -7,7 +7,7 @@ import:
 config:
   application: 'stiri-oficiale'
   repository: 'https://github.com/code4romania/covid-19-stiri-oficiale.git'
-  php_fpm_version: '7.4'
+  php_fpm_version: '8.0'
   remote_user: 'ubuntu'
   shared_files:
     - .env
