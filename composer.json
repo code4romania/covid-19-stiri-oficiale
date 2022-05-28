@@ -4,7 +4,7 @@
     "description": "Platform which centralizes all the official press releases, press conferences and decisions of the Committee for Special Emergency Situations.",
     "license": "MPL-2.0",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "artesaos/seotools": "^0.22",
         "benjaminhirsch/nova-slug-field": "^1.2",
         "blade-ui-kit/blade-icons": "^1.1",
