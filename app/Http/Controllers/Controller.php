@@ -54,6 +54,6 @@ class Controller extends BaseController
 
     protected function getCurrentPageNumber(Request $request): int
     {
-        return abs($request->get('page')) ?: 1;
+        return abs((int) $request->get('page')) ?: 1;
     }
 }
