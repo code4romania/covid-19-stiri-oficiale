@@ -2,13 +2,13 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/stiri-oficiale.svg?style=for-the-badge)](https://github.com/code4romania/stiri-oficiale/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
 
-[See the project live](https://stirioficiale.ro/)
+[See the project live](https://covid19.stirioficiale.ro/)
 
 Platform which centralizes all the official press releases, press conferences and decisions of the Committee for Special Emergency Situations.
 
 [Contributing](#contributing) | [Built with](#built-with) | [Development](#development) | [Deployment](#deployment) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
 
-## Contributing 
+## Contributing
 
 This project is built by amazing volunteers and you can be one of them! Here's a list of ways in [which you can contribute to this project](.github/CONTRIBUTING.md).
 
